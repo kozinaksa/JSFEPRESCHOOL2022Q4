@@ -16,8 +16,6 @@ body {
 .container {
   width: 1440px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 .header {
@@ -41,7 +39,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 452px;
-  font-family: "Inika", serif;
+  font-family: 'Inika', serif;
   font-weight: 400;
   list-style: none;
   font-size: 16px;
@@ -77,13 +75,73 @@ a:hover {
 .logo-vector {
   width: 20px;
   height: auto;
+  margin-right: 2px;
 }
 
 .logo-text {
-  font-family: "Inika";
+  font-family: 'Inika', serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
   color: #000000;
 }
 
+.welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 62px 109px 63px;
+}
+
+.welcome-image {
+  width: 449px;
+  height: 407px;
+  object-fit: cover;
+}
+
+.welcome-section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 549px;
+  margin-top: 2px;
+}
+
+.welcome-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 50px;
+  color: #717171;
+  text-align: top;
+  padding-bottom: 1px;
+  margin-bottom: 42px;
+}
+
+.span-green {
+  color: #499a18;
+}
+
+.welcome-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 35px;
+  color: #636060;
+  text-align: top;
+  margin-bottom: 48px;
+}
+
+.welcome-button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 10px 26px;
+  color: #000000;
+  border: 2px solid #E06733;
+  border-radius: 10px;
+}
