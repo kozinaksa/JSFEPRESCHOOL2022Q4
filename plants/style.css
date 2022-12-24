@@ -142,6 +142,14 @@ a:hover {
   line-height: 20px;
   padding: 10px 26px;
   color: #000000;
-  border: 2px solid #E06733;
+  border: 2px solid #e06733;
   border-radius: 10px;
+}
+
+.welcome-button:hover {
+  background-color: #e06733;
+  cursor: pointer;
+  color: #edf2ec;
+  font-weight: 700;
+  transition: .3s;
 }
