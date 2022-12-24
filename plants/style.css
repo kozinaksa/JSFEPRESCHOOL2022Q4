@@ -9,11 +9,6 @@ html {
   scroll-behavior: smooth;
 }
 
-a:hover {
-  cursor: pointer;
-  color: #e06733;
-}
-
 body {
   background-color: #edf2ec;
 }
@@ -28,7 +23,6 @@ body {
 .header {
   display: flex;
   width: 100%;
-  height: 134px;
   background-color: #edf2ec;
   align-items: center;
   justify-content: center;
@@ -39,26 +33,23 @@ body {
   justify-content: space-between;
   flex-direction: row-reverse;
   width: 100%;
-  align-items: center;
-  padding: 42px 110px;
-}
-
-.nav {
-  display: block;
+  align-items: baseline;
+  margin: 42px 110px;
 }
 
 .nav-list {
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
+  width: 452px;
   font-family: "Inika", serif;
-  font-weight: 700;
+  font-weight: 400;
   list-style: none;
   font-size: 16px;
+  line-height: 50px;
 }
 
 .nav-item {
   width: fit-content;
-  padding-left: 47px;
 }
 
 a.nav-link {
@@ -68,18 +59,31 @@ a.nav-link {
 
 a.nav-link-first {
   color: #e06733;
+  font-weight: 700;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #e06733;
+  font-weight: 700;
+  transition: .3s;
 }
 
 .logo {
   display: flex;
-  align-items: flex-end;
-  position: relative;
-  top: -3px;
+  align-items: baseline;
+}
+
+.logo-vector {
+  width: 20px;
+  height: auto;
 }
 
 .logo-text {
-  font-family: 'Inika', serif;
+  font-family: "Inika";
   font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
   color: #000000;
 }
 
