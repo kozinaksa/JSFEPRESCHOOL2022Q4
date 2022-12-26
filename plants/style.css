@@ -56,7 +56,7 @@ a:hover {
   cursor: pointer;
   color: #e06733;
   font-weight: 700;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .logo {
@@ -141,15 +141,17 @@ a:hover {
 }
 
 .welcome-button:hover,
-.services-btn:hover {
+.services-btn:hover,
+.prices-button:hover {
   background-color: #e06733;
   cursor: pointer;
   color: #edf2ec;
   font-weight: 700;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-.about {
+.about,
+.prices {
   background-color: #ffffff;
 }
 
@@ -221,17 +223,19 @@ a:hover {
   column-gap: 38px;
 }
 
-.services-btn {
-  width: 161px;
+.services-btn,
+.prices-button {
+  width: 162px;
   font-family: 'Inika', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+  text-align: center;
   line-height: 26px;
   color: #e06733;
-  border: 1px solid #E06733;
+  border: 1px solid #e06733;
   border-radius: 5px;
-  padding: 12px 40px;
+  padding: 12px 0;
 }
 
 .services-list {
@@ -284,3 +288,97 @@ a:hover {
   line-height: 20px;
   color: #717171;
 }
+
+.prices-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 40px 109px 115px;
+}
+
+.prices-right-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 39px;
+}
+
+.prices-title {
+  width: 452px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: right;
+  color: #000000;
+}
+
+.prices-button {
+  background-color: #ffffff;
+  font-weight: 700;
+}
+
+.prices-image {
+  width: 152px;
+  height: 175px;
+  object-fit: cover;
+}
+
+.prices-left-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 332px;
+  gap: 58px;
+}
+
+.prices-left-block .prices-title {
+  text-align: left;
+}
+
+.prices-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  border: 1px solid #e3e1d5;
+  border-radius: 20px;
+  padding: 34px 41px;
+}
+
+.prices-item-btn {
+  width: 250px;
+  background: #edf2ec;
+  border-radius: 20px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+  padding: 15px 40px;
+}
+
+.prices-item-btn::after {
+  content: url(./assets/svg/accordion_btn.svg);
+  width: 16px;
+  float: right;
+  margin-left: 54px;
+}
+
+.prices-item-btn:hover {
+  cursor: pointer;
+  background-color: #d6e7d2;
+  transition: 0.3s;
+}
+
+/*
+:active.prices-item-btn::after {
+  content: url(./assets/svg/accordion_btn_open.svg);
+  width: 16px;
+  float: right;
+  margin-left: 54px;
+}
+*/
