@@ -61,50 +61,50 @@
               <button class="services-btn">Gardens</button>
             </div>
           </div>
-          <ul class="services-list">
-            <li class="services-item">
+          <div class="services-list">
+            <div class="services-item">
               <img src="./assets/img/first.jpg" class="services-image" alt="photo of woman in gloves holding aloe">
               <div class="services-txt">
                 <h3 class="services-title-small">Garden care</h3>
                 <p class="services-text">Lorem Ipsum has been the industry</p>
               </div>
-            </li>
-            <li class="services-item">
+            </div>
+            <div class="services-item">
               <img src="./assets/img/second.jpg" class="services-image" alt="photo of a lemon on a branch being touched by someone's hand">
               <div class="services-txt">
                 <h3 class="services-title-small">Planting</h3>
                 <p class="services-text">Lorem Ipsum has been the industry</p>
               </div>
-            </li>
-            <li class="services-item">
+            </div>
+            <div class="services-item">
               <img src="./assets/img/third.jpg" class="services-image" alt="photo of plants being sprayed with a pink spray bottle">
               <div class="services-txt">
                 <h3 class="services-title-small">Lawn care</h3>
                 <p class="services-text">Lorem Ipsum has been the industry</p>
               </div>
-            </li>
-            <li class="services-item">
+            </div>
+            <div class="services-item">
               <img src="./assets/img/fourth.jpg" class="services-image" alt="photo of a woman tending to potted rose bush">
               <div class="services-txt">
                 <h3 class="services-title-small">Planting</h3>
                 <p class="services-text">Lorem Ipsum has been the industry</p>
               </div>
-            </li>
-            <li class="services-item">
+            </div>
+            <div class="services-item">
               <img src="./assets/img/fifth.jpg" class="services-image" alt="photo of succulents">
               <div class="services-txt">
                 <h3 class="services-title-small">Garden care</h3>
                 <p class="services-text">Lorem Ipsum has been the industry</p>
               </div>
-            </li>
-            <li class="services-item">
+            </div>
+            <div class="services-item">
               <img src="./assets/img/sixth.jpg" class="services-image" alt="photo of cacti">
               <div class="services-txt">
                 <h3 class="services-title-small">Planting</h3>
                 <p class="services-text">Lorem Ipsum has been the industry</p>
               </div>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </section>
       <section class="prices">
@@ -116,11 +116,35 @@
           </div>
           <div class="prices-left-block">
             <h3 class="prices-title">Prices</h3>
-            <ul class="prices-list">
-              <li class="prices-item"><button class="prices-item-btn">Basics</button></li>
-              <li class="prices-item"><button class="prices-item-btn">Standard</button></li>
-              <li class="prices-item"><button class="prices-item-btn">Pro care</button></li>
-            </ul>
+            <div class="prices-container">
+              <div class="prices-accordion">
+                <input type="checkbox" name="prices-input" id="basics">
+                <label for="basics" class="prices-label">Basics</label>
+                <div class="prices-acc-content">
+                  <p class="prices-acc-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <p class="prices-acc-price"><span class="prices-acc-span">$15</span> / per hour</p>
+                  <button class="prices-acc-btn">Order</button>
+                </div>
+              </div>
+              <div class="prices-accordion">
+                <input type="checkbox" name="prices-input" id="standard">
+                <label for="standard" class="prices-label">Standard</label>
+                <div class="prices-acc-content">
+                  <p class="prices-acc-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <p class="prices-acc-price"><span class="prices-acc-span">$25</span> / per hour</p>
+                  <button class="prices-acc-btn">Order</button>
+                </div>
+              </div>
+              <div class="prices-accordion">
+                <input type="checkbox" name="prices-input" id="pro-care">
+                <label for="pro-care" class="prices-label">Pro care</label>
+                <div class="prices-acc-content">
+                  <p class="prices-acc-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <p class="prices-acc-price"><span class="prices-acc-span">$35</span> / per hour</p>
+                  <button class="prices-acc-btn">Order</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

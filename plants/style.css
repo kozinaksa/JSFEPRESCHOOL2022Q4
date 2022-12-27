@@ -142,7 +142,8 @@ a:hover {
 
 .welcome-button:hover,
 .services-btn:hover,
-.prices-button:hover {
+.prices-button:hover,
+.prices-acc-btn:hover {
   background-color: #e06733;
   cursor: pointer;
   color: #edf2ec;
@@ -220,7 +221,7 @@ a:hover {
 .services-buttons {
   display: flex;
   flex-direction: row-reverse;
-  column-gap: 38px;
+  column-gap: 37px;
 }
 
 .services-btn,
@@ -266,7 +267,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border: 1px solid #E3E1D5;
+  border: 1px solid #e3e1d5;
   border-radius: 0px 0px 20px 20px;
   gap: 10px;
   padding: 9px 0 35px;
@@ -304,13 +305,16 @@ a:hover {
 }
 
 .prices-title {
-  width: 452px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 50px;
   text-align: right;
   color: #000000;
+}
+
+.prices-right-block .prices-title {
+  width: 452px;
 }
 
 .prices-button {
@@ -328,7 +332,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 332px;
   gap: 58px;
 }
 
@@ -336,49 +339,121 @@ a:hover {
   text-align: left;
 }
 
-.prices-list {
+.prices-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  list-style: none;
+  flex-flow: column wrap;
+  max-height: 400px;
+  align-content: flex-start;
+  gap: 30px;
   border: 1px solid #e3e1d5;
   border-radius: 20px;
-  padding: 34px 41px;
+  padding: 33px 41px;
 }
 
-.prices-item-btn {
-  width: 250px;
-  background: #edf2ec;
+/*--here begins my timid attempt to make an accordion on css--*/
+
+.prices-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+.prices-accordion input,
+.prices-acc-content {
+  display: none;
+}
+
+.prices-label {
+  cursor: pointer;
+  background-color: #edf2ec;
   border-radius: 20px;
+  width: 250px;
   text-align: left;
+  padding: 16px 40px;
   font-family: 'Inter', sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
   color: #000000;
-  padding: 15px 40px;
 }
 
-.prices-item-btn::after {
+.prices-accordion label::before {
   content: url(./assets/svg/accordion_btn.svg);
   width: 16px;
   float: right;
-  margin-left: 54px;
 }
 
-.prices-item-btn:hover {
+.prices-accordion label:hover {
   cursor: pointer;
-  background-color: #d6e7d2;
+  color: #e06733;
   transition: 0.3s;
 }
 
-/*
-:active.prices-item-btn::after {
+.prices-accordion input:checked + label::before {
   content: url(./assets/svg/accordion_btn_open.svg);
-  width: 16px;
-  float: right;
-  margin-left: 54px;
 }
-*/
+
+.prices-accordion input:checked + label {
+  background-color: #d6e7d2;
+  border-radius: 20px 20px 0 0;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.prices-accordion input:checked + label:hover {
+  cursor: pointer;
+  color: #e06733;
+  transition: 0.3s;
+}
+
+.prices-accordion input:checked + label + .prices-acc-content {
+  display: flex;
+  transition: 0.3s;
+  width: 250px;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #d6e7d2;
+  padding: 0px 40px 12px;
+  border-radius: 0 0 20px 20px;
+}
+
+.prices-acc-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 10px;
+  color: #717171;
+  padding-top: 6px;
+  border-top: 0.5px solid #aea1a1;
+}
+
+.prices-acc-price {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.prices-acc-span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  color: #e06733;
+}
+
+.prices-acc-btn {
+  width: max-content;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #717171;
+  padding: 3px 26px 3px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/*--here ends my timid attempt to make an accordion on css--*/
+
