@@ -16,7 +16,8 @@ html {
 
 .header,
 .welcome,
-.services {
+.services,
+.contacts {
   background-color: #edf2ec;
 }
 
@@ -78,6 +79,8 @@ a:hover {
   color: #000000;
 }
 
+/*--welcome--*/
+
 .welcome-wrapper {
   display: flex;
   justify-content: space-between;
@@ -126,7 +129,7 @@ a:hover {
   color: #636060;
 }
 
-.welcome-button {
+.welcome-btn {
   display: flex;
   align-items: center;
   text-align: center;
@@ -140,9 +143,9 @@ a:hover {
   border-radius: 10px;
 }
 
-.welcome-button:hover,
+.welcome-btn:hover,
 .services-btn:hover,
-.prices-button:hover,
+.prices-btn:hover,
 .prices-acc-btn:hover {
   background-color: #e06733;
   cursor: pointer;
@@ -151,10 +154,14 @@ a:hover {
   transition: 0.3s;
 }
 
+/*--welcome--*/
+
 .about,
 .prices {
   background-color: #ffffff;
 }
+
+/*--about--*/
 
 .about-wrapper {
   display: flex;
@@ -173,7 +180,8 @@ a:hover {
 }
 
 .about-title,
-.services-title {
+.services-title,
+.contacts-title {
   width: 603px;
   font-family: 'Inika', serif;
   font-weight: 400;
@@ -200,6 +208,9 @@ a:hover {
   object-fit: cover;
 }
 
+/*--about--*/
+/*--services--*/
+
 .services-wrapper {
   display: flex;
   flex-direction: column;
@@ -218,14 +229,14 @@ a:hover {
   width: 30%;
 }
 
-.services-buttons {
+.services-btns {
   display: flex;
   flex-direction: row-reverse;
   column-gap: 37px;
 }
 
 .services-btn,
-.prices-button {
+.prices-btn {
   width: 162px;
   font-family: 'Inika', serif;
   font-style: normal;
@@ -245,7 +256,6 @@ a:hover {
   flex-direction: row;
   justify-content: space-between;
   align-content: flex-start;
-  list-style: none;
   margin: auto;
   gap: 55px;
 }
@@ -290,10 +300,14 @@ a:hover {
   color: #717171;
 }
 
+/*--services--*/
+/*--prices--*/
+
 .prices-wrapper {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
+  max-height: 560px;
   padding: 40px 109px 115px;
 }
 
@@ -317,7 +331,7 @@ a:hover {
   width: 452px;
 }
 
-.prices-button {
+.prices-btn {
   background-color: #ffffff;
   font-weight: 700;
 }
@@ -342,7 +356,7 @@ a:hover {
 .prices-container {
   display: flex;
   flex-flow: column wrap;
-  max-height: 400px;
+  max-height: 395px;
   align-content: flex-start;
   gap: 30px;
   border: 1px solid #e3e1d5;
@@ -391,6 +405,7 @@ input,
 
 .prices-accordion input:checked + label::before {
   content: url(./assets/svg/accordion_btn_open.svg);
+  transform: rotate(-180deg);
 }
 
 .prices-accordion input:checked + label {
@@ -456,4 +471,53 @@ input,
 }
 
 /*--here ends my timid attempt to make an accordion on css--*/
+/*--prices--*/
 
+.contacts-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 0 109px;
+}
+
+.contacts-image {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  margin-top: 50px;
+}
+
+.contacts-title {
+  margin-top: 57px;
+  margin-left: 113px;
+  font-weight: 700;
+}
+
+.contacts-accordion {
+  width: 450px;
+  background: #d6e7e2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #717171;
+  padding: 5px 20px;
+  margin-top: 145px;
+}
+
+.contacts-accordion::before {
+  content: url(./assets/svg/accordion_btn_open.svg);
+  width: 16px;
+  float: right;
+  margin-right: 15px;
+}
+
+.contacts-accordion:hover {
+  background-color: #c1e698;
+  cursor: pointer;
+  transition: 0.3s;
+}
