@@ -157,7 +157,8 @@ a:hover {
 /*--welcome--*/
 
 .about,
-.prices {
+.prices,
+.footer {
   background-color: #ffffff;
 }
 
@@ -520,4 +521,47 @@ input,
   background-color: #c1e698;
   cursor: pointer;
   transition: 0.3s;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 39px 109px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #000000;
+}
+
+.footer-data,
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-data {
+  padding-right: 15px;
+}
+
+.footer-github,
+.footer-rsschool {
+  text-decoration: none;
+  color: #000000;
+}
+
+.footer-rsschool {
+  padding-left: 3px;
+}
+
+.footer-link {
+  display: flex;
+  align-self: flex-end;
+}
+
+.footer-vector {
+  width: 32px;
+  height: 32px;
+
 }
