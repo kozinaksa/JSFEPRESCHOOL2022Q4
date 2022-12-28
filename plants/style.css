@@ -16,10 +16,12 @@ html {
 
 .header,
 .welcome,
-.services,
+.service,
 .contacts {
   background-color: #edf2ec;
 }
+
+/*--header--*/
 
 .navbar {
   display: flex;
@@ -48,11 +50,6 @@ a.nav-link {
   color: #010201;
 }
 
-a.nav-link-first {
-  color: #e06733;
-  font-weight: 700;
-}
-
 a:hover {
   cursor: pointer;
   color: #e06733;
@@ -79,6 +76,7 @@ a:hover {
   color: #000000;
 }
 
+/*--header--*/
 /*--welcome--*/
 
 .welcome-wrapper {
@@ -144,13 +142,13 @@ a:hover {
 }
 
 .welcome-btn:hover,
-.services-btn:hover,
+.service-btn:hover,
 .prices-btn:hover,
 .prices-acc-btn:hover {
   background-color: #e06733;
   cursor: pointer;
   color: #edf2ec;
-  font-weight: 700;
+  /*font-weight: 700;*/
   transition: 0.3s;
 }
 
@@ -181,7 +179,7 @@ a:hover {
 }
 
 .about-title,
-.services-title,
+.service-title,
 .contacts-title {
   width: 603px;
   font-family: 'Inika', serif;
@@ -205,38 +203,38 @@ a:hover {
 
 .about-image {
   width: 464px;
-  height: 479px;
+  height: auto;
   object-fit: cover;
 }
 
 /*--about--*/
-/*--services--*/
+/*--service--*/
 
-.services-wrapper {
+.service-wrapper {
   display: flex;
   flex-direction: column;
   padding: 40px 109px 121px;
   gap: 80px;
 }
 
-.services-content {
+.service-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 1006px;
 }
 
-.services-title {
+.service-title {
   width: 30%;
 }
 
-.services-btns {
+.service-btns {
   display: flex;
   flex-direction: row-reverse;
   column-gap: 37px;
 }
 
-.services-btn,
+.service-btn,
 .prices-btn {
   width: 162px;
   font-family: 'Inika', serif;
@@ -251,7 +249,7 @@ a:hover {
   padding: 12px 0;
 }
 
-.services-list {
+.service-list {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -261,20 +259,20 @@ a:hover {
   gap: 55px;
 }
 
-.services-image {
+.service-image {
   width: 329px;
   height: 350px;
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
 }
 
-.services-item {
+.service-item {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.services-txt {
+.service-txt {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -284,7 +282,7 @@ a:hover {
   padding: 9px 0 35px;
 }
 
-.services-title-small {
+.service-title-small {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -293,7 +291,7 @@ a:hover {
   padding-bottom: 4px;
 }
 
-.services-text {
+.service-text {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -301,7 +299,7 @@ a:hover {
   color: #717171;
 }
 
-/*--services--*/
+/*--service--*/
 /*--prices--*/
 
 .prices-wrapper {
@@ -398,31 +396,26 @@ input,
   float: right;
 }
 
-.prices-accordion label:hover {
-  cursor: pointer;
-  color: #e06733;
-  transition: 0.3s;
-}
-
-.prices-accordion input:checked + label::before {
-  content: url(./assets/svg/accordion_btn_open.svg);
-  transform: rotate(-180deg);
-}
-
-.prices-accordion input:checked + label {
-  background-color: #d6e7d2;
-  border-radius: 20px 20px 0 0;
-  color: #000000;
-  transition: 0.3s;
-}
-
+.prices-accordion label:hover,
 .prices-accordion input:checked + label:hover {
   cursor: pointer;
   color: #e06733;
   transition: 0.3s;
 }
 
-.prices-accordion input:checked + label + .prices-acc-content {
+.prices-accordion input:checked + .prices-label::before {
+  content: url(./assets/svg/accordion_btn_open.svg);
+  transform: rotate(-180deg);
+}
+
+.prices-accordion input:checked + .prices-label {
+  background-color: #d6e7d2;
+  border-radius: 20px 20px 0 0;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.prices-accordion input:checked + .prices-label + .prices-acc-content {
   display: flex;
   transition: 0.3s;
   width: 250px;
@@ -473,6 +466,7 @@ input,
 
 /*--here ends my timid attempt to make an accordion on css--*/
 /*--prices--*/
+/*--contacts--*/
 
 .contacts-wrapper {
   display: flex;
@@ -523,6 +517,9 @@ input,
   transition: 0.3s;
 }
 
+/*--contacts--*/
+/*--footer--*/
+
 .footer-wrapper {
   display: flex;
   justify-content: space-between;
@@ -551,17 +548,27 @@ input,
   color: #000000;
 }
 
+.footer-github:hover,
+.footer-rsschool:hover {
+  font-weight: 400;
+}
+
 .footer-rsschool {
   padding-left: 3px;
+}
+
+.footer-social {
+  list-style: none;
 }
 
 .footer-link {
   display: flex;
   align-self: flex-end;
+  justify-content: flex-end;
 }
 
 .footer-vector {
   width: 32px;
   height: 32px;
-
+  object-fit: contain;
 }
