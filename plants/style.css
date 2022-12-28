@@ -1,0 +1,574 @@
+* {
+  margin: 0px;
+	padding: 0px;
+  border: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.header,
+.welcome,
+.service,
+.contacts {
+  background-color: #edf2ec;
+}
+
+/*--header--*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  padding: 43px 109px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 47px;
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  list-style: none;
+  font-size: 16px;
+  line-height: 50px;
+}
+
+.nav-item {
+  width: fit-content;
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: #010201;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #e06733;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.logo-vector {
+  width: 20px;
+  height: auto;
+}
+
+.logo-text {
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+}
+
+/*--header--*/
+/*--welcome--*/
+
+.welcome-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 62px 109px;
+}
+
+.welcome-image {
+  width: 449px;
+  height: 407px;
+  object-fit: cover;
+}
+
+.welcome-section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 549px;
+  gap: 46px;
+}
+
+.welcome-section-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.welcome-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 50px;
+  color: #717171;
+  padding-bottom: 1px;
+}
+
+.span-green {
+  color: #499a18;
+}
+
+.welcome-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 35px;
+  color: #636060;
+}
+
+.welcome-btn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 10px 26px;
+  color: #000000;
+  border: 2px solid #e06733;
+  border-radius: 10px;
+}
+
+.welcome-btn:hover,
+.service-btn:hover,
+.prices-btn:hover,
+.prices-acc-btn:hover {
+  background-color: #e06733;
+  cursor: pointer;
+  color: #edf2ec;
+  /*font-weight: 700;*/
+  transition: 0.3s;
+}
+
+/*--welcome--*/
+
+.about,
+.prices,
+.footer {
+  background-color: #ffffff;
+}
+
+/*--about--*/
+
+.about-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 93px 109px;
+}
+
+.about-section-text {
+  display: flex;
+  flex-direction: column;
+  width: 605px;
+  margin-top: 10px;
+  gap: 36px;
+}
+
+.about-title,
+.service-title,
+.contacts-title {
+  width: 603px;
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  color: #499a18;
+}
+
+.span-orange {
+  color: #e06733;
+}
+
+.about-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #636060;
+}
+
+.about-image {
+  width: 464px;
+  height: auto;
+  object-fit: cover;
+}
+
+/*--about--*/
+/*--service--*/
+
+.service-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 109px 121px;
+  gap: 80px;
+}
+
+.service-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1006px;
+}
+
+.service-title {
+  width: 30%;
+}
+
+.service-btns {
+  display: flex;
+  flex-direction: row-reverse;
+  column-gap: 37px;
+}
+
+.service-btn,
+.prices-btn {
+  width: 162px;
+  font-family: 'Inika', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  line-height: 26px;
+  color: #e06733;
+  border: 1px solid #e06733;
+  border-radius: 5px;
+  padding: 12px 0;
+}
+
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-start;
+  margin: auto;
+  gap: 55px;
+}
+
+.service-image {
+  width: 329px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.service-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid #e3e1d5;
+  border-radius: 0px 0px 20px 20px;
+  gap: 10px;
+  padding: 9px 0 35px;
+}
+
+.service-title-small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #e06733;
+  padding-bottom: 4px;
+}
+
+.service-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #717171;
+}
+
+/*--service--*/
+/*--prices--*/
+
+.prices-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  max-height: 560px;
+  padding: 40px 109px 115px;
+}
+
+.prices-right-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 39px;
+}
+
+.prices-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: right;
+  color: #000000;
+}
+
+.prices-right-block .prices-title {
+  width: 452px;
+}
+
+.prices-btn {
+  background-color: #ffffff;
+  font-weight: 700;
+}
+
+.prices-image {
+  width: 152px;
+  height: 175px;
+  object-fit: cover;
+}
+
+.prices-left-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 58px;
+}
+
+.prices-left-block .prices-title {
+  text-align: left;
+}
+
+.prices-container {
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 395px;
+  align-content: flex-start;
+  gap: 30px;
+  border: 1px solid #e3e1d5;
+  border-radius: 20px;
+  padding: 33px 41px;
+}
+
+/*--here begins my timid attempt to make an accordion on css--*/
+
+.prices-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+.prices-accordion input,
+.prices-acc-content {
+  display: none;
+}
+
+.prices-label {
+  cursor: pointer;
+  background-color: #edf2ec;
+  border-radius: 20px;
+  width: 250px;
+  text-align: left;
+  padding: 16px 40px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.prices-accordion label::before {
+  content: url(./assets/svg/accordion_btn.svg);
+  width: 16px;
+  float: right;
+}
+
+.prices-accordion label:hover,
+.prices-accordion input:checked + label:hover {
+  cursor: pointer;
+  color: #e06733;
+  transition: 0.3s;
+}
+
+.prices-accordion input:checked + .prices-label::before {
+  content: url(./assets/svg/accordion_btn_open.svg);
+  transform: rotate(-180deg);
+}
+
+.prices-accordion input:checked + .prices-label {
+  background-color: #d6e7d2;
+  border-radius: 20px 20px 0 0;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.prices-accordion input:checked + .prices-label + .prices-acc-content {
+  display: flex;
+  transition: 0.3s;
+  width: 250px;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #d6e7d2;
+  padding: 0px 40px 12px;
+  border-radius: 0 0 20px 20px;
+}
+
+.prices-acc-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 10px;
+  color: #717171;
+  padding-top: 6px;
+  border-top: 0.5px solid #aea1a1;
+}
+
+.prices-acc-price {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.prices-acc-span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  color: #e06733;
+}
+
+.prices-acc-btn {
+  width: max-content;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #717171;
+  padding: 3px 26px 3px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/*--here ends my timid attempt to make an accordion on css--*/
+/*--prices--*/
+/*--contacts--*/
+
+.contacts-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 0 109px;
+}
+
+.contacts-image {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  margin-top: 50px;
+}
+
+.contacts-title {
+  margin-top: 57px;
+  margin-left: 113px;
+  font-weight: 700;
+}
+
+.contacts-accordion {
+  width: 450px;
+  background: #d6e7e2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #717171;
+  padding: 5px 20px;
+  margin-top: 145px;
+}
+
+.contacts-accordion::before {
+  content: url(./assets/svg/accordion_btn_open.svg);
+  width: 16px;
+  float: right;
+  margin-right: 15px;
+}
+
+.contacts-accordion:hover {
+  background-color: #c1e698;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/*--contacts--*/
+/*--footer--*/
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 39px 109px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #000000;
+}
+
+.footer-data,
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-data {
+  padding-right: 15px;
+}
+
+.footer-github,
+.footer-rsschool {
+  text-decoration: none;
+  color: #000000;
+}
+
+.footer-github:hover,
+.footer-rsschool:hover {
+  font-weight: 400;
+}
+
+.footer-rsschool {
+  padding-left: 3px;
+}
+
+.footer-social {
+  list-style: none;
+}
+
+.footer-link {
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.footer-vector {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
