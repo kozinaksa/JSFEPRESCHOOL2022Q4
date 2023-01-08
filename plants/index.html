@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plants</title>
+  <meta name="description" content="Task 'Plants #1' from RS School">
+  <meta name="theme-color" content="#edf2ec">
+  <title>Plants by Galina Moroz</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" href="./assets/svg/logo_vector.svg">
+  <link rel="apple-touch-icon" href="./assets/svg/logo_vector.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inika&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
@@ -26,7 +29,7 @@
           </ul>
         </nav>
         <div class="logo">
-          <img src="./assets/svg/logo_vector.svg" class="logo-vector" alt="green leaf vector logo">
+          <img src="./assets/svg/logo_vector.svg" class="logo-vector"   width="20" height="20" alt="green leaf vector logo">
           <p class="logo-text">Plants</p>
         </div>
       </div>
@@ -34,19 +37,17 @@
     <main class="main">
       <section class="welcome">
         <div class="wrapper welcome-wrapper">
-          <img src="./assets/img/leafs-5.png" class="welcome-image" alt="leaf vector image">
+          <div class="welcome-img"></div>
           <div class="welcome-section-text">
-            <div class="welcome-section-txt">
-              <h1 class="welcome-title">We grow <span class="span-green">plants</span> and give you oxygen</h1>
-              <p class="welcome-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            </div>
-            <button class="welcome-btn">LEARN MORE</button>
+            <h1 class="welcome-title">We grow <span class="span-green">plants</span> and give you oxygen</h1>
+            <p class="welcome-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <button class="welcome-btn">Learn more</button>
           </div>
         </div>
       </section>
       <section class="about" id="about-us">
         <div class="wrapper about-wrapper">
-          <img src="./assets/img/houseplant_1.png" class="about-image" alt="photo of a green plant with large leaves in a pot">
+          <div class="about-img"></div>
           <div class="about-section-text">
             <h2 class="about-title">We are <span class="span-orange">professional experienced</span> gardeners</h2>
             <p class="about-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
@@ -55,7 +56,7 @@
       </section>
       <section class="service" id="service">
         <div class="wrapper service-wrapper">
-          <div class="service-content">
+          <div class="service-filter">
             <h2 class="service-title">Service and our projects</h2>
             <div class="service-btns">
               <button class="service-btn">Planting</button>
@@ -64,43 +65,43 @@
             </div>
           </div>
           <div class="service-list">
-            <div class="service-item">
-              <img src="./assets/img/first.jpg" class="service-image" alt="photo of woman in gloves holding aloe">
+            <div class="service-variant">
+              <div class="service-img service-first"></div>
               <div class="service-txt">
                 <h3 class="service-title-small">Garden care</h3>
                 <p class="service-text">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
-              <img src="./assets/img/second.jpg" class="service-image" alt="photo of a lemon on a branch being touched by someone's hand">
+            <div class="service-variant">
+              <div class="service-img service-second"></div>
               <div class="service-txt">
                 <h3 class="service-title-small">Planting</h3>
                 <p class="service-text">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
-              <img src="./assets/img/third.jpg" class="service-image" alt="photo of plants being sprayed with a pink spray bottle">
+            <div class="service-variant">
+              <div class="service-img service-third"></div>
               <div class="service-txt">
                 <h3 class="service-title-small">Lawn care</h3>
                 <p class="service-text">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
-              <img src="./assets/img/fourth.jpg" class="service-image" alt="photo of a woman tending to potted rose bush">
+            <div class="service-variant">
+              <div class="service-img service-fourth"></div>
               <div class="service-txt">
                 <h3 class="service-title-small">Planting</h3>
                 <p class="service-text">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
-              <img src="./assets/img/fifth.jpg" class="service-image" alt="photo of succulents">
+            <div class="service-variant">
+              <div class="service-img service-fifth"></div>
               <div class="service-txt">
                 <h3 class="service-title-small">Garden care</h3>
                 <p class="service-text">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-            <div class="service-item">
-              <img src="./assets/img/sixth.jpg" class="service-image" alt="photo of cacti">
+            <div class="service-variant">
+              <div class="service-img service-sixth"></div>
               <div class="service-txt">
                 <h3 class="service-title-small">Planting</h3>
                 <p class="service-text">Lorem Ipsum has been the industry</p>
@@ -114,37 +115,43 @@
           <div class="prices-right-block">
             <h3 class="prices-title">Our best <span class="span-green">gardeners</span> are ready to help you</h3>
             <button class="prices-btn">Contact us</button>
-            <img src="./assets/img/leafs-4.png" class="prices-image" alt="leaf vector image">
+            <div class="prices-img"></div>
           </div>
           <div class="prices-left-block">
             <h2 class="prices-title">Prices</h2>
             <div class="prices-container">
-              <div class="prices-accordion">
+              <div class="prices-dropdown">
                 <input type="checkbox" name="prices-input" id="basics">
                 <label for="basics" class="prices-label">Basics</label>
-                <div class="prices-acc-content">
-                  <p class="prices-acc-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-                  <p class="prices-acc-price"><span class="prices-acc-span">$15</span> / per hour</p>
-                  <p class="prices-acc-btn">Order</p><!--this should be a <btn>, not a <p>. i know, but in task plants 1 only five buttons-->
+                <!--
+                <div class="prices-drop-content">
+                  <p class="prices-drop-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <p class="prices-drop-price"><span class="prices-drop-span">$15</span> / per hour</p>
+                  <a href="#contacts-accordion" class="prices-drop-btn" target="_self">Order</a>
                 </div>
+              -->
               </div>
-              <div class="prices-accordion">
+              <div class="prices-dropdown">
                 <input type="checkbox" name="prices-input" id="standard">
                 <label for="standard" class="prices-label">Standard</label>
-                <div class="prices-acc-content">
-                  <p class="prices-acc-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-                  <p class="prices-acc-price"><span class="prices-acc-span">$25</span> / per hour</p>
-                  <p class="prices-acc-btn">Order</p><!--this should be a <btn>, not a <p> too. i know-->
+                <!--
+                <div class="prices-drop-content">
+                  <p class="prices-drop-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <p class="prices-drop-price"><span class="prices-drop-span">$25</span> / per hour</p>
+                  <a href="#contacts-dropdown" class="prices-drop-btn" target="_self">Order</a>
                 </div>
+              -->
               </div>
-              <div class="prices-accordion">
+              <div class="prices-dropdown">
                 <input type="checkbox" name="prices-input" id="pro-care">
                 <label for="pro-care" class="prices-label">Pro care</label>
-                <div class="prices-acc-content">
-                  <p class="prices-acc-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-                  <p class="prices-acc-price"><span class="prices-acc-span">$35</span> / per hour</p>
-                  <p class="prices-acc-btn">Order</p><!--and this should be a <btn>. i know-->
+                <!--
+                <div class="prices-drop-content">
+                  <p class="prices-drop-text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <p class="prices-drop-price"><span class="prices-drop-span">$35</span> / per hour</p>
+                  <a href="#contacts-accordion" class="prices-drop-btn" target="_self">Order</a>
                 </div>
+              -->
               </div>
             </div>
           </div>
@@ -153,12 +160,12 @@
       <section class="contacts" id="contacts">
         <div class="wrapper contacts-wrapper">
           <div class="conacts-container">
-            <div class="contacts-accordion">
-              <p class="contact-label">City</p>
+            <div class="contacts-accordion" id="contacts-accordion">
+              <p class="contacts-label">City</p>
             </div>
           </div>
           <h2 class="contacts-title">Contact us</h2>
-          <img src="./assets/img/woman.png" class="contacts-image" alt="photo of woman">
+          <div class="contacts-img"></div>
         </div>
       </section>
     </main>
@@ -171,10 +178,18 @@
         </div>
         <a href="https://rs.school/js-stage0/" class="footer-rsschool">Rolling Scopes School</a>
         <ul class="footer-social">
-          <li class="footer-soc-item"><a href="https://www.instagram.com/" class="footer-link"><img src="./assets/svg/instagram.svg" class="footer-vector" alt="logo instagram"></a></li>
-          <li class="footer-soc-item"><a href="https://www.facebook.com/" class="footer-link"><img src="./assets/svg/facebook.svg" class="footer-vector" alt="logo facebook"></a></li>
-          <li class="footer-soc-item"><a href="https://twitter.com/" class="footer-link"><img src="./assets/svg/twitter.svg" class="footer-vector" alt="logo twitter"></a></li>
-          <li class="footer-soc-item"><a href="https://pinterest.com/" class="footer-link"><img src="./assets/svg/pinterest.svg" class="footer-vector" alt="logo pinterest"></a></li>
+          <li class="footer-soc-item">
+            <a href="https://www.instagram.com/" class="footer-link"><img src="./assets/svg/instagram.svg" class="footer-vector" width="27" height="27" alt="instagram link"></a>
+          </li>
+          <li class="footer-soc-item">
+            <a href="https://www.facebook.com/" class="footer-link"><img src="./assets/svg/facebook.svg" class="footer-vector" width="17" height="27" alt="facebook link"></a>
+          </li>
+          <li class="footer-soc-item">
+            <a href="https://twitter.com/" class="footer-link"><img src="./assets/svg/twitter.svg" class="footer-vector" width="27" height="22" alt="twitter link"></a>
+          </li>
+          <li class="footer-soc-item">
+            <a href="https://pinterest.com/" class="footer-link"><img src="./assets/svg/pinterest.svg" class="footer-vector" width="27" height="27" alt="pinterest link"></a>
+          </li>
         </ul>
       </div>
     </footer>

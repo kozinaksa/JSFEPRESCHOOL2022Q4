@@ -1,6 +1,6 @@
 * {
   margin: 0px;
-	padding: 0px;
+  padding: 0px;
   border: 0px;
   box-sizing: border-box;
 }
@@ -10,6 +10,8 @@ html {
 }
 
 .wrapper {
+  display: flex;
+  /* flex-wrap: wrap; */
   width: 1440px;
   margin: 0 auto;
 }
@@ -21,14 +23,17 @@ html {
   background-color: #edf2ec;
 }
 
+img {
+  object-fit: cover;
+}
+
 /*--header--*/
 
 .navbar {
-  display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
   align-items: baseline;
-  padding: 43px 109px;
+  padding: 42px 109px;
 }
 
 .nav-list {
@@ -45,7 +50,9 @@ html {
   width: fit-content;
 }
 
-a.nav-link {
+a.nav-link,
+.footer-github,
+.footer-rsschool {
   text-decoration: none;
   color: #010201;
 }
@@ -61,11 +68,7 @@ a:hover {
   display: flex;
   align-items: baseline;
   gap: 2px;
-}
-
-.logo-vector {
-  width: 20px;
-  height: auto;
+  margin-left: 1px;
 }
 
 .logo-text {
@@ -80,30 +83,26 @@ a:hover {
 /*--welcome--*/
 
 .welcome-wrapper {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 62px 109px;
 }
 
-.welcome-image {
-  width: 449px;
-  height: 407px;
-  object-fit: cover;
+.welcome-img {
+  background-image: url(./assets/img/leafs-5.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 450px;
+  height: 408px;
 }
 
 .welcome-section-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 549px;
-  gap: 46px;
-}
-
-.welcome-section-txt {
-  display: flex;
-  flex-direction: column;
-  gap: 44px;
+  width: 550px;
+  gap: 45px;
+  margin-top: 1px;
 }
 
 .welcome-title {
@@ -112,7 +111,6 @@ a:hover {
   font-size: 45px;
   line-height: 50px;
   color: #717171;
-  padding-bottom: 1px;
 }
 
 .span-green {
@@ -125,6 +123,7 @@ a:hover {
   font-size: 20px;
   line-height: 35px;
   color: #636060;
+  margin-right: 25px;
 }
 
 .welcome-btn {
@@ -135,6 +134,7 @@ a:hover {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+  text-transform: uppercase;
   padding: 10px 26px;
   color: #000000;
   border: 2px solid #e06733;
@@ -143,12 +143,20 @@ a:hover {
 
 .welcome-btn:hover,
 .service-btn:hover,
-.prices-btn:hover,
-.prices-acc-btn:hover {
+.prices-btn:hover {
   background-color: #e06733;
   cursor: pointer;
   color: #edf2ec;
-  /*font-weight: 700;*/
+  transition: 0.3s;
+}
+
+.welcome-btn:active,
+.service-btn:active,
+.prices-btn:active {
+  transform: scale(1.1);
+  background-color: #499a18;
+  border: 2px solid #499a18;
+  border-radius: 10px;
   transition: 0.3s;
 }
 
@@ -163,11 +171,18 @@ a:hover {
 /*--about--*/
 
 .about-wrapper {
-  display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   padding: 93px 109px;
+}
+
+.about-img {
+  background-image: url(./assets/img/houseplant_1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 465px;
+  height: 480px;
 }
 
 .about-section-text {
@@ -175,7 +190,7 @@ a:hover {
   flex-direction: column;
   width: 605px;
   margin-top: 10px;
-  gap: 36px;
+  gap: 38px;
 }
 
 .about-title,
@@ -185,8 +200,9 @@ a:hover {
   font-family: 'Inika', serif;
   font-weight: 400;
   font-size: 40px;
-  line-height: 52px;
+  line-height: 51px;
   color: #499a18;
+  margin-top: -2px;
 }
 
 .span-orange {
@@ -201,37 +217,32 @@ a:hover {
   color: #636060;
 }
 
-.about-image {
-  width: 464px;
-  height: auto;
-  object-fit: cover;
-}
-
 /*--about--*/
 /*--service--*/
 
 .service-wrapper {
-  display: flex;
   flex-direction: column;
-  padding: 40px 109px 121px;
-  gap: 80px;
+  padding: 41px 109px 120px;
+  gap: 82px;
 }
 
-.service-content {
+.service-filter {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
-  width: 1006px;
+  gap: 142px;
 }
 
 .service-title {
-  width: 30%;
+  width: 306px;
 }
 
 .service-btns {
   display: flex;
   flex-direction: row-reverse;
   column-gap: 37px;
+  position: relative;
+  top: 3px;
 }
 
 .service-btn,
@@ -244,9 +255,9 @@ a:hover {
   text-align: center;
   line-height: 26px;
   color: #e06733;
-  border: 1px solid #e06733;
+  border: 2px solid #e06733;
   border-radius: 5px;
-  padding: 12px 0;
+  padding: 10px 0;
 }
 
 .service-list {
@@ -259,27 +270,45 @@ a:hover {
   gap: 55px;
 }
 
-.service-image {
-  width: 329px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 20px 20px 0px 0px;
+.service-first {
+  background-image: url(./assets/img/first.jpg);
 }
 
-.service-item {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+.service-second {
+  background-image: url(./assets/img/second.jpg);
+}
+
+.service-third {
+  background-image: url(./assets/img/third.jpg);
+}
+
+.service-fourth {
+  background-image: url(./assets/img/fourth.jpg);
+}
+
+.service-fifth {
+  background-image: url(./assets/img/fifth.jpg);
+}
+
+.service-sixth {
+  background-image: url(./assets/img/sixth.jpg);
+}
+
+.service-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px 20px 0px 0px;
+  width: 330px;
+  height: 350px;
 }
 
 .service-txt {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   border: 1px solid #e3e1d5;
   border-radius: 0px 0px 20px 20px;
-  gap: 10px;
-  padding: 9px 0 35px;
+  padding: 10px 0 34px;
+  vertical-align: bottom;
+  text-align: center;
 }
 
 .service-title-small {
@@ -288,10 +317,10 @@ a:hover {
   font-size: 20px;
   line-height: 20px;
   color: #e06733;
-  padding-bottom: 4px;
 }
 
 .service-text {
+  margin-top: 14px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -303,18 +332,17 @@ a:hover {
 /*--prices--*/
 
 .prices-wrapper {
-  display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
   max-height: 560px;
-  padding: 40px 109px 115px;
+  padding: 40px 109px 120px;
 }
 
 .prices-right-block {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 39px;
+  gap: 40px;
 }
 
 .prices-title {
@@ -335,17 +363,19 @@ a:hover {
   font-weight: 700;
 }
 
-.prices-image {
+.prices-img {
+  background-image: url(./assets/img/leafs-4.png);
+  background-position: -5px -5px;
+  background-repeat: no-repeat;
   width: 152px;
   height: 175px;
-  object-fit: cover;
 }
 
 .prices-left-block {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 58px;
+  gap: 60px;
 }
 
 .prices-left-block .prices-title {
@@ -360,19 +390,17 @@ a:hover {
   gap: 30px;
   border: 1px solid #e3e1d5;
   border-radius: 20px;
-  padding: 33px 41px;
+  padding: 32px 40px;
 }
 
-/*--here begins my timid attempt to make an accordion on css--*/
-
-.prices-accordion {
+.prices-dropdown {
   display: flex;
   flex-direction: column;
 }
 
 input,
-.prices-accordion input,
-.prices-acc-content {
+.prices-input,
+.prices-drop-content {
   display: none;
 }
 
@@ -390,33 +418,34 @@ input,
   color: #000000;
 }
 
-.prices-accordion label::before {
+.prices-label::before {
   content: url(./assets/svg/accordion_btn.svg);
   width: 16px;
   float: right;
 }
 
-.prices-accordion label:hover,
-.prices-accordion input:checked + label:hover {
+.prices-label:hover,
+.prices-input:checked + .prices-label:hover {
   cursor: pointer;
   color: #e06733;
   transition: 0.3s;
 }
 
-.prices-accordion input:checked + .prices-label::before {
+.prices-dropdown input:checked + .prices-label::before {
   content: url(./assets/svg/accordion_btn_open.svg);
   transform: rotate(-180deg);
 }
 
-.prices-accordion input:checked + .prices-label {
+.prices-dropdown input:checked + .prices-label {
   background-color: #d6e7d2;
-  border-radius: 20px 20px 0 0;
+  /*border-radius: 20px 20px 0 0;*/
   color: #000000;
   transition: 0.3s;
 }
 
-.prices-accordion input:checked + .prices-label + .prices-acc-content {
-  display: flex;
+/*--here begins my timid attempt to make an accordion on css--*/
+/*
+.prices-drop-content {
   transition: 0.3s;
   width: 250px;
   flex-direction: column;
@@ -426,7 +455,7 @@ input,
   border-radius: 0 0 20px 20px;
 }
 
-.prices-acc-text {
+.prices-drop-text {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 10px;
@@ -436,7 +465,7 @@ input,
   border-top: 0.5px solid #aea1a1;
 }
 
-.prices-acc-price {
+.prices-drop-price {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -444,7 +473,7 @@ input,
   color: #000000;
 }
 
-.prices-acc-span {
+.prices-drop-span {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -452,47 +481,59 @@ input,
   color: #e06733;
 }
 
-.prices-acc-btn {
+.prices-drop-btn {
   width: max-content;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   color: #717171;
+  text-decoration: none;
   padding: 3px 26px 3px 20px;
   background: #ffffff;
   border-radius: 10px;
 }
 
+.prices-dropdown input:checked + .prices-label + .prices-drop-content {
+  display: flex;
+}
+*/
 /*--here ends my timid attempt to make an accordion on css--*/
 /*--prices--*/
 /*--contacts--*/
 
 .contacts-wrapper {
-  display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
   padding: 0 109px;
 }
 
-.contacts-image {
+.contacts-img {
+  margin-top: 53px;
+  background-image: url(./assets/img/contact_woman_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 400px;
-  height: 500px;
-  object-fit: cover;
-  margin-top: 50px;
+  height: 497px;
 }
 
 .contacts-title {
-  margin-top: 57px;
-  margin-left: 113px;
+  width: 192px;
   font-weight: 700;
+  margin-top: 60px;
+  margin-left: 45px;
 }
 
 .contacts-accordion {
   width: 450px;
-  background: #d6e7e2;
+  background: #d6e7d2;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px;
+  padding: 5px 20px;
+  margin-top: 148px;
+}
+
+.contacts-label {
   text-align: left;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -500,19 +541,17 @@ input,
   line-height: 40px;
   letter-spacing: 0.05em;
   color: #717171;
-  padding: 5px 20px;
-  margin-top: 145px;
 }
 
-.contacts-accordion::before {
-  content: url(./assets/svg/accordion_btn_open.svg);
-  width: 16px;
-  float: right;
-  margin-right: 15px;
+.contacts-label {
+  width: inherit;
+  background: url(./assets/svg/accordion_btn_open.svg) no-repeat;
+  background-position: 380px 12px;
 }
 
 .contacts-accordion:hover {
   background-color: #c1e698;
+  box-shadow: none;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -521,10 +560,9 @@ input,
 /*--footer--*/
 
 .footer-wrapper {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 39px 109px;
+  padding: 40px 109px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -538,37 +576,41 @@ input,
   gap: 20px;
 }
 
-.footer-data {
-  padding-right: 15px;
-}
-
-.footer-github,
-.footer-rsschool {
-  text-decoration: none;
-  color: #000000;
-}
-
 .footer-github:hover,
 .footer-rsschool:hover {
   font-weight: 400;
 }
 
 .footer-rsschool {
-  padding-left: 3px;
+  margin-left: 20px;
 }
 
 .footer-social {
   list-style: none;
 }
 
+.footer-soc-item {
+  width: 32px;
+  height: 32px;
+}
+
 .footer-link {
   display: flex;
-  align-self: flex-end;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .footer-vector {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+  object-fit: cover;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.footer-soc-item:hover {
+  background-color: #e06733;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
 }
