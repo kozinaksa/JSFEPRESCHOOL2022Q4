@@ -39,13 +39,15 @@
   }
 
   .welcome__img {
-    width: 280px;
+    max-width: 280px;
+    min-width: 42.5%;
     height: 254px;
+    background-size: contain;
   }
 
   .welcome__article {
     gap: 30px;
-    width: 345px;
+    width: 52%;
   }
 
   .welcome__title {
@@ -78,7 +80,8 @@
   }
 
   .about__img {
-    width: 250px;
+    max-width: 250px;
+    min-width: 37.5%;
     height: 258px;
   }
 
@@ -119,7 +122,7 @@
     /*----Prices----*/
 
     .prices__wrapper {
-      padding: 40px 50px 88px;
+      padding: 40px 50px 163px;
     }
 
     .prices__right {
@@ -142,5 +145,53 @@
     .prices__left .prices__title {
       max-width: 135px;
       text-align: center;
+    }
+
+    .dropdown-container {
+      max-width: 335px;
+      min-width: 50%;
+    }
+
+    /*----Prices----*/
+    /*----Contacts----*/
+
+    .contacts__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contacts__title {
+      order: -1;
+      font-size: 40px;
+      line-height: 52px;
+    }
+
+    .contacts__title {
+      margin-top: 40px;
+    }
+
+    .accordion {
+      margin-top: 100px;
+    }
+
+    .contacts__img {
+      margin-top: 250px;
+      margin-left: 15px;
+      width: 200px;
+      height: 250px;
+    }
+
+    /*----Contacts----*/
+    /*----Footer----*/
+
+    .footer__wrapper {
+      flex-direction: column;
+      gap: 22px;
+      padding: 30px 0 18px;
+      line-height: 24px;
+    }
+
+    .footer__link_rs {
+      margin-top: -6px;
     }
 }

@@ -162,7 +162,6 @@ p {
 
 .welcome__img {
   background-image: url(./assets/img/leafs-5.png);
-  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -213,7 +212,7 @@ p {
 
 .about__img {
   background-image: url(./assets/img/houseplant_1.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -370,11 +369,10 @@ p {
 .dropdown-container {
   display: flex;
   flex-flow: column wrap;
-  max-height: 395px;
-  align-content: flex-start;
+  /* max-height: 395px; */
+
   gap: 30px;
   padding: 32px 40px;
-  max-width: fit-content;
   border: 1px solid #e3e1d5;
   border-radius: 20px;
 }
@@ -382,6 +380,7 @@ p {
 .dropdown {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .dropdown__input {
@@ -391,7 +390,6 @@ p {
 .dropdown__label {
   cursor: pointer;
   padding: 16px 40px;
-  width: 250px;
   text-align: left;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -429,25 +427,21 @@ p {
 /*----Prices----*/
 /*----Contacts----*/
 
-.contacts__wrapper {
+/* .contacts__wrapper {
   justify-content: space-between;
   flex-direction: row-reverse;
   padding: 0 109px;
-}
+} */
 
 .accordion {
   width: 450px;
   background: #d6e7d2;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px;
-  padding: 5px 20px;
-  margin-top: 148px;
+  padding: 5px 35px 5px 20px;
 }
 
 .accordion__label {
-  max-width: inherit;
-  background: url(./assets/svg/accordion_btn_open.svg) no-repeat;
-  background-position: 380px 12px;
   text-align: left;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -455,6 +449,12 @@ p {
   line-height: 40px;
   letter-spacing: 0.05em;
   color: #717171;
+}
+
+.accordion__label::before {
+  float: right;
+  width: 16px;
+  content: url(./assets/svg/accordion_btn_open.svg);
 }
 
 .accordion:hover {
@@ -467,14 +467,9 @@ p {
 .contacts__title {
   max-width: 192px;
   font-weight: 700;
-  margin-top: 60px;
-  margin-left: 45px;
 }
 
 .contacts__img {
-  margin-top: 53px;
-  width: 400px;
-  height: 497px;
   background-image: url(./assets/img/contact_woman_1.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -486,16 +481,15 @@ p {
 .footer__wrapper {
   justify-content: space-between;
   align-items: center;
-  padding: 40px 109px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 20px;
-  line-height: 50px;
   color: #000000;
 }
 
 .footer__container {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
@@ -509,10 +503,6 @@ p {
 
 .footer__link:hover {
   font-weight: 400;
-}
-
-.footer__link_rs {
-  margin-left: 20px;
 }
 
 .footer__item {

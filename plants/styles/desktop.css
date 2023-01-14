@@ -126,4 +126,44 @@
     .prices__left .prices__title {
       text-align: left;
     }
+
+    .dropdown-container {
+      width: 335px;
+    }
+
+    /*----Prices----*/
+    /*----Contacts----*/
+
+    .contacts__wrapper {
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      padding: 0 109px;
+    }
+
+    .contacts__title {
+      margin-top: 60px;
+      margin-left: 45px;
+    }
+
+    .accordion {
+      margin-top: 148px;
+    }
+
+    .contacts__img {
+      margin-top: 53px;
+      width: 400px;
+      height: 497px;
+    }
+
+    /*----Contacts----*/
+    /*----Footer----*/
+
+    .footer__wrapper {
+      padding: 40px 109px;
+      line-height: 50px;
+    }
+
+    .footer__link_rs {
+      margin-left: 20px;
+    }
 }
