@@ -1,5 +1,5 @@
 /* ----Desktop---- */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 961px) {
   p {
     line-height: 35px;
   }
@@ -25,6 +25,10 @@
     padding: 42px 109px;
   }
 
+  .nav__item {
+    line-height: 50px;
+  }
+
   /*----Header----*/
   /*----Welcome----*/
 
@@ -34,13 +38,22 @@
   }
 
   .welcome__img {
-    width: 450px;
-    height: 408px;
+    width: 280px;
+    height: 254px;
+    transition: all 1s;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .welcome__img {
+      width: 450px;
+      height: 408px;
+      transition: all 1s;
+    }
   }
 
   .welcome__article {
     gap: 45px;
-    width: 550px;
+    max-width: 45%;
   }
 
   .welcome__title {
@@ -66,4 +79,6 @@
     width: 465px;
     height: 480px;
   }
+
+    /*----About us----*/
 }
