@@ -1,5 +1,6 @@
 /* ----Desktop---- */
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 1201px) {
+
   p {
     line-height: 35px;
   }
@@ -10,9 +11,8 @@
   }
 
   h2 {
-    width: 603px;
     font-size: 40px;
-    line-height: 50px;
+    line-height: 52px;
   }
 
   .wrapper {
@@ -38,17 +38,8 @@
   }
 
   .welcome__img {
-    width: 280px;
-    height: 254px;
-    transition: all 1s;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .welcome__img {
-      width: 450px;
-      height: 408px;
-      transition: all 1s;
-    }
+    width: 450px;
+    height: 408px;
   }
 
   .welcome__article {
@@ -72,7 +63,11 @@
   .about__article {
     gap: 38px;
     margin-top: 10px;
-    width: 605px;
+    max-width: 49.5%;
+  }
+
+  .about__title {
+    max-width: 80%;
   }
 
   .about__img {
@@ -81,4 +76,54 @@
   }
 
     /*----About us----*/
+    /*----Service----*/
+
+    .service__wrapper {
+      padding: 41px 109px 120px;
+      gap: 82px;
+    }
+
+    .service__filter {
+      justify-content: left;
+      align-items: center;
+      gap: 142px;
+    }
+
+    .service__list {
+      gap: 55px;
+    }
+
+    .service__variant {
+      max-width: 330px;
+    }
+
+    .service__img {
+      width: 330px;
+      height: 350px;
+    }
+
+    /*----Service----*/
+    /*----Prices----*/
+
+    .prices__wrapper {
+      padding: 40px 109px 120px;
+      max-height: 560px;
+    }
+
+    .prices__right {
+      gap: 40px;
+    }
+
+    .prices__title {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    .prices__left {
+      gap: 60px;
+    }
+
+    .prices__left .prices__title {
+      text-align: left;
+    }
 }
