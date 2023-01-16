@@ -1,10 +1,7 @@
 /* ----Tablet---- */
-@media only screen and (min-width: 600px) and (max-width: 1200px) {
-  p {
-    line-height: 25px;
-  }
-
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
   button {
+    width: 160px;
     font-size: 20px;
     line-height: 26px;
   }
@@ -34,6 +31,8 @@
 
   .nav__list {
     display: flex;
+    flex-wrap: wrap;
+    gap: 47px;
   }
 
   .nav__item {
@@ -68,11 +67,19 @@
 
   .welcome__title {
     font-size: 35px;
+    line-height: 50px;
   }
 
   .welcome__text {
-    font-size: 16px;
     margin-bottom: 5px;
+    margin-right: 25px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .welcome__btn {
+    padding: 10px 26px;
+    font-size: 16px;
   }
 
   /*----Welcome----*/
@@ -93,6 +100,11 @@
   .about__title {
     max-width: 423px;
     text-align: center;
+  }
+
+  .about__text {
+    font-size: 20px;
+    line-height: 30px;
   }
 
   .about__img {

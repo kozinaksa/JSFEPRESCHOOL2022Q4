@@ -1,11 +1,7 @@
 /* ----Desktop---- */
-@media only screen and (min-width: 1200px) {
-
-  p {
-    line-height: 35px;
-  }
-
+@media only screen and (min-width: 1201px) {
   button {
+    width: 160px;
     font-size: 20px;
     line-height: 26px;
   }
@@ -34,6 +30,8 @@
 
   .nav__list {
     display: flex;
+    flex-wrap: wrap;
+    gap: 47px;
   }
 
   .nav__item {
@@ -68,6 +66,17 @@
     line-height: 50px;
   }
 
+  .welcome__text {
+    margin-right: 25px;
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  .welcome__btn {
+    padding: 10px 26px;
+    font-size: 16px;
+  }
+
   /*----Welcome----*/
   /*----About us----*/
 
@@ -84,6 +93,11 @@
 
   .about__title {
     max-width: 80%;
+  }
+
+  .about__text {
+    font-size: 20px;
+    line-height: 30px;
   }
 
   .about__img {

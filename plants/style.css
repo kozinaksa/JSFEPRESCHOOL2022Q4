@@ -51,7 +51,6 @@ a:hover {
 button {
   cursor: pointer;
   background-color: transparent;
-  width: 160px;
   font-family: 'Inika', serif;
   font-style: normal;
   font-weight: 400;
@@ -97,7 +96,6 @@ p {
   width: auto;
   overflow-wrap: break-word;
   font-family: 'Inter', sans-serif;
-  font-size: 20px;
   font-weight: 400;
 }
 
@@ -117,11 +115,6 @@ p {
 
 /* .header__wrapper {
 } */
-
-.nav__list {
-  flex-wrap: wrap;
-  gap: 47px;
-}
 
 .nav__item {
   max-width: fit-content;
@@ -170,7 +163,6 @@ p {
 .welcome__title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  line-height: 50px;
   color: #717171;
 }
 
@@ -179,18 +171,15 @@ p {
 }
 
 .welcome__text {
-  margin-right: 25px;
   color: #636060;
 }
 
 .welcome__btn {
   display: flex;
   align-items: center;
-  padding: 10px 26px;
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
   color: #010201;
@@ -222,7 +211,6 @@ p {
 }
 
 .about__text {
-  line-height: 30px;
   color: #636060;
 }
 
