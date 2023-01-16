@@ -1,5 +1,5 @@
 /* ----Desktop---- */
-@media only screen and (min-width: 1201px) {
+@media only screen and (min-width: 1200px) {
 
   p {
     line-height: 35px;
@@ -22,11 +22,27 @@
   /*----Header----*/
 
   .header__wrapper {
+    justify-content: space-between;
+    flex-direction: row-reverse;
     padding: 42px 109px;
+    align-items: baseline;
+  }
+
+  .burger-icon {
+    display: none;
+  }
+
+  .nav__list {
+    display: flex;
   }
 
   .nav__item {
+    font-size: 16px;
     line-height: 50px;
+  }
+
+  .nav__link {
+    color: #010201;
   }
 
   /*----Header----*/
@@ -129,6 +145,10 @@
 
     .dropdown-container {
       width: 335px;
+    }
+
+    .dropdown {
+      font-size: 20px;
     }
 
     /*----Prices----*/
