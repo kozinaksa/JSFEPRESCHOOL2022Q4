@@ -396,11 +396,9 @@ p {
 /*----Contacts----*/
 
 .accordion {
-  width: 450px;
   background: #d6e7d2;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px;
-  padding: 5px 35px 5px 20px;
 }
 
 .accordion__label {

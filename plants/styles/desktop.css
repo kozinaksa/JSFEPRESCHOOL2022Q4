@@ -201,6 +201,8 @@
 
     .accordion {
       margin-top: 148px;
+      padding: 5px 35px 5px 20px;
+      width: 450px;
     }
 
     .contacts__img {

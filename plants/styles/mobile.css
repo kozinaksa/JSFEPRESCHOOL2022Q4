@@ -258,4 +258,46 @@
   }
 
   /*----Prices----*/
+  /*----Contacts----*/
+
+  .contacts__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts__title {
+    order: -1;
+    font-size: 25px;
+    line-height: 33px;
+  }
+
+  .contacts__title {
+    margin-top: 25px;
+  }
+
+  .accordion {
+    margin-top: 80px;
+    padding: 5px 20px;
+    width: 300px;
+  }
+
+  .contacts__img {
+    margin-top: 132px;
+    width: 100px;
+    height: 125px;
+  }
+
+  /*----Contacts----*/
+  /*----Footer----*/
+
+  .footer__wrapper {
+    flex-direction: column;
+    gap: 17px;
+    padding: 22px 0 7px;
+    line-height: 24px;
+  }
+
+  .footer__container {
+    margin-top: -2px;
+  }
 }
