@@ -1,6 +1,7 @@
 /* ----Tablet---- */
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
   button {
+    padding: 10px 0;
     width: 160px;
     font-size: 20px;
     line-height: 26px;
@@ -122,11 +123,15 @@
     }
 
     .service__filter {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: left;
-      align-items: center;
       gap: 40px;
+    }
+
+    .service__title {
+      max-width: 306px;
+    }
+
+    .service__btn-container {
+      gap: 37px;
     }
 
     .service__list {
@@ -150,24 +155,28 @@
     /*----Prices----*/
 
     .prices__wrapper {
+      flex-direction: row-reverse;
       padding: 40px 50px 163px;
     }
 
     .prices__right {
       width: calc(50% - 40px);
+      align-items: flex-end;
       position: relative;
       top: 100px;
       gap: 30px;
     }
 
     .prices__right .prices__title {
+      text-align: right;
       font-size: 25px;
       line-height: 35px;
     }
 
     .prices__left {
-      width: 50%;
+      align-items: flex-start;
       gap: 56px;
+      width: 50%;
     }
 
     .prices__left .prices__title {
@@ -176,12 +185,19 @@
     }
 
     .dropdown-container {
+      gap: 30px;
+      padding: 32px 40px;
       max-width: 335px;
-      min-width: 50%;
+      min-width: 100%;
     }
 
     .dropdown {
       font-size: 20px;
+      width: 100%;
+    }
+
+    .dropdown__label {
+      padding: 16px 40px;
     }
 
     @media only screen and (max-width: 700px) {

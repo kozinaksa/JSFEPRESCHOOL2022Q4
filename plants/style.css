@@ -58,7 +58,6 @@ button {
   color: #e06733;
   border: 2px solid #e06733;
   border-radius: 5px;
-  padding: 10px 0;
 }
 
 button:hover {
@@ -228,27 +227,18 @@ p {
   align-items: center;
 }
 
-.service__title {
-  max-width: 306px;
-}
-
 .service__btn-container {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
-  gap: 10px;
-  column-gap: 37px;
-  /* position: relative; */
+  position: relative;
   top: 3px;
 }
 
 .service__list {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: space-between;
   align-content: flex-start;
-  margin: auto;
 }
 
 .service__img_first {
@@ -313,19 +303,16 @@ p {
 
 .prices__wrapper {
   justify-content: space-between;
-  flex-direction: row-reverse;
 }
 
 .prices__right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 
 .prices__title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  text-align: right;
   color: #000000;
 }
 
@@ -349,16 +336,13 @@ p {
 .prices__left {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
 }
 
 .dropdown-container {
   display: flex;
   flex-flow: column wrap;
   /* max-height: 395px; */
-
-  gap: 30px;
-  padding: 32px 40px;
   border: 1px solid #e3e1d5;
   border-radius: 20px;
 }
@@ -366,7 +350,7 @@ p {
 .dropdown {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .dropdown__input {
@@ -375,7 +359,6 @@ p {
 
 .dropdown__label {
   cursor: pointer;
-  padding: 16px 40px;
   text-align: left;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
