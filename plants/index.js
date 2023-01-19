@@ -33,6 +33,7 @@ window.addEventListener("load", function() {
   const burgerIcon_close = document.querySelector(".burger-icon__close");
   const nav = document.querySelector('.nav');
   const navLinks = document.querySelectorAll('.nav__link[href]');
+  const burgerLinks = document.querySelector('.burger-links');
 
   if (isMobile.any()) {
     body.classList.toggle('_touch');
@@ -48,6 +49,7 @@ window.addEventListener("load", function() {
       burgerIcon_open.classList.toggle('_hidden');
       burgerIcon_close.classList.toggle('_active');
       nav.classList.toggle('_active');
+      burgerLinks.classList.toggle('_active');
     });
   }
 
@@ -68,6 +70,7 @@ window.addEventListener("load", function() {
         burgerIcon_close.classList.toggle('_active');
         burgerIcon.classList.remove('_active');
         nav.classList.remove('_active');
+        burgerLinks.classList.remove('_active');
       }
 
       document.getElementById(toSection).scrollIntoView({
@@ -88,6 +91,7 @@ window.addEventListener("load", function() {
       burgerIcon_close.classList.toggle('_active');
       burgerIcon.classList.remove('_active');
       nav.classList.remove('_active');
+      burgerLinks.classList.remove('_active');
     }
   });
 });
