@@ -48,7 +48,7 @@ a:hover {
 
 button {
   cursor: pointer;
-  background-color: transparent;
+  padding: 10px 0;
   width: 162px;
   font-family: 'Inika', serif;
   font-style: normal;
@@ -57,9 +57,9 @@ button {
   text-align: center;
   line-height: 26px;
   color: #e06733;
+  background-color: transparent;
   border: 2px solid #e06733;
   border-radius: 5px;
-  padding: 10px 0;
 }
 
 button:hover {
@@ -175,8 +175,8 @@ p {
   width: 450px;
   height: 408px;
   background-image: url(./assets/img/leafs-5.png);
-  background-position: center center;
   background-size: contain;
+  background-position: center center;
   background-origin: content-box;
   background-repeat: no-repeat;
 }
@@ -242,7 +242,7 @@ p {
   width: 465px;
   height: 480px;
   background-image: url(./assets/img/houseplant_1.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-origin: content-box;
 }
@@ -527,12 +527,14 @@ p {
 .contacts__img {
   margin: 53px 0 0;
   width: 400px;
+  min-width: 200px;
   height: 497px;
+  min-height: 250px;
   background-image: url(./assets/img/contact_woman_1.png);
-  background-position: center 0;
+  background-size: contain;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-origin: content-box;
-  background-size: contain;
 }
 
 /*----Footer----*/
@@ -584,12 +586,6 @@ p {
 /* ----Responsive design---- */
 /* ----Tablet---- */
 @media screen and (min-width: 600px) and (max-width: 1023px) {
-  button {
-    padding: 10px 0;
-    font-size: 20px;
-    line-height: 26px;
-  }
-
   h2 {
     max-width: 423px;
     width: 100%;
@@ -604,43 +600,30 @@ p {
   /*----Tablet Header----*/
 
   .header__wrapper {
-    justify-content: space-between;
-    flex-direction: row-reverse;
     padding: 38px 50px 32px;
-    align-items: baseline;
   }
 
   .nav__list {
-    display: flex;
     flex-wrap: wrap;
-    gap: 47px;
-  }
-
-  .nav__item {
     font-size: 16px;
     line-height: 47px;
-  }
-
-  .nav__link {
-    color: #010201;
   }
 
   /*----Tablet Welcome----*/
 
   .welcome__wrapper {
     flex-direction: row-reverse;
-    justify-content: space-around;
     padding: 40px 40px 70px;
   }
 
   .welcome__img {
     max-width: 280px;
     max-height: 254px;
-    background-position: left center;
+    background-image: url(./assets/img/leafs-5_293x271.png);
   }
 
   .welcome__article {
-    margin: 0;
+    margin: 0 0 0 10px;
     gap: 31px;
     width: 52%;
     min-height: 100%;
@@ -648,7 +631,6 @@ p {
 
   .welcome__title {
     font-size: 35px;
-    line-height: 50px;
   }
 
   .welcome__text {
@@ -659,8 +641,6 @@ p {
 
   .welcome__btn {
     margin: 5px 0 0;
-    padding: 10px 26px;
-    font-size: 16px;
   }
 
   /*----Tablet About us----*/
@@ -689,6 +669,7 @@ p {
   .about__img {
     max-width: 250px;
     max-height: 258px;
+    background-image: url(./assets/img/houseplant_1_250x258.png);
   }
 
   /*----Tablet Service----*/
@@ -701,10 +682,6 @@ p {
   .service__filter {
     flex-wrap: wrap;
     gap: 40px;
-  }
-
-  .service__title {
-    max-width: 306px;
   }
 
   .service__btn-container {
@@ -726,14 +703,13 @@ p {
 
   .service__img {
     max-width: 281px;
-    height: 350px;
   }
 
   .service__caption {
     display: flex;
     flex-direction: column;
-    padding: 11px 0 18px;
     align-items: center;
+    padding: 11px 0 18px;
   }
 
   .service__caption-text {
@@ -745,14 +721,12 @@ p {
   /*----Tablet Prices----*/
 
   .prices__wrapper {
-    flex-direction: row-reverse;
     padding: 46px 50px 95px;
     max-height: 100%;
   }
 
   .prices__right {
     max-width: 45%;
-    align-items: flex-end;
     margin: 96px 0 0;
     gap: 28px;
   }
@@ -770,19 +744,12 @@ p {
 
   .prices__left {
     align-items: flex-start;
-    gap: 60px;
     max-width: 50%;
   }
 
   .prices__left .prices__title {
-    text-align: left;
     margin: 0 0 0 15px;
     line-height: 35px;
-  }
-
-  .dropdown-container {
-    gap: 30px;
-    padding: 34px 40px;
   }
 
   @media screen and (min-width: 600px) and (max-width: 767px) {
@@ -819,7 +786,7 @@ p {
     margin: 250px 0 0 15px;
     max-width: 200px;
     max-height: 250px;
-    background-size: contain;
+    background-image: url(./assets/img/contact_woman_1_200x248.png);
   }
 
   /*----Tablet Contacts----*/
@@ -858,9 +825,7 @@ p {
   /*----Mobile Header----*/
 
   .header__wrapper {
-    justify-content: space-between;
     padding: 36px 25px;
-    align-items: baseline;
   }
 
   .nav {
@@ -871,22 +836,15 @@ p {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-  }
-
-  .nav__item {
     font-size: 16px;
     line-height: 21px;
-  }
-
-  .nav__link {
-    color: #010201;
   }
 
   /*----Mobile Welcome----*/
 
   .welcome__wrapper {
-    padding: 26px 25px;
     flex-direction: column;
+    padding: 26px 25px;
   }
 
   .welcome__img {
@@ -943,15 +901,16 @@ p {
   }
 
   .about__img {
-    background-position: center bottom;
     max-width: 150px;
-    height: 155px;
+    max-height: 155px;
+    background-image: url(./assets/img/houseplant_1_150x147.png);
+    background-position: center 51%;
   }
 
   /*----Mobile Service----*/
 
   .service__wrapper {
-    padding: 30px 25px 25px;
+    padding: 30px 25px;
     gap: 42px;
   }
 
@@ -982,7 +941,7 @@ p {
     align-items: center;
     padding: 0 25px;
     margin: 0;
-    gap: 35px;
+    gap: 34px;
   }
 
   .service__img {
@@ -1007,16 +966,16 @@ p {
   /*----Mobile Prices----*/
 
   .prices__wrapper {
-    padding: 25px 75px 40px;
     flex-direction: column-reverse;
+    padding: 25px 75px 40px;
     gap: 19px;
     max-height: 100%;
   }
 
   .prices__right {
+    align-items: center;
     gap: 18px;
     width: 100%;
-    align-items: center;
   }
 
   .prices__right .prices__title {
@@ -1037,7 +996,6 @@ p {
 
   .prices__left .prices__title {
     text-align: center;
-    margin: 0;
     font-size: 25px;
     line-height: 30px;
   }
@@ -1045,7 +1003,7 @@ p {
   .dropdown-container {
     gap: 15px;
     padding: 27px 22px;
-    width: 224px;
+    max-width: 224px;
   }
 
   .dropdown__label {
@@ -1059,27 +1017,24 @@ p {
   .contacts__wrapper {
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
 
   .contacts__title {
+    margin: 27px 0 0;
     order: -1;
     font-size: 25px;
     line-height: 33px;
-  }
-
-  .contacts__title {
-    margin: 25px 0 0 45px;
-    FONT-VARIANT: JIS04;
+    text-align: center;
   }
 
   .accordion {
     margin: 82px 0 0;
-    padding: 5px 0 5px 20px;
     max-width: 300px;
   }
 
   .accordion__label {
-    padding: 0;
+    padding: 5px 0 5px 20px;
   }
 
   .accordion__label::before {
@@ -1092,10 +1047,10 @@ p {
     }
     .accordion {
       max-width: 100px;
-      padding: 5px 0 5px 10px;
     }
 
     .accordion__label {
+      padding: 5px 0 5px 10px;
       font-size: 15px;
     }
 
@@ -1106,9 +1061,10 @@ p {
 
   .contacts__img {
     margin: 132px 2px 0 0;
-    max-width: 100px;
-    max-height: 125px;
-    object-fit: contain;
+    width: 100px;
+    height: 125px;
+    min-height: auto;
+    background-image: url(./assets/img/contact_woman_1_100x124.png);
   }
 
   /*----Mobile Footer----*/
@@ -1121,7 +1077,6 @@ p {
   }
 
   .footer__container {
-    margin: 0;
     gap: 21px;
   }
 
@@ -1181,14 +1136,14 @@ p {
     justify-content: space-between;
     top: 0px;
     right: -100%;
-    width: 64%;
+    width: 66%;
     height: 100%;
     padding: 96px 0px 0px 47px;
     background-color:#d6e7d2;
     background-image: url(./assets/img/leaf-1.png);
+    background-size: 68%;
     background-repeat: no-repeat;
     background-position: 124% 94%;
-    background-size: 68%;
     transition: all 0.4s;
     z-index: 10;
   }
@@ -1214,9 +1169,5 @@ p {
     .burger-links._active {
       display: none;
     }
-  }
-
-  .nav__link {
-    color: #010201;
   }
 }
