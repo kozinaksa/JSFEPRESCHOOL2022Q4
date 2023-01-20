@@ -30,7 +30,8 @@ aside {
 html,
 body {
   scroll-behavior: smooth;
-  background-color: #ffffff;
+  background-color: #edf2ec;
+  width: 100%;
 }
 
 a {
@@ -47,7 +48,7 @@ a:hover {
 
 button {
   cursor: pointer;
-  background-color: transparent;
+  padding: 10px 0;
   width: 162px;
   font-family: 'Inika', serif;
   font-style: normal;
@@ -56,9 +57,9 @@ button {
   text-align: center;
   line-height: 26px;
   color: #e06733;
+  background-color: transparent;
   border: 2px solid #e06733;
   border-radius: 5px;
-  padding: 10px 0;
 }
 
 button:hover {
@@ -86,13 +87,14 @@ ul li {
 }
 
 h2 {
-  width: 603px;
+  max-width: 603px;
+  width: 100%;
   font-family: 'Inika', serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 51px;
   color: #499a18;
-  margin-top: -2px;
+  margin: -2px 0 0;
 }
 
 p {
@@ -107,13 +109,12 @@ p {
 
 .wrapper {
   display: flex;
-  /* flex-wrap: wrap; */
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
-.bg_green {
-  background-color: #edf2ec;
+.bg_white {
+  background-color: #ffffff;
 }
 
 /*----Header----*/
@@ -123,6 +124,11 @@ p {
   flex-direction: row-reverse;
   align-items: baseline;
   padding: 42px 109px;
+}
+
+.burger-icon,
+.burger-links {
+  display: none;
 }
 
 .nav__list {
@@ -142,7 +148,7 @@ p {
   display: flex;
   align-items: baseline;
   gap: 2px;
-  margin-left: 1px;
+  margin: 0 0 0 1px;
 }
 
 .logo__img:hover {
@@ -158,12 +164,10 @@ p {
   color: #000000;
 }
 
-/*----Header----*/
 /*----Welcome----*/
 
 .welcome__wrapper {
   justify-content: space-between;
-  align-items: center;
   padding: 62px 109px;
 }
 
@@ -171,8 +175,16 @@ p {
   width: 450px;
   height: 408px;
   background-image: url(./assets/img/leafs-5.png);
-  background-size: cover;
+  background-size: contain;
+  background-position: center center;
+  background-origin: content-box;
   background-repeat: no-repeat;
+}
+
+.welcome__img,
+.about__article,
+.prices__left {
+  margin: 0 16px 0 0;
 }
 
 .welcome__article {
@@ -181,7 +193,7 @@ p {
   align-items: flex-start;
   gap: 45px;
   width: 550px;
-  margin-top: 1px;
+  margin: 38px 0 0;
 }
 
 .welcome__title {
@@ -197,7 +209,7 @@ p {
 }
 
 .welcome__text {
-  margin-right: 25px;
+  margin: 0 25px 0 0;
   line-height: 35px;
   color: #636060;
 }
@@ -217,7 +229,6 @@ p {
   border-radius: 10px;
 }
 
-/*----Welcome----*/
 /*----About us----*/
 
 .about__wrapper {
@@ -231,16 +242,17 @@ p {
   width: 465px;
   height: 480px;
   background-image: url(./assets/img/houseplant_1.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-origin: content-box;
 }
 
 .about__article {
   display: flex;
   flex-direction: column;
   gap: 38px;
-  width: 605px;
-  margin-top: 10px;
+  max-width: 50%;
+  margin: 10px 0 0;
 }
 
 .span-orange {
@@ -252,13 +264,12 @@ p {
   color: #636060;
 }
 
-/*----About us----*/
 /*----Service----*/
 
 .service__wrapper {
   flex-direction: column;
   padding: 41px 109px 120px;
-  gap: 82px;
+  gap: 27px;
 }
 
 .service__filter {
@@ -274,10 +285,13 @@ p {
 
 .service__btn-container {
   display: flex;
-  flex-direction: row-reverse;
   column-gap: 37px;
   position: relative;
   top: 3px;
+}
+
+.service__variant {
+  margin: 0;
 }
 
 .service__list {
@@ -286,8 +300,9 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-content: flex-start;
+  margin: 55px 0 0;
+  max-width: 100%;
   gap: 55px;
-  margin: auto;
 }
 
 .service__img_first {
@@ -340,7 +355,7 @@ p {
 }
 
 .service__caption-text {
-  margin-top: 14px;
+  margin: 14px 0 0;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -348,8 +363,7 @@ p {
   color: #717171;
 }
 
-/*--service--*/
-/*--prices--*/
+/*----Prices----*/
 
 .prices__wrapper {
   justify-content: space-between;
@@ -368,14 +382,14 @@ p {
 .prices__title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 40px;
   line-height: 50px;
   text-align: right;
   color: #000000;
 }
 
 .prices__right .prices__title {
-  width: 452px;
+  max-width: 452px;
+  font-size: 40px;
 }
 
 .prices__btn {
@@ -389,6 +403,7 @@ p {
   background-image: url(./assets/img/leafs-4.png);
   background-position: -5px -5px;
   background-repeat: no-repeat;
+  background-origin: content-box;
 }
 
 .prices__left {
@@ -405,11 +420,11 @@ p {
 .dropdown-container {
   display: flex;
   flex-flow: column wrap;
-  max-height: 395px;
   align-content: flex-start;
   gap: 30px;
   padding: 32px 40px;
-  max-width: fit-content;
+  width: 332px;
+  max-height: 395px;
   border: 1px solid #e3e1d5;
   border-radius: 20px;
 }
@@ -417,6 +432,7 @@ p {
 .dropdown {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .dropdown__input {
@@ -425,13 +441,12 @@ p {
 
 .dropdown__label {
   cursor: pointer;
-  padding: 16px 40px;
-  width: 250px;
+  padding: 16px 0 16px 40px;
   text-align: left;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  line-height: 20px;
+  line-height: 21px;
   color: #000000;
   background-color: #edf2ec;
   border-radius: 20px;
@@ -439,6 +454,7 @@ p {
 
 .dropdown__label::before {
   float: right;
+  margin: 0 40px 0 0;
   width: 16px;
   content: url(./assets/svg/accordion_btn.svg);
 }
@@ -461,7 +477,6 @@ p {
   background-color: #d6e7d2;
 }
 
-/*----Prices----*/
 /*----Contacts----*/
 
 .contacts__wrapper {
@@ -475,14 +490,12 @@ p {
   background: #d6e7d2;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px;
-  padding: 5px 20px;
-  margin-top: 148px;
+  margin: 148px 0 0;
 }
 
 .accordion__label {
-  width: inherit;
-  background: url(./assets/svg/accordion_btn_open.svg) no-repeat;
-  background-position: 380px 12px;
+  padding: 5px 35px 5px 20px;
+  width: 100%;
   text-align: left;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -490,6 +503,12 @@ p {
   line-height: 40px;
   letter-spacing: 0.05em;
   color: #717171;
+}
+
+.accordion__label::before {
+  float: right;
+  width: 16px;
+  content: url('./assets/svg/accordion_btn_open.svg');
 }
 
 .accordion:hover {
@@ -500,22 +519,24 @@ p {
 }
 
 .contacts__title {
-  width: 192px;
+  max-width: 192px;
   font-weight: 700;
-  margin-top: 60px;
-  margin-left: 45px;
+  margin: 60px 0 0 45px;
 }
 
 .contacts__img {
-  margin-top: 53px;
+  margin: 53px 0 0;
   width: 400px;
+  min-width: 200px;
   height: 497px;
+  min-height: 250px;
   background-image: url(./assets/img/contact_woman_1.png);
+  background-size: contain;
+  background-position: center bottom;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-origin: content-box;
 }
 
-/*----Contacts----*/
 /*----Footer----*/
 
 .footer__wrapper {
@@ -547,7 +568,7 @@ p {
 }
 
 .footer__link_rs {
-  margin-left: 20px;
+  margin: 0 0 0 20px;
 }
 
 .footer__item {
@@ -560,4 +581,593 @@ p {
   border-radius: 50px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+/* ----Responsive design---- */
+/* ----Tablet---- */
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  h2 {
+    max-width: 423px;
+    width: 100%;
+    font-size: 35px;
+    line-height: 46px;
+  }
+
+  .wrapper {
+    max-width: 100%;
+  }
+
+  /*----Tablet Header----*/
+
+  .header__wrapper {
+    padding: 38px 50px 32px;
+  }
+
+  .nav__list {
+    flex-wrap: wrap;
+    font-size: 16px;
+    line-height: 47px;
+  }
+
+  /*----Tablet Welcome----*/
+
+  .welcome__wrapper {
+    flex-direction: row-reverse;
+    padding: 40px 40px 70px;
+  }
+
+  .welcome__img {
+    max-width: 280px;
+    max-height: 254px;
+    background-image: url(./assets/img/leafs-5_293x271.png);
+  }
+
+  .welcome__article {
+    margin: 0 0 0 10px;
+    gap: 31px;
+    width: 52%;
+    min-height: 100%;
+  }
+
+  .welcome__title {
+    font-size: 35px;
+  }
+
+  .welcome__text {
+    margin: 0 0 0 5px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .welcome__btn {
+    margin: 5px 0 0;
+  }
+
+  /*----Tablet About us----*/
+
+  .about__wrapper {
+    flex-direction: column-reverse;
+    padding: 32px 50px 98px;
+    gap: 65px;
+  }
+
+  .about__article {
+    align-items: center;
+    gap: 50px;
+    max-width: 100%;
+  }
+
+  .about__title {
+    text-align: center;
+  }
+
+  .about__text {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .about__img {
+    max-width: 250px;
+    max-height: 258px;
+    background-image: url(./assets/img/houseplant_1_250x258.png);
+  }
+
+  /*----Tablet Service----*/
+
+  .service__wrapper {
+    padding: 62px 50px 70px;
+    gap: 40px;
+  }
+
+  .service__filter {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .service__btn-container {
+    gap: 37px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 767px) {
+    .service__btn-container {
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+
+  .service__list {
+    margin: 0;
+    gap: 38px;
+  }
+
+  .service__img {
+    max-width: 281px;
+  }
+
+  .service__caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 11px 0 18px;
+  }
+
+  .service__caption-text {
+    margin: 10px 0 0;
+    width: 80%;
+  }
+
+  /*----Tablet Service----*/
+  /*----Tablet Prices----*/
+
+  .prices__wrapper {
+    padding: 46px 50px 95px;
+    max-height: 100%;
+  }
+
+  .prices__right {
+    max-width: 45%;
+    margin: 96px 0 0;
+    gap: 28px;
+  }
+
+  .prices__right .prices__title {
+    text-align: right;
+    font-size: 25px;
+    line-height: 35px;
+    max-width: 100%;
+  }
+
+  .prices__img {
+    background-position: center top;
+  }
+
+  .prices__left {
+    align-items: flex-start;
+    max-width: 50%;
+  }
+
+  .prices__left .prices__title {
+    margin: 0 0 0 15px;
+    line-height: 35px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 767px) {
+    .dropdown-container {
+      padding: 25px 22px;
+      width: 224px;
+    }
+
+    .dropdown__label {
+      font-size: 15px;
+    }
+  }
+
+  /*----Tablet Prices----*/
+  /*----Tablet Contacts----*/
+
+  .contacts__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts__title {
+    margin: 40px 0 0;
+    font-size: 40px;
+    line-height: 52px;
+    order: -1;
+  }
+
+  .accordion {
+    margin: 100px 0 0;
+  }
+
+  .contacts__img {
+    margin: 250px 0 0 15px;
+    max-width: 200px;
+    max-height: 250px;
+    background-image: url(./assets/img/contact_woman_1_200x248.png);
+  }
+
+  /*----Tablet Contacts----*/
+  /*----Tablet Footer----*/
+
+  .footer__wrapper {
+    flex-direction: column;
+    gap: 22px;
+    padding: 30px 0 18px;
+    line-height: 24px;
+  }
+
+  .footer__link_rs {
+    margin: -6px 0 0;
+  }
+}
+
+/* ----Mobile---- */
+@media only screen and (max-width: 599px) {
+  button {
+    padding: 6px 0;
+    width: 121px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  h2 {
+    font-size: 25px;
+    line-height: 33px;
+  }
+
+  .wrapper {
+    max-width: 100%;
+  }
+
+  /*----Mobile Header----*/
+
+  .header__wrapper {
+    padding: 36px 25px;
+  }
+
+  .nav {
+    order: 3;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  /*----Mobile Welcome----*/
+
+  .welcome__wrapper {
+    flex-direction: column;
+    padding: 26px 25px;
+  }
+
+  .welcome__img {
+    display: none;
+  }
+
+  .welcome__article {
+    width: 100%;
+    gap: 20px;
+    margin: 0;
+  }
+
+  .welcome__title {
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  .welcome__text {
+    font-size: 16px;
+    line-height: 25px;
+    margin: 0;
+  }
+
+  .welcome__btn {
+    padding: 5px 16px;
+    width: 100px;
+    font-size: 10px;
+    margin: 5px 0 0;
+  }
+
+  /*----Mobile About us----*/
+
+  .about__wrapper {
+    flex-direction: column-reverse;
+    padding: 30px 25px 27px;
+  }
+
+  .about__article {
+    align-items: center;
+    margin: 1px 0 0;
+    max-width: 100%;
+    gap: 1px;
+  }
+
+  .about__title {
+    margin: 0 0 12px;
+    max-width: 288px;
+    text-align: center;
+  }
+
+  .about__text {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .about__img {
+    max-width: 150px;
+    max-height: 155px;
+    background-image: url(./assets/img/houseplant_1_150x147.png);
+    background-position: center 51%;
+  }
+
+  /*----Mobile Service----*/
+
+  .service__wrapper {
+    padding: 30px 25px;
+    gap: 42px;
+  }
+
+  .service__filter {
+    flex-direction: column;
+    gap: 35px;
+    max-width: 80%;
+  }
+
+  .service__title {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .service__btn-container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 9px;
+    margin: -2px 0 0;
+  }
+
+  .service__variant {
+    height: 450px;
+  }
+
+  .service__list {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px;
+    margin: 0;
+    gap: 34px;
+  }
+
+  .service__img {
+    max-width: 281px;
+    width: 100%;
+    height: 350px;
+  }
+
+  .service__caption {
+    padding: 10px 0 16px;
+  }
+
+  .service__caption-title {
+    padding: 2px 0 0;
+  }
+
+  .service__caption-text {
+    padding: 0 20px;
+    margin: 10px 0 0;
+  }
+
+  /*----Mobile Prices----*/
+
+  .prices__wrapper {
+    flex-direction: column-reverse;
+    padding: 25px 75px 40px;
+    gap: 19px;
+    max-height: 100%;
+  }
+
+  .prices__right {
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .prices__right .prices__title {
+    text-align: center;
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  .prices__img {
+    display: none;
+  }
+
+  .prices__left {
+    align-items: center;
+    gap: 38px;
+    margin: 0;
+  }
+
+  .prices__left .prices__title {
+    text-align: center;
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .dropdown-container {
+    gap: 15px;
+    padding: 27px 22px;
+    max-width: 224px;
+  }
+
+  .dropdown__label {
+    padding: 15px 0 14px 30px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  /*----Mobile Contacts----*/
+
+  .contacts__wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .contacts__title {
+    margin: 27px 0 0;
+    order: -1;
+    font-size: 25px;
+    line-height: 33px;
+    text-align: center;
+  }
+
+  .accordion {
+    margin: 82px 0 0;
+    max-width: 300px;
+  }
+
+  .accordion__label {
+    padding: 5px 0 5px 20px;
+  }
+
+  .accordion__label::before {
+      margin: 0 20px 0 0;
+  }
+
+  @media only screen and (max-width: 300px) {
+    .contacts__title {
+      margin: 0 auto;
+    }
+    .accordion {
+      max-width: 100px;
+    }
+
+    .accordion__label {
+      padding: 5px 0 5px 10px;
+      font-size: 15px;
+    }
+
+    .accordion__label::before {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .contacts__img {
+    margin: 132px 2px 0 0;
+    width: 100px;
+    height: 125px;
+    min-height: auto;
+    background-image: url(./assets/img/contact_woman_1_100x124.png);
+  }
+
+  /*----Mobile Footer----*/
+
+  .footer__wrapper {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0 14px;
+    line-height: 24px;
+  }
+
+  .footer__container {
+    gap: 21px;
+  }
+
+  .footer__link_rs {
+    margin: 0;
+  }
+}
+
+/* ----Burger menu---- */
+
+@media only screen and (max-width: 380px) {
+  body._touch._none-scroll {
+    overflow: hidden;
+  }
+
+  .header__wrapper {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 35px 25px;
+    align-items: flex-end;
+    overflow: auto;
+  }
+
+  .burger-icon {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 26px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 20;
+  }
+
+  .burger-icon__open._hidden {
+    display: none;
+  }
+
+  .burger-icon__close._active {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .burger-links._active {
+    display: flex;
+    gap: 16px;
+    padding: 0 0 20px;
+  }
+
+  .logo {
+    z-index: 10;
+  }
+
+  .nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0px;
+    right: -100%;
+    width: 66%;
+    height: 100%;
+    padding: 96px 0px 0px 47px;
+    background-color:#d6e7d2;
+    background-image: url(./assets/img/leaf-1.png);
+    background-size: 68%;
+    background-repeat: no-repeat;
+    background-position: 124% 94%;
+    transition: all 0.4s;
+    z-index: 10;
+  }
+
+  .nav._active {
+    right: 0;
+  }
+
+  .nav__list {
+    display: block;
+  }
+
+  .nav__item {
+    font-size: 25px;
+    margin: 0 0 38px 0;
+  }
+
+  @media only screen and (max-width: 300px) {
+    .nav__item {
+      font-size: 20px;
+    }
+
+    .burger-links._active {
+      display: none;
+    }
+  }
 }

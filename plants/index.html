@@ -14,28 +14,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inika&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
   <base target="_blank">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="./index.js"></script>
 </head>
 <body>
-    <header class="header bg_green" id="home">
-      <div class="wrapper header__wrapper">
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item"><a href="#home" class="nav__link" target="_self">Home</a></li>
-            <li class="nav__item"><a href="#about-us" class="nav__link" target="_self">About us</a></li>
-            <li class="nav__item"><a href="#service" class="nav__link" target="_self">Service</a></li>
-            <li class="nav__item"><a href="#prices" class="nav__link" target="_self">Price</a></li>
-            <li class="nav__item"><a href="#contacts" class="nav__link" target="_self">Contacts</a></li>
-          </ul>
-        </nav>
-        <a href="#" target="_self" class="logo">
-          <img src="./assets/svg/logo_vector.svg" class="logo__img"   width="20" height="20" alt="green leaf vector logo">
-          <p class="logo__text">Plants</p>
-        </a>
+  <header class="header" id="home">
+    <div class="wrapper header__wrapper">
+      <div class="burger-icon">
+        <img src="./assets/svg/burger.svg" class="burger-icon__open" width="40" height="26" alt="burger icon">
+        <img src="./assets/svg/burger_close.svg" class="burger-icon__close" width="28" height="28" alt="burger icon">
       </div>
-    </header>
-    <main class="main">
-      <section class="welcome bg_green">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link" target="_self">Home</a></li>
+          <li class="nav__item"><a href="#about-us" class="nav__link" target="_self">About us</a></li>
+          <li class="nav__item"><a href="#service" class="nav__link" target="_self">Service</a></li>
+          <li class="nav__item"><a href="#prices" class="nav__link" target="_self">Price</a></li>
+          <li class="nav__item"><a href="#contacts" class="nav__link" target="_self">Contacts</a></li>
+        </ul>
+        <div class="burger-links">
+          <a href="https://github.com/kozinaksa" class="burger-links__link"><img src="./assets/svg/github.svg" class="burger-links__img" alt="github logo" width="20" height="20"></a>
+          <a href="https://rs.school/js-stage0/" class="burger-links__link"><img src="./assets/svg/rs_school.svg" class="burger-links__img" alt="rs school logo" height="20"></a>
+        </div>
+      </nav>
+      <a href="#" target="_self" class="logo">
+        <img src="./assets/svg/logo_vector.svg" class="logo__img"   width="20" height="20" alt="green leaf vector logo">
+        <p class="logo__text">Plants</p>
+      </a>
+    </div>
+  </header>
+  <main class="main">
+      <section class="welcome">
         <div class="wrapper welcome__wrapper">
           <div class="welcome__img"></div>
           <div class="welcome__article">
@@ -45,7 +54,7 @@
           </div>
         </div>
       </section>
-      <section class="about" id="about-us">
+      <section class="about bg_white" id="about-us">
         <div class="wrapper about__wrapper">
           <div class="about__img"></div>
           <div class="about__article">
@@ -54,14 +63,14 @@
           </div>
         </div>
       </section>
-      <section class="service bg_green" id="service">
+      <section class="service" id="service">
         <div class="wrapper service__wrapper">
           <div class="service__filter">
             <h2 class="service__title">Service and our projects</h2>
             <div class="service__btn-container">
-              <button class="service__btn">Planting</button>
-              <button class="service__btn">Lawn</button>
-              <button class="service__btn">Gardens</button>
+              <button class="service__btn" type="button">Gardens</button>
+              <button class="service__btn" type="button">Lawn</button>
+              <button class="service__btn" type="button">Planting</button>
             </div>
           </div>
           <div class="service__list">
@@ -110,7 +119,7 @@
           </div>
         </div>
       </section>
-      <section class="prices" id="prices">
+      <section class="prices bg_white" id="prices">
         <div class="wrapper prices__wrapper">
           <div class="prices__right">
             <h3 class="prices__title">Our best <span class="span-green">gardeners</span> are ready to help you</h3>
@@ -136,7 +145,7 @@
           </div>
         </div>
       </section>
-      <section class="contacts bg_green" id="contacts">
+      <section class="contacts" id="contacts">
         <div class="wrapper contacts__wrapper">
           <div class="accordion-container">
             <div class="accordion" id="contacts-accordion">
@@ -147,8 +156,8 @@
           <div class="contacts__img"></div>
         </div>
       </section>
-    </main>
-    <footer class="footer">
+  </main>
+  <footer class="footer bg_white">
       <div class="wrapper footer__wrapper">
         <div class="footer__container">
           <p class="footer__copier">©</p>
@@ -171,6 +180,6 @@
           </li>
         </ul>
       </div>
-    </footer>
+  </footer>
 </body>
 </html>
