@@ -804,6 +804,33 @@ p {
   }
 }
 
+@media only screen and (max-width: 768px) {
+
+  .service__img_first {
+    background-image: url(./assets/img/first_280x350.jpg);
+  }
+
+  .service__img_second {
+    background-image: url(./assets/img/second_280x350.jpg);
+  }
+
+  .service__img_third {
+    background-image: url(./assets/img/third_280x350.jpg);
+  }
+
+  .service__img_fourth {
+    background-image: url(./assets/img/fourth_280x350.jpg);
+  }
+
+  .service__img_fifth {
+    background-image: url(./assets/img/fifth_280x350.jpg);
+  }
+
+  .service__img_sixth {
+    background-image: url(./assets/img/sixth_280x350.jpg);
+  }
+}
+
 /* ----Mobile---- */
 @media only screen and (max-width: 599px) {
   button {
@@ -843,12 +870,21 @@ p {
   /*----Mobile Welcome----*/
 
   .welcome__wrapper {
-    flex-direction: column;
+    flex-direction: row-reverse;
     padding: 26px 25px;
   }
 
   .welcome__img {
-    display: none;
+    max-width: 150px;
+    max-height: 155px;
+    background-image: url(./assets/img/leafs-5_293x271.png);
+    background-position: center;
+  }
+
+  @media only screen and (max-width: 380px) {
+    .welcome__img {
+      display: none;
+    }
   }
 
   .welcome__article {
