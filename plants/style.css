@@ -66,7 +66,7 @@ button:hover {
   background-color: #e06733;
   cursor: pointer;
   color: #edf2ec;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 button:active {
@@ -74,7 +74,7 @@ button:active {
   background-color: #499a18;
   border: 2px solid #499a18;
   border-radius: 10px;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 img {
@@ -462,7 +462,7 @@ p {
 .dropdown__label:hover,
 .dropdown__input:checked + .dropdown__label:hover {
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
   color: #e06733;
 }
 
@@ -472,7 +472,7 @@ p {
 }
 
 .dropdown__input:checked + .dropdown__label {
-  transition: 0.3s;
+  transition: 0.4s;
   color: #000000;
   background-color: #d6e7d2;
 }
@@ -515,7 +515,7 @@ p {
   background-color: #c1e698;
   box-shadow: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .contacts__title {
@@ -580,7 +580,7 @@ p {
   background-color: #e06733;
   border-radius: 50px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 /* ----Responsive design---- */
@@ -1206,4 +1206,49 @@ p {
       display: none;
     }
   }
+}
+
+.service__btn._active {
+  color: #ffffff;
+  background-color: #499a18;
+  border: 2px solid #499a18;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.service__btn._disabled {
+  color: #717171;
+  background-color: transparent;
+  border: 2px solid #717171;
+}
+
+.service__btn._disabled:hover {
+  color: #717171;
+  background-color: transparent;
+  border: 2px solid #717171;
+  cursor: auto;
+}
+
+.service__btn._disabled:active {
+  color: #717171;
+  background-color: transparent;
+  border: 2px solid #717171;
+  cursor: auto;
+  transform: none;
+  transition: 0;
+}
+
+.garden,
+.lawn,
+.planting {
+  filter: none;
+  transition: 1s;
+}
+
+
+.garden._blur,
+.lawn._blur,
+.planting._blur {
+  filter: blur(5px);
+  transition: 1s;
 }
