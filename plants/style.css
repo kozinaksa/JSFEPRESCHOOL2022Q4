@@ -292,6 +292,7 @@ p {
 
 .service__variant {
   margin: 0;
+  cursor: pointer;
 }
 
 .service__list {
@@ -459,22 +460,17 @@ p {
   content: url(./assets/svg/accordion_btn.svg);
 }
 
-.dropdown__label:hover,
-.dropdown__input:checked + .dropdown__label:hover {
+.dropdown__label:hover {
   cursor: pointer;
-  transition: 0.4s;
+  /* transition: 0.4s; */
   color: #e06733;
 }
 
 .dropdown__input:checked + .dropdown__label::before {
   content: url(./assets/svg/accordion_btn_open.svg);
   transform: rotate(-180deg);
-}
-
-.dropdown__input:checked + .dropdown__label {
-  transition: 0.4s;
-  color: #000000;
-  background-color: #d6e7d2;
+  position: relative;
+  bottom: 2px;
 }
 
 /*----Contacts----*/
@@ -1208,6 +1204,8 @@ p {
   }
 }
 
+/* ----Service Buttons---- */
+
 .service__btn._active {
   color: #ffffff;
   background-color: #499a18;
@@ -1251,4 +1249,74 @@ p {
 .planting._blur {
   filter: blur(5px);
   transition: 1s;
+  cursor: auto;
 }
+
+/* ----Prices Dropdown---- */
+.dropdown__input:checked + .dropdown__label {
+  background-color: #d6e7d2;
+  border-radius: 20px 20px 0 0;
+  color: #000000;
+}
+
+.dropdown__content {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #d6e7d2;
+  padding: 0px 40px 12px;
+  border-radius: 0 0 20px 20px;
+}
+
+.dropdown__text {
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 10px;
+  color: #717171;
+  padding-top: 6px;
+  border-top: 0.5px solid #aea1a1;
+  font-family: 'Inter', sans-serif;
+}
+
+.dropdown__price {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000000;
+  background-color: #d6e7d2;
+  font-family: 'Inter', sans-serif;
+}
+
+.span_big-orange {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  color: #e06733;
+  font-family: 'Inter', sans-serif;
+}
+
+.dropdown__btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #717171;
+  text-decoration: none;
+  padding: 3px 26px 3px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  border-color: #ffffff;
+  width: max-content;
+}
+
+.dropdown__btn:hover {
+  border-color: #e06733;
+}
+
+.dropdown__btn:active {
+  border-color: #499a18;
+}
+
+.dropdown__input:checked + .dropdown__label + .dropdown__content {
+    display: flex;
+  }

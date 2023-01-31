@@ -65,7 +65,6 @@ window.addEventListener('load', function() {
     function onNavLinkClick(e) {
       const navLink = e.target;
       const toSection = navLink.getAttribute('href').substr(1);
-      const contacts = document.getElementById(toSection);
       e.preventDefault();
 
       if (burgerIcon.classList.contains('_active')) {
@@ -99,7 +98,13 @@ window.addEventListener('load', function() {
     }
   });
 
+  const welcomeBtn = document.querySelector('.welcome__btn');
+  welcomeBtn.addEventListener('click', function(e) {
+    document.location.href='#about-us';
+  });
+
 // ----Plans3 functional----
+  // ----Service----
   let variantArr = ['garden', 'planting', 'lawn'];
   const serviceBtns = document.querySelectorAll('.service__btn');
   const serviceVariant = document.querySelectorAll('.service__variant');
@@ -113,7 +118,6 @@ window.addEventListener('load', function() {
     const Btn = e.target;
     Btn.classList.toggle('_active');
     count.some(element => element === Btn.classList[1]) ? count.splice(count.indexOf(Btn.classList[1], 0), 1) : count.push(Btn.classList[1]);
-    console.log(count, count.length);
 
     if (count.length === 0) {
       serviceBtns.forEach(btn => {
@@ -164,5 +168,46 @@ window.addEventListener('load', function() {
     }
 
   }
+
+  let countVar = 0;
+  serviceVariant.forEach(variant => {
+    variant.addEventListener('click', function(e) {
+      if ((variant.classList.contains('_blur') === false)) {
+        document.location.href='#prices';
+      }
+    });
+  });
+
+  // ----Prices----
+  const pricesCheck = document.querySelectorAll('.dropdown__input');
+  const pricesBtnDropdown = document.querySelectorAll('.dropdown__btn');
+  const pricesBtn = document.querySelector('.prices__btn')
+
+  pricesCheck.forEach(checkbox => {
+      checkbox.addEventListener('click', dropdown);
+    });
+
+  function dropdown(e) {
+    const checkbox = e.target;
+    for (var i = 0; i < pricesCheck.length; i++) {
+      if (pricesCheck[i] != checkbox) {
+        pricesCheck[i].oldChecked = false;
+      }
+    }
+    if (checkbox.oldChecked) {
+      checkbox.checked = false;
+    }
+    checkbox.oldChecked = checkbox.checked;
+  }
+
+  pricesBtnDropdown.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      document.location.href='#contacts';
+    });
+  });
+
+  pricesBtn.addEventListener('click', function(e) {
+    document.location.href='#contacts';
+  });
 
 });
