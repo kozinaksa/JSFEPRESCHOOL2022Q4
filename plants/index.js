@@ -4,6 +4,9 @@
 //self-assessment task Plants#2
 // console.log('Score: 85/75 \n 1. Вёрстка соответствует макету. Ширина экрана 768px +24 \n    блок <header> +2 \n    секция welcome +3 \n    секция about +4 \n    секция service +4 \n    секция prices +4 \n    секция contacts +4 \n    блок <footer> + 3 \n 2. Вёрстка соответствует макету. Ширина экрана 380px +24 \n    блок <header> +2 \n    секция welcome +3 \n    секция about +4 \n    секция service +4 \n    секция prices +4 \n    секция contacts +4 \n    блок <footer> + 3 \n Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется +15 \n    нет полосы прокрутки при ширине страницы от 1440рх до 380px +7 \n    нет полосы прокрутки при ширине страницы от 380px до 320рх +8 \n На ширине экрана 380рх и меньше реализовано адаптивное меню +22 \n    при ширине страницы 380рх панель навигации скрывается, появляется бургер-иконка +2 \n    при нажатии на бургер-иконку плавно появляется адаптивное меню +4 \n    адаптивное меню соответствует цветовой схеме макета +4 (Цвет фона адаптивного меню такой-же как у аккордеона в секции Contacts)\n    при нажатии на крестик адаптивное меню плавно скрывается уезжая за экран +4 \n    ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям +4 \n    при клике по ссылке в адаптивном меню адаптивное меню плавно скрывается, также скрытие меню происходит если сделать клик вне данного окна +4');
 
+//self-assessment task Plants#3
+console.log('Score: 125/100 \n 1. При нажатии на кнопки:Gardens,Lawn,Planting происходит смена фокуса на услугах в разделе service +50 \n 2. Accordion в секции prices реализация 3-х выпадающих списков об услугах и ценах + 50 \n 3. В разделе contacts реализован select с выбором городов +25');
+
 const isMobile = {
   Android: function () {
     return navigator.userAgent.match(/Android/i);
@@ -288,7 +291,6 @@ window.addEventListener('load', function() {
         contactsImg.style.display = 'none';
       }
       for (let i = 0; i < selectedArr.length; i++) {
-        console.log(selectedArr[i].city);
         if (cityLet === selectedArr[i].city) {
           city.textContent = selectedArr[i].city;
           phone.textContent = selectedArr[i].phone;
@@ -304,7 +306,6 @@ window.addEventListener('load', function() {
     let target = e.target;
     let itsValue = target === values || values.contains(target);
     let itsLabel = target === select || select.contains(target);
-    // console.log(itsValue);
     if (!itsValue && !itsLabel && !values.classList.contains('_hide')) {
       values.classList.add('_hide');
       if (cityLet != 'City') {
@@ -314,9 +315,7 @@ window.addEventListener('load', function() {
   });
 
   cityBtn.addEventListener('click', function(e) {
-    // console.log(phone.textContent);
     document.location.href = 'tel:' + phone.textContent;
   });
 
-  console.log(cityLet.length);
 });
