@@ -162,12 +162,43 @@
       </section>
       <section class="contacts" id="contacts">
         <div class="wrapper contacts__wrapper">
-          <div class="accordion-container">
-            <div class="accordion" id="contacts-accordion">
-              <p class="accordion__label">City</p>
+          <div class="select-wrapper">
+            <div class="select-container">
+              <div class="select">
+                <p class="select__label">City</p>
+                <div class="select__values _hide">
+                  <p class="select__value">Canandaigua, NY</p>
+                  <p class="select__value">New York City</p>
+                  <p class="select__value">Yonkers, NY</p>
+                  <p class="select__value">Sherrill, NY</p>
+                </div>
+              </div>
+              <div class="selected _hide">
+                <table class="selected-table">
+                  <tbody>
+                    <tr>
+                      <td>City:</td>
+                      <td class="selected-table__td _city">Canandaigua, NY</td>
+                    </tr>
+                    <tr>
+                      <td>Phone:</td>
+                      <td class="selected-table__td _phone">+1	585	393 0001</td>
+                    </tr>
+                    <tr>
+                      <td>Office address:</td>
+                      <td class="selected-table__td _address" >151 Charlotte Street</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td><button class="selected-table__button">Call us</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+            <h2 class="contacts__title">Contact us</h2>
           </div>
-          <h2 class="contacts__title">Contact us</h2>
           <div class="contacts__img"></div>
         </div>
       </section>

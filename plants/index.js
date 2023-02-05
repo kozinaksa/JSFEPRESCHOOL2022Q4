@@ -169,10 +169,9 @@ window.addEventListener('load', function() {
 
   }
 
-  let countVar = 0;
   serviceVariant.forEach(variant => {
     variant.addEventListener('click', function(e) {
-      if ((variant.classList.contains('_blur') === false)) {
+      if (variant.classList.contains('_blur') === false) {
         document.location.href='#prices';
       }
     });
@@ -210,4 +209,114 @@ window.addEventListener('load', function() {
     document.location.href='#contacts';
   });
 
+  // ----Contacts----
+  const select = document.querySelector('.select');
+  const values = document.querySelector('.select__values');
+  const selectValue = document.querySelectorAll('.select__value');
+
+  const selected = document.querySelector('.selected');
+  const city = document.querySelector('._city');
+  const phone = document.querySelector('._phone');
+  const address = document.querySelector('._address');
+
+  cityBtn = document.querySelector('.selected-table__button');
+
+  const selectLabel = document.querySelector('.select__label');
+  const contactsImg = document.querySelector('.contacts__img');
+
+  const selectedArr = [
+    {
+      city: 'Canandaigua, NY',
+      phone: '+1	585	393 0001',
+      adress: '151 Charlotte Street'
+    },
+    {
+      city: 'New York City',
+      phone: '+1	212	456 0002',
+      adress: '9 East 91st Street'
+    },
+    {
+      city: 'Yonkers, NY',
+      phone: '+1	914	678 0003',
+      adress: '511 Warburton Ave'
+    },
+    {
+      city: 'Sherrill, NY',
+      phone: '+1	315	908 0004',
+      adress: '14 WEST Noyes BLVD'
+    }
+  ];
+
+  let cityLet = 'City';
+
+  select.addEventListener('click', function(e) {
+    values.classList.toggle('_hide');
+    if (!values.classList.contains('_hide') && !selected.classList.contains('_hide')) {
+      selected.classList.add('_hide');
+      contactsImg.style.display = 'inline';
+      if (window.innerWidth < 1023) {
+        contactsImg.style.margin = '172px 0 0 7px';
+      }
+    }
+    if (values.classList.contains('_hide') && cityLet != 'City') {
+      selected.classList.remove('_hide');
+      if (window.innerWidth < 599) {
+        contactsImg.style.display = 'none';
+      }
+    }
+  })
+
+  selectValue.forEach(citySelect => {
+    citySelect.addEventListener('click', selectCity);
+  });
+
+
+  function selectCity(e) {
+    const citySelect = e.target;
+    cityLet = citySelect.textContent;
+    if (cityLet != 'City') {
+      selectLabel.style.fontSize = '16px';
+      selectLabel.textContent = citySelect.textContent;
+      if (window.innerWidth > 600 && window.innerWidth < 1023) {
+        select.style.margin = '61px 0 0';
+        selectLabel.style.padding = '5px 35px';
+        contactsImg.style.margin = '289px 0 0 7px';
+      }
+      if (window.innerWidth < 599) {
+        select.style.margin = '42px 0 0';
+        selectLabel.style.padding = '5px 0 5px 20px';
+        contactsImg.style.display = 'none';
+      }
+      for (let i = 0; i < selectedArr.length; i++) {
+        console.log(selectedArr[i].city);
+        if (cityLet === selectedArr[i].city) {
+          city.textContent = selectedArr[i].city;
+          phone.textContent = selectedArr[i].phone;
+          address.textContent = selectedArr[i].adress;
+        }
+      }
+      select.classList.add('_city');
+      selected.classList.remove('_hide');
+    }
+  }
+
+  document.addEventListener('click', (e) => {
+    let target = e.target;
+    let itsValue = target === values || values.contains(target);
+    let itsLabel = target === select || select.contains(target);
+    // console.log(itsValue);
+    if (!itsValue && !itsLabel && !values.classList.contains('_hide')) {
+      values.classList.add('_hide');
+      if (cityLet != 'City') {
+        selected.classList.remove('_hide');
+      }
+    }
+  });
+
+  cityBtn.addEventListener('click', function(e) {
+    // console.log(phone.textContent);
+    document.location.href = 'tel:' + phone.textContent;
+  });
+
+  console.log(cityLet.length);
 });
