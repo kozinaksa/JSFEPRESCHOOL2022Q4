@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/favicon.ico" rel="shortcut icon">
+  <!-- <link rel="stylesheet" href="./style/css/fonts.css">
+  <link rel="stylesheet" href="./style/css/style.css"> -->
+  <title>momentum by Galina Moroz</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player__controls">
+        <button class="player__controls-prev player__controls-icon"></button>
+        <button class="player__controls-play player__controls-icon"></button>
+        <button class="player__controls-next player__controls-icon"></button>
+      </div>
+      <ul class="player__playlist">
+        <!-- TODO: make js, delete line with <li></li> -->
+        <li class="player__playlist-item"></li>
+      </ul>
+    </div>
+    <div class="weather">
+      <input type="text" class="weather__city">
+      <i class="weather__icon owf"></i>
+      <div class="weather__error"></div>
+      <div class="weather__description">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="weather__wind"></div>
+      <div class="weather__humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-btns">
+      <button class="slider-btns__prev slider-icon"></button>
+      <button class="slider-btns__next slider-icon"></button>
+    </div>
+    <!-- TODO: delete time and data info into tags -->
+    <time class="time">15:07:00</time>
+    <date class="date">Monday, February 13</date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name">
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="change-quote"></button>
+    <div>
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+  </footer>
+  <!-- <script src="./js/script.js"></script> -->
+</body>
+</html>
