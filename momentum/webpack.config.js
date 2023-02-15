@@ -19,7 +19,7 @@ module.exports = {
   entry: [
     "@babel/polyfill",
     // "./app/js",
-    path.resolve(__dirname, 'src', 'script.js')
+    path.resolve(__dirname, 'src/js', 'script.js')
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
