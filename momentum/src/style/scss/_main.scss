@@ -9,46 +9,48 @@
   min-height: 260px;
   padding: 20px;
 
-  .slider-btns {
-    position: absolute;
-    top: 50%;
-    margin-top: -16px;
-    cursor: pointer;
+  .slider {
 
-    &-prev {
-      left: 20px;
-      background-image: url("../../assets/svg/slider-prev.svg");
+    &-icon {
+      position: absolute;
+      top: 50%;
+      margin-top: -16px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      background-size: 32px 32px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      border: 0px;
+      outline: 0px;
+      opacity: 0.8;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:active {
+        border: 0;
+        outline: 0;
+        transform: scale(1.1);
+      }
     }
 
-    &-next {
+    &__prev {
+      left: 20px;
+      background-image: url("../../assets/svg/slider-prev.svg");
+
+    }
+
+    &__next {
       right: 20px;
       background-image: url("../../assets/svg/slider-next.svg");
     }
   }
 
-  .slider-icon {
-    width: 32px;
-    height: 32px;
-    background-size: 32px 32px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    border: 0;
-    outline: 0;
-    opacity: .8;
-    cursor: pointer;
-    transition: .3s;
-
-    &:hover {
-      opacity: 1;
-    }
-
-    &:active {
-      border: 0;
-      outline: 0;
-      transform: scale(1.1);
-    }
-  }
 
   .time {
     min-height: 124px;
@@ -61,19 +63,15 @@
   .date {
     min-height: 28px;
     font-size: 24px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
   }
 
   .greeting-container {
     display: inline;
-    // flex-wrap: wrap;
-    // justify-content: stretch;
-    // align-items: center;
     min-height: 48px;
     font-size: 40px;
 
     .greeting {
-      padding: 0 10px;
       text-align: right;
       vertical-align: top;
     }
@@ -99,20 +97,10 @@
 
     .name {
       display: none;
-      // font-size: 40px;
-      // text-align: left;
-      // color: #fff;
-      // background-color: transparent;
-      // border: 0;
-      // outline: 0;
-
-      // &::placeholder {
-      //   color: #fff;
-      //   opacity: .6;
-      // }
     }
   }
 }
+
 @media (max-width: 768px) {
   .main {
 
@@ -125,16 +113,6 @@
       min-width: 380px;
       min-height: 40px;
       font-size: 32px;
-
-
-      .greeting {
-        white-space: nowrap;
-        padding: 0 5px;
-      }
-
-      .name {
-        font-size: 32px;
-      }
     }
   }
 }

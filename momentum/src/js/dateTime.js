@@ -10,3 +10,5 @@ export function showTime() {
   isDate.textContent = currentDate;
   setTimeout(showTime, 1000);
 }
+
+showTime();

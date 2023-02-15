@@ -4,6 +4,7 @@ const date = new Date();
 const hours = date.getHours();
 const isGreeting = document.querySelector('.greeting');
 const greetingEn = ['night', 'morning', 'afternoon', 'evening'];
+const timeOfDay = '';
 
 function getTimeOfDay() {
   return greetingEn[Math.floor(hours/6)];
@@ -31,17 +32,16 @@ function getLocalStorage() {
 
 function colorName() {
   if (isUserName.textContent.length === 0) {
-    isUserName.textContent = '[Your name]';
+    isUserName.textContent = '[Enter name]';
     isUserName.classList.add('_none-name');
   }
-  if (isUserName.classList.contains('_none-name') && !isUserName.textContent.includes('[Your name]')) {
+  if (isUserName.classList.contains('_none-name') && !isUserName.textContent.includes('[Enter name]')) {
     isUserName.classList.remove('_none-name');
   }
 }
 
 // TODO non-scroll span element with big text and move cursor in start
 function sizeGreeting() {
-  console.log(window.innerWidth);
   if (isGreeting.getBoundingClientRect().y === isUserName.getBoundingClientRect().y && isGreeting.offsetWidth + isUserName.offsetWidth < window.innerWidth) {
     isUserName.classList.remove('_inline-block');
   }
@@ -51,13 +51,17 @@ function sizeGreeting() {
   }
 }
 
+window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('load', function() {
+
 isUserName.addEventListener('click', function(e) {
-  if (isUserName.textContent.includes('[Your name]')) {
+  if (isUserName.textContent.includes('[Enter name]')) {
     isUserName.textContent = '';
   }
   isUserName.classList.remove('_none-name');
   isUserName.contentEditable = 'true';
-  isUserName.style.borderBottom = "1px solid #fff";
+  isUserName.style.borderBottom = "2px solid #fff";
+  isUserName.style.paddingBottom = '6px';
   sizeGreeting();
 });
 
@@ -88,4 +92,11 @@ document.addEventListener('click', (e) => {
   }
 });
 
-export {showGreeting, setLocalStorage, getLocalStorage, colorName, sizeGreeting};
+  showGreeting()
+  sizeGreeting();
+  getLocalStorage();
+  colorName();
+  sizeGreeting();
+});
+
+export {getTimeOfDay};
