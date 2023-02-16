@@ -4,7 +4,6 @@ const date = new Date();
 const hours = date.getHours();
 const isGreeting = document.querySelector('.greeting');
 const greetingEn = ['night', 'morning', 'afternoon', 'evening'];
-const timeOfDay = '';
 
 function getTimeOfDay() {
   return greetingEn[Math.floor(hours/6)];
@@ -24,6 +23,9 @@ function setLocalStorage() {
 }
 
 function getLocalStorage() {
+  if (localStorage.getItem('name') === 'undefined') {
+    localStorage.clear();
+  }
   if (localStorage.getItem('name')) {
     name.value = localStorage.getItem('name');
     isUserName.textContent = name.value;
@@ -40,7 +42,6 @@ function colorName() {
   }
 }
 
-// TODO non-scroll span element with big text and move cursor in start
 function sizeGreeting() {
   if (isGreeting.getBoundingClientRect().y === isUserName.getBoundingClientRect().y && isGreeting.offsetWidth + isUserName.offsetWidth < window.innerWidth) {
     isUserName.classList.remove('_inline-block');
@@ -51,7 +52,11 @@ function sizeGreeting() {
   }
 }
 
-window.addEventListener('beforeunload', setLocalStorage);
+showGreeting();
+
+window.addEventListener('beforeunload', function() {
+  setLocalStorage();
+});
 window.addEventListener('load', function() {
 
 isUserName.addEventListener('click', function(e) {
@@ -99,4 +104,5 @@ document.addEventListener('click', (e) => {
   sizeGreeting();
 });
 
-export {getTimeOfDay};
+showGreeting();
+export { getTimeOfDay };

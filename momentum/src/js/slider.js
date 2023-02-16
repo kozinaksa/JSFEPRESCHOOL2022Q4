@@ -6,7 +6,6 @@ function getRandomNum() {
 }
 
 function setBg() {
-  console.log(numRand);
   const img = new Image();
   numRand < 10 ? numRand = '0' + numRand : numRand;
   img.src = "https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/" + getTimeOfDay() + "/" + numRand + ".jpg"
@@ -28,7 +27,6 @@ setBg(getRandomNum());
 window.addEventListener('load', function() {
   const btnPrev = document.querySelector('.slider__prev');
   const btnNext = document.querySelector('.slider__next');
-  console.log(btnPrev.getBoundingClientRect.y, btnNext.getBoundingClientRect.y);
   setBg();
   btnPrev.addEventListener('click', function(e) {
     getSlidePrev();
