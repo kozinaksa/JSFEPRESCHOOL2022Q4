@@ -1,11 +1,13 @@
 const name = document.querySelector('.name');
 const isUserName = document.querySelector('.username');
-const date = new Date();
-const hours = date.getHours();
 const isGreeting = document.querySelector('.greeting');
 const greetingEn = ['night', 'morning', 'afternoon', 'evening'];
 
 function getTimeOfDay() {
+  const date = new Date();
+  const hours = date.getHours();
+  // --- if update won't working, uncomment ---
+  // setTimeout(showGreeting, 1000);
   return greetingEn[Math.floor(hours/6)];
 }
 

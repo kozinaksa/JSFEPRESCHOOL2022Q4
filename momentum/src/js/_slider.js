@@ -1,25 +1,28 @@
-import { getTimeOfDay } from "./greeting";
+import { getTimeOfDay } from "./_greeting";
 let max = 20, min = 1, numRand = 1;
 
 function getRandomNum() {
   return numRand = Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function normalizeNumber(value) {
+  return value.toString().length > 1 ? value : `0${value}`;
+}
+
 function setBg() {
   const img = new Image();
-  numRand < 10 ? numRand = '0' + numRand : numRand;
-  img.src = "https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/" + getTimeOfDay() + "/" + numRand + ".jpg"
+  img.src = "https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/" + getTimeOfDay() + "/" + normalizeNumber(numRand) + ".jpg"
   img.onload = () => {
     document.body.style.backgroundImage = "url('" + img.src + "')";
   };
 }
 
 function getSlideNext() {
-  return numRand === 20 ? numRand = 1 : numRand = Number(numRand) + 1;
+  return numRand === 20 ? numRand = 1 : numRand = numRand + 1;
 }
 
 function getSlidePrev() {
-  return numRand === 1 || numRand === '01' ? numRand = 20 : numRand = Number(numRand) - 1;
+  return numRand === 1 ? numRand = 20 : numRand = numRand - 1;
 }
 
 setBg(getRandomNum());
