@@ -45,11 +45,12 @@
         height: 40px;
         background-size: 40px 40px;
         background-image: url("../../assets/svg/play.svg");
+
+        &.pause {
+          background-image: url("../../assets/svg/pause.svg");
+        }
       }
 
-      &-pause {
-        background-image: url("../../assets/svg/pause.svg");
-      }
 
       &-prev {
         background-image: url("../../assets/svg/play-prev.svg");
@@ -74,20 +75,27 @@
         transition: .3s;
         list-style: none;
 
+        &._active {
+          opacity: 1;
+        }
+
+        &._onPause {
+          opacity: .8;
+        }
+
         &:hover {
           opacity: 1;
         }
 
         &::before {
-          // TODO: uncomment next line
-          // content: "\2713";
+          content: "\2713";
           position: absolute;
           left: 0;
           top: 2px;
           font-weight: 900;
         }
 
-        &-active::before {
+        &._active::before {
           color: #C5B358;
         }
       }

@@ -1,4 +1,6 @@
 const path = require('path');
+const SRC = path.resolve(__dirname, 'node_modules');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
@@ -36,6 +38,14 @@ module.exports = {
           from: path.resolve(__dirname, 'src/libs', 'data.json'),
           to: path.resolve(__dirname, 'dist/libs', 'data.json'),
         },
+        {
+          from: path.resolve(__dirname, 'src/libs/playList.js'),
+          to: path.resolve(__dirname, 'dist/libs/playList.js'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/assets/sounds'),
+          to: path.resolve(__dirname, 'dist/assets/sounds'),
+        }
       ],
     }),
     new HtmlWebpackPlugin({
@@ -67,12 +77,22 @@ module.exports = {
           },
           "sass-loader"
         ],
+        generator: {
+          filename: 'styles/[name][ext]'
+        }
+      },
+      {
+        test: /\.(mp3?|wav|ogg|mpe?g)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/sounds/[name][hash][ext]',
+        },
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name][ext]'
+          filename: 'assets/fonts/[name][ext]'
         }
       },
       {
@@ -102,7 +122,10 @@ module.exports = {
             }
           }
         ],
-        type: 'asset/resource'
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/img/[name][ext]'
+        }
       },
       {
         test: /\.m?js$/i,

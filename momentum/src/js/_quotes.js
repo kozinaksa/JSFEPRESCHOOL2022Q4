@@ -12,8 +12,8 @@ function updateQuote() {
   const hours = date.getHours();
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
-  const timeInterval = day - hours * 3600 + minutes * 60 + seconds;
-  console.log(timeInterval);
+  const timeInterval = day - (hours * 3600 + minutes * 60 + seconds);
+  // console.log(timeInterval);
   setTimeout(updateQuote, timeInterval);
 }
 
@@ -21,7 +21,6 @@ async function getQuotesJson() {
   const quotes = "/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/libs/data.json";
   const res = await fetch(quotes);
   await res.json().then((data) => {
-      // console.log(data);
       randomQuote = data[Math.floor(Math.random() * (max - min + 1)) + min];
       quote = randomQuote.text;
       author = randomQuote.author;
@@ -33,7 +32,6 @@ async function getQuotesAPI() {
   const quotes = 'https://api.quotable.io/random';
   const res = await fetch(quotes);
   await res.json().then((data) => {
-      // console.log(data.content.length);
       if (data.content.length >= 130) {
         getQuotesAPI();
       }
@@ -55,17 +53,21 @@ function sourceQuote() {
 }
 
 getQuotesJson();
+
 document.addEventListener('DOMContentLoaded', function() {
   getQuotesJson();
   getQuotesAPI();
+  updateQuote();
 });
+
 window.addEventListener('load', function() {
   change.addEventListener('click', (e) => {
-    sourceQuote();
     updateQuote();
+    sourceQuote();
   });
   source.addEventListener('click', (e) => {
     sourceJson ? sourceJson = false : sourceJson = true;
-    // console.log(sourceJson);
+    updateQuote();
+    sourceQuote();
   })
 });

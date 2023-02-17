@@ -8,6 +8,7 @@ import './_greeting';
 import './_slider';
 import './_weather';
 import './_quotes';
+import './_audioPlayer';
 
 // TODO non-scroll span element with big text and move cursor in start
 // TODO: upload weather every half hour
