@@ -6,8 +6,6 @@ const greetingEn = ['night', 'morning', 'afternoon', 'evening'];
 function getTimeOfDay() {
   const date = new Date();
   const hours = date.getHours();
-  // --- if update won't working, uncomment ---
-  // setTimeout(showGreeting, 1000);
   return greetingEn[Math.floor(hours/6)];
 }
 
@@ -67,7 +65,7 @@ isUserName.addEventListener('click', function(e) {
   }
   isUserName.classList.remove('_none-name');
   isUserName.contentEditable = 'true';
-  isUserName.style.borderBottom = "2px solid #fff";
+  isUserName.style.borderBottom = '2px solid coral';
   isUserName.style.paddingBottom = '6px';
   sizeGreeting();
 });
@@ -82,6 +80,7 @@ document.addEventListener( 'keyup', function(e) {
     setLocalStorage();
     isUserName.style.borderBottom = "none";
     colorName();
+    isUserName.blur();
   };
   sizeGreeting();
 });

@@ -14,3 +14,4 @@ import './_audioPlayer';
 // TODO: upload weather every half hour
 // TODO: setLocalStorage and getLocalStorage -- make normal export
 // TODO: when will make settings move quotes-source-dots inside
+// TODO: find timeot in player and fix bag in timeline

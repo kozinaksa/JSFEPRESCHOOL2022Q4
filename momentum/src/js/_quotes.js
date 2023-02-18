@@ -12,9 +12,9 @@ function updateQuote() {
   const hours = date.getHours();
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
-  const timeInterval = day - (hours * 3600 + minutes * 60 + seconds);
-  // console.log(timeInterval);
-  setTimeout(updateQuote, timeInterval);
+  const timeInterval = (day - (hours * 3600 + minutes * 60 + seconds)) * 1000;
+  console.log(timeInterval);
+  setTimeout(sourceQuote, timeInterval);
 }
 
 async function getQuotesJson() {

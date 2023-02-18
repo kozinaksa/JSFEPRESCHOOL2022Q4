@@ -8,6 +8,7 @@
   height: 40vh;
   min-height: 260px;
   padding: 20px;
+  top: -20px;
 
   .slider {
 
@@ -102,6 +103,7 @@
 
 @media (max-width: 768px) {
   .main {
+    top: 0px;
 
     .time {
       min-height: 80px;

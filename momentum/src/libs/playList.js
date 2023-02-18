@@ -2,7 +2,7 @@ const playList = [
   {
     title: 'Aqua Caelestis',
     src: '/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/assets/sounds/Aqua_Caelestis.mp3',
-    duration: '00:58'
+    duration: '00:39'
   },
   {
     title: 'Ennio Morricone',

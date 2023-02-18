@@ -55,6 +55,7 @@ function getLocalStorage() {
 function setCity(event) {
   // setTimeout(getWeather, 5000);
   if (event.code === 'Enter') {
+    city.style.borderBottom = '2px solid #fff';
     setLocalStorage();
     getLocalStorage();
     getWeather();
@@ -66,16 +67,20 @@ document.addEventListener('click', (e) => {
   let target = e.target;
   let isCity = target == city || city.contains(target);
   if (!isCity) {
+    city.style.borderBottom = '2px solid #fff';
     setLocalStorage();
     getLocalStorage();
     getWeather();
     city.blur();
   }
+  if (isCity) {
+    city.style.borderBottom = '2px solid coral';
+  }
 });
 
+getLocalStorage();
 window.addEventListener('beforeunload', setLocalStorage);
 document.addEventListener('DOMContentLoaded', getWeather);
 window.addEventListener('load', function() {
-  getLocalStorage();
   city.addEventListener('keypress', setCity);
 });
