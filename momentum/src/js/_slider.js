@@ -11,7 +11,7 @@ function normalizeNumber(value) {
 
 function setBg() {
   const img = new Image();
-  img.src = "https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/" + getTimeOfDay() + "/" + normalizeNumber(numRand) + ".jpg"
+  img.src = "https://raw.githubusercontent.com/kozinaksa/image-collection/assets/images/" + getTimeOfDay() + "/" + normalizeNumber(numRand) + ".jpg"
   img.onload = () => {
     document.body.style.backgroundImage = "url('" + img.src + "')";
   };

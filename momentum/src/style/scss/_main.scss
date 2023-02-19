@@ -103,7 +103,6 @@
 
 @media (max-width: 768px) {
   .main {
-    top: 0px;
 
     .time {
       min-height: 80px;
@@ -114,6 +113,38 @@
       min-width: 380px;
       min-height: 40px;
       font-size: 32px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .main {
+    top: 0;
+
+    .slider {
+
+      &__prev {
+        left: 10px;
+      }
+
+      &__next {
+        right: 10px;
+      }
+    }
+
+    .time {
+      min-height: 45px;
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+
+    .date {
+      margin: 0 auto 10px;
+    }
+
+    .greeting-container {
+      min-width: 320px;
+      font-size: 28px;
     }
   }
 }

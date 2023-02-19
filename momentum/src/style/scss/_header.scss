@@ -229,7 +229,7 @@
     align-items: flex-start;
     // row-gap: 5px;
     width: 180px;
-    min-height: 150px;
+    min-height: 148px;
     text-align: left;
 
     ._weather-hide {
@@ -318,11 +318,25 @@
     }
 
     .weather {
-      width: 120px;
+      width: 140px;
       font-size: 14px;
 
       .city {
         font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .header {
+
+    .player {
+      width: 125px;
+
+      &-time {
+        flex-direction: column;
+        top: -10px;
       }
     }
   }

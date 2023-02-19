@@ -41,7 +41,7 @@
       </ul>
     </div>
     <div class="weather">
-      <input type="text" class="city" value="Minsk" placeholder="[Enter city]">
+      <input type="text" class="city" placeholder="[Enter city]">
       <i class="weather__icon owf"></i>
       <div class="weather__error"></div>
       <div class="weather__description">
@@ -67,13 +67,35 @@
     </div>
   </main>
   <footer class="footer">
-    <div class="btns-container">
-      <button class="change-quote"></button>
-      <button class="source-quote"></button>
-    </div>
+    <button class="change-quote"></button>
     <div class="quote-container">
-      <div class="quote"></div>
-      <div class="author"></div>
+      <div class="quote-text">
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+    <button class="settings-btn">
+      <span class="settings-btn_icon_1"></span>
+      <span class="settings-btn_icon_2"></span>
+    </button>
+    <div class="settings-container">
+        <button class="settings_close-bth settings_close-icon"></button>
+        <ul class="settings__list">
+          <li class="settings__list-item settings__language">
+            <span class="settings-name">Language</span>
+            <div class="settings-value__container">
+              <span class="settings-value value-language">en</span>
+              <span class="toggle-slider toggle-language">
+                <svg class="toggle-switch"></svg>
+              </span>
+              <span class="settings-value value-language">ru</span>
+            </div>
+          </li>
+        </ul>
+        <div class="settings-milk">
+          <button class="source-quote"></button>
+        </div>
+      </div>
     </div>
   </footer>
 </body>

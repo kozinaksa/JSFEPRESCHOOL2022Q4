@@ -1,9 +1,12 @@
+import { language } from "./_settings";
+
 const isQuote = document.querySelector('.quote');
 const isAuthor = document.querySelector('.author');
 const change = document.querySelector('.change-quote');
 const source = document.querySelector('.source-quote');
-const min = 0, max = 16;
+const min = 0, max = 54;
 let sourceJson = true;
+let randomQuote = {};
 let author = '', quote = '';
 
 function updateQuote() {
@@ -13,18 +16,21 @@ function updateQuote() {
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
   const timeInterval = (day - (hours * 3600 + minutes * 60 + seconds)) * 1000;
-  console.log(timeInterval);
   setTimeout(sourceQuote, timeInterval);
 }
 
 async function getQuotesJson() {
+  const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
   const quotes = "/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/libs/data.json";
   const res = await fetch(quotes);
   await res.json().then((data) => {
-      randomQuote = data[Math.floor(Math.random() * (max - min + 1)) + min];
-      quote = randomQuote.text;
-      author = randomQuote.author;
-      showQuote();
+    randomQuote = data[language][randomNum];
+    quote = randomQuote.text;
+    if (quote.length >= 130) {
+      getQuotesJson();
+    }
+    author = randomQuote.author;
+    showQuote();
   });
 }
 
@@ -48,15 +54,13 @@ function showQuote() {
   isAuthor.textContent = author;
 }
 
-function sourceQuote() {
+export function sourceQuote() {
   return sourceJson ? getQuotesJson() : getQuotesAPI();
 }
 
-getQuotesJson();
 
 document.addEventListener('DOMContentLoaded', function() {
-  getQuotesJson();
-  getQuotesAPI();
+  sourceQuote()
   updateQuote();
 });
 

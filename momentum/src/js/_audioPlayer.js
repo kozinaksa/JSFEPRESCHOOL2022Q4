@@ -176,9 +176,6 @@ window.addEventListener('load', function() {
       const newVolume = e.offsetX / parseInt(sliderWidth);
       audio.volume = newVolume;
       volumePercentage.style.width = newVolume * 100 + '%';
-      if (newVolume === 0) {
-        volumeBtn.classList.add('mute');
-      }
       if (newVolume != 0 && volumeBtn.classList.contains('mute')) {
         volumeBtn.classList.remove('mute');
       }

@@ -1,3 +1,6 @@
+import { language } from "./_settings";
+import { greetingTranslation } from "./Languages";
+
 const name = document.querySelector('.name');
 const isUserName = document.querySelector('.username');
 const isGreeting = document.querySelector('.greeting');
@@ -10,8 +13,8 @@ function getTimeOfDay() {
 }
 
 function showGreeting() {
-  const timeOfDay = getTimeOfDay();
-  isGreeting.textContent = `Good ${timeOfDay},`;
+  const timeIndex = greetingEn.indexOf(getTimeOfDay());
+  isGreeting.textContent = greetingTranslation[language][timeIndex];
   setTimeout(showGreeting, 1000);
 }
 
@@ -54,11 +57,8 @@ function sizeGreeting() {
 
 showGreeting();
 
-window.addEventListener('beforeunload', function() {
-  setLocalStorage();
-});
+window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', function() {
-
 isUserName.addEventListener('click', function(e) {
   if (isUserName.textContent.includes('[Enter name]')) {
     isUserName.textContent = '';
