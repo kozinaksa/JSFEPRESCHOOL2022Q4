@@ -26,9 +26,9 @@ async function getQuotesJson() {
   await res.json().then((data) => {
     randomQuote = data[language][randomNum];
     quote = randomQuote.text;
-    if (quote.length >= 130) {
-      getQuotesJson();
-    }
+    // if (quote.length >= 130) {
+    //   getQuotesJson();
+    // }
     author = randomQuote.author;
     showQuote();
   });

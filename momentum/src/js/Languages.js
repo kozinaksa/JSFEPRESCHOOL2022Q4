@@ -1,3 +1,5 @@
+import { language } from "./_settings";
+
 export const dateTimeTranslation = {
   en: 'en-Us',
   ru: 'ru-Ru'
@@ -13,4 +15,8 @@ export const weatherTranslation = {
   en: ['wind speed: ', 'humidity: ', 'Minsk'],
   ru: ['скорость ветра:', 'влажность', 'Минск']
 };
-import { language } from "./_settings";
+
+export const settingsTranslation = {
+  en: ['Language'],
+  ru: ['Язык']
+};

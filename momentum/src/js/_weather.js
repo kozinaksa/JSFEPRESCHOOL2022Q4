@@ -56,7 +56,6 @@ function getLocalStorage() {
 }
 
 function setCity(event) {
-  // setTimeout(getWeather, 5000);
   if (event.code === 'Enter') {
     city.style.borderBottom = '2px solid #fff';
     setLocalStorage();

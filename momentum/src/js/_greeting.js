@@ -55,6 +55,7 @@ function sizeGreeting() {
   }
 }
 
+getLocalStorage();
 showGreeting();
 
 window.addEventListener('beforeunload', setLocalStorage);

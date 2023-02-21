@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   height: 40vh;
-  min-height: 260px;
+  min-height: 300px;
   padding: 20px;
   top: -20px;
 
@@ -58,12 +58,14 @@
     font-family: 'Arial-MT';
     font-size: 100px;
     letter-spacing: -4px;
+    user-select: none;
   }
 
   .date {
     min-height: 28px;
     font-size: 24px;
     margin: 0 auto 20px;
+    user-select: none;
   }
 
   .greeting-container {
@@ -74,6 +76,7 @@
     .greeting {
       text-align: right;
       vertical-align: top;
+      user-select: none;
     }
 
     .username {

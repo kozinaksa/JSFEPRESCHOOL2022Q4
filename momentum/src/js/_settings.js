@@ -1,4 +1,5 @@
 import { sourceQuote } from "./_quotes";
+import { settingsTranslation } from "./Languages";
 
 const isBtnSettings = document.querySelector('.settings-btn');
 const isBtnClose = document.querySelector('.settings_close-bth');
@@ -6,12 +7,15 @@ const settingApp = document.querySelector('.settings-container');
 const toggleSlider = document.querySelector('.toggle-slider');
 const toggleLanguage = document.querySelector('.toggle-language');
 const toggleSwitch = document.querySelector('.toggle-switch');
+const settingsNames = document.querySelectorAll('.settings-name');
 const settingsValues = document.querySelectorAll('.settings-value');
 const isLanguageValue = document.querySelectorAll('.value-language');
 let showBool = false, activeToggleBool = false;
 let language = 'en';
 
 function showSettings() {
+  // TODO: add change language here and make function updateShowSettings
+  updateSettingsNames();
   settingApp.classList.add('_show');
   showBool = true;
 }
@@ -44,6 +48,13 @@ function changeLanguage() {
   setLocalStorage();
   getLocalStorage();
   sourceQuote();
+  updateSettingsNames();
+}
+
+function updateSettingsNames() {
+  for (let i = 0; i < settingsNames.length; i++) {
+    settingsNames[i].textContent = settingsTranslation[language][i];
+  }
 }
 
 function setLocalStorage() {
