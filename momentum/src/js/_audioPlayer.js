@@ -1,5 +1,7 @@
 import playList from '../libs/playList.js';
+import { state } from './_settings.js';
 
+const playerContainer = document.querySelector('.player');
 const isCurrentSong = document.querySelector('.player-current-sound');
 const playerTimeline = document.querySelector('.player-timeline-wrapper');
 const playerTimelineProgress = document.querySelector('.player-timeline-progress');
@@ -125,8 +127,18 @@ setInterval(() => {
   isCurrentTime.textContent = getTimeCodeFromNum(audio.currentTime);
 }, 500);
 
+export function visiblePlayer() {
+  if (state.toggles._audio === 'true' && playerContainer.classList.contains('_hide')) {
+    playerContainer.classList.remove('_hide');
+  }
+  if (state.toggles._audio === 'false' && !playerContainer.classList.contains('_hide')) {
+    playerContainer.classList.add('_hide');
+  }
+}
+
 window.addEventListener('load', function() {
   isCurrentSong.textContent = liArray[playNum].textContent;
+  visiblePlayer();
 
   playBtn.addEventListener('click', function() {
     playBtn.classList.toggle('pause');

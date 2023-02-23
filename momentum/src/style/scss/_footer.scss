@@ -7,6 +7,7 @@
   bottom: 0;
   gap: 10px;
   width: 100%;
+  min-width: 320px;
   height: 30vh;
   min-height: 200px;
   padding: 20px 20px;
@@ -25,6 +26,15 @@
     cursor: pointer;
     transition: all 0.3s ease 0s;
     background-image: url("../../assets/svg/reload.svg");
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.8s;
+
+    &._hide {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.8s;
+    }
 
     &:hover {
       opacity: 1;
@@ -44,6 +54,15 @@
     // max-width: 600px;
     align-items: center;
     height: 70px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.8s;
+
+    &._hide {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.8s;
+    }
 
     .author {
       margin: 6px 0 0;

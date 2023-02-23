@@ -5,10 +5,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 40vh;
-  min-height: 300px;
+  // height: 40vh;
+  // min-height: 300px;
   padding: 20px;
-  top: -20px;
+  top: -50px;
+  z-index: 14;
 
   .slider {
 
@@ -59,6 +60,13 @@
     font-size: 100px;
     letter-spacing: -4px;
     user-select: none;
+    opacity: 1;
+    transition: all 0.8s;
+
+    &._hide {
+      opacity: 0;
+      transition: all 0.8s;
+    }
   }
 
   .date {
@@ -66,12 +74,28 @@
     font-size: 24px;
     margin: 0 auto 20px;
     user-select: none;
+    opacity: 1;
+    transition: all 0.8s;
+
+    &._hide {
+      opacity: 0;
+      transition: all 0.8s;
+    }
   }
 
   .greeting-container {
     display: inline;
     min-height: 48px;
     font-size: 40px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.8s;
+
+    &._hide {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.8s;
+    }
 
     .greeting {
       text-align: right;
@@ -106,6 +130,7 @@
 
 @media (max-width: 768px) {
   .main {
+    top: -20px;
 
     .time {
       min-height: 80px;
@@ -122,7 +147,7 @@
 
 @media (max-width: 380px) {
   .main {
-    top: 0;
+    top: 20px;
 
     .slider {
 
@@ -147,7 +172,7 @@
 
     .greeting-container {
       min-width: 320px;
-      font-size: 28px;
+      font-size: 20px;
     }
   }
 }

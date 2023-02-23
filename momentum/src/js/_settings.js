@@ -1,5 +1,6 @@
 import { settingsTranslation } from "./Languages";
-import { sourceQuote } from "./_quotes";
+import { visiblePlayer } from "./_audioPlayer";
+import { sourceQuote, visibleQuote } from "./_quotes";
 
 const state = {
   language: 'en',
@@ -240,6 +241,8 @@ window.addEventListener('load', function() {
           }
           state.toggles[key] === 'true' ? state.toggles[key] = 'false' : state.toggles[key] = 'true';
           setLocalStorage();
+          visibleQuote();
+          visiblePlayer();
         }
       }
     });

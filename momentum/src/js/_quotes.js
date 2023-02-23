@@ -3,7 +3,7 @@ import { state } from "./_settings";
 const isQuote = document.querySelector('.quote');
 const isAuthor = document.querySelector('.author');
 const change = document.querySelector('.change-quote');
-// const source = document.querySelector('.source-quote');
+const quoteContainer = document.querySelector('.quote-container');
 const min = 0, max = 54;
 let sourceJson = true;
 let randomQuote = {};
@@ -49,6 +49,17 @@ async function getQuotesAPI() {
   });
 }
 
+export function visibleQuote() {
+  if (state.toggles._quote === 'true' && change.classList.contains('_hide')) {
+    change.classList.remove('_hide');
+    quoteContainer.classList.remove('_hide');
+  }
+  if (state.toggles._quote === 'false' && !change.classList.contains('_hide')) {
+    change.classList.add('_hide');
+    quoteContainer.classList.add('_hide');
+  }
+}
+
 function showQuote() {
   isQuote.textContent = quote;
   isAuthor.textContent = author;
@@ -62,6 +73,7 @@ export function sourceQuote() {
 
 document.addEventListener('DOMContentLoaded', sourceQuote, updateQuote);
 window.addEventListener('load', function() {
+  visibleQuote();
   change.addEventListener('click', (e) => {
     updateQuote();
     sourceQuote();

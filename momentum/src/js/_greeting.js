@@ -1,6 +1,7 @@
 import { state } from "./_settings";
 import { greetingTranslation } from "./Languages";
 
+const greetingContainer = document.querySelector('.greeting-container');
 const name = document.querySelector('.name');
 const isUserName = document.querySelector('.username');
 const isGreeting = document.querySelector('.greeting');
@@ -12,7 +13,17 @@ function getTimeOfDay() {
   return greetingEn[Math.floor(hours/6)];
 }
 
+function visibleGreeting() {
+  if (state.toggles._greeting === 'true' && greetingContainer.classList.contains('_hide')) {
+    greetingContainer.classList.remove('_hide');
+  }
+  if (state.toggles._greeting === 'false' && !greetingContainer.classList.contains('_hide')) {
+    greetingContainer.classList.add('_hide');
+  }
+}
+
 function showGreeting() {
+  visibleGreeting();
   const timeIndex = greetingEn.indexOf(getTimeOfDay());
   isGreeting.textContent = greetingTranslation[state.language][timeIndex];
   setTimeout(showGreeting, 1000);

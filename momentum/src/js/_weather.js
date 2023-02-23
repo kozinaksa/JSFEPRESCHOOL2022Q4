@@ -1,6 +1,7 @@
 import { state } from "./_settings";
 import { weatherTranslation } from "./Languages";
 
+const weatherContainer = document.querySelector('.weather');
 const weatherIcon = document.querySelector('.weather__icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.description');
@@ -11,6 +12,7 @@ const city = document.querySelector('.city');
 city.value = weatherTranslation[state.language][2];
 
 export async function getWeather() {
+  visibleDateTime();
   try {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${state.language}&appid=c36fdf9b668d78ad77874bc684328a97&units=metric`;
     const res = await fetch(url);
@@ -79,6 +81,15 @@ document.addEventListener('click', (e) => {
     city.style.borderBottom = '2px solid coral';
   }
 });
+
+function visibleDateTime() {
+  if (state.toggles._weather === 'true' && weatherContainer.classList.contains('_hide')) {
+    weatherContainer.classList.remove('_hide');
+  }
+  if (state.toggles._weather === 'false' && !weatherContainer.classList.contains('_hide')) {
+    weatherContainer.classList.add('_hide');
+  }
+}
 
 // getLocalStorage();
 window.addEventListener('DOMContentLoaded', getLocalStorage, getWeather);
