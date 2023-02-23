@@ -1,9 +1,9 @@
-import { language } from "./_settings";
+import { state } from "./_settings";
 
 const isQuote = document.querySelector('.quote');
 const isAuthor = document.querySelector('.author');
 const change = document.querySelector('.change-quote');
-const source = document.querySelector('.source-quote');
+// const source = document.querySelector('.source-quote');
 const min = 0, max = 54;
 let sourceJson = true;
 let randomQuote = {};
@@ -24,7 +24,7 @@ async function getQuotesJson() {
   const quotes = "/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/libs/data.json";
   const res = await fetch(quotes);
   await res.json().then((data) => {
-    randomQuote = data[language][randomNum];
+    randomQuote = data[state.language][randomNum];
     quote = randomQuote.text;
     // if (quote.length >= 130) {
     //   getQuotesJson();
@@ -55,23 +55,20 @@ function showQuote() {
 }
 
 export function sourceQuote() {
-  return sourceJson ? getQuotesJson() : getQuotesAPI();
+  return getQuotesJson();
+  // return sourceJson ? getQuotesJson() : getQuotesAPI();
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  sourceQuote()
-  updateQuote();
-});
-
+document.addEventListener('DOMContentLoaded', sourceQuote, updateQuote);
 window.addEventListener('load', function() {
   change.addEventListener('click', (e) => {
     updateQuote();
     sourceQuote();
   });
-  source.addEventListener('click', (e) => {
-    sourceJson ? sourceJson = false : sourceJson = true;
-    updateQuote();
-    sourceQuote();
-  })
+  // source.addEventListener('click', (e) => {
+  //   sourceJson ? sourceJson = false : sourceJson = true;
+  //   updateQuote();
+  //   sourceQuote();
+  // })
 });

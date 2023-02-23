@@ -1,4 +1,4 @@
-import { language } from "./_settings";
+import { state } from "./_settings";
 import { weatherTranslation } from "./Languages";
 
 const weatherIcon = document.querySelector('.weather__icon');
@@ -8,11 +8,11 @@ const wind = document.querySelector('.wind');
 const humidity = document.querySelector('.humidity');
 const weatherError = document.querySelector('.weather__error');
 const city = document.querySelector('.city');
-city.value = weatherTranslation[language][2];
+city.value = weatherTranslation[state.language][2];
 
 export async function getWeather() {
   try {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${language}&appid=c36fdf9b668d78ad77874bc684328a97&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${state.language}&appid=c36fdf9b668d78ad77874bc684328a97&units=metric`;
     const res = await fetch(url);
     const data = await res.json();
     if (data.cod!="200")
@@ -21,8 +21,8 @@ export async function getWeather() {
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${data.main.temp.toFixed(0)}°C`;
-    wind.textContent = `${weatherTranslation[language][0]} ${data.wind.speed.toFixed(0)}m/s`;
-    humidity.textContent = `${weatherTranslation[language][1]} ${data.main.humidity.toFixed(0)}%`
+    wind.textContent = `${weatherTranslation[state.language][0]} ${data.wind.speed.toFixed(0)}m/s`;
+    humidity.textContent = `${weatherTranslation[state.language][1]} ${data.main.humidity.toFixed(0)}%`
     weatherDescription.textContent = data.weather[0].description;
     // setTimeout(getWeather, 10000);
   } catch (err) {
@@ -80,9 +80,10 @@ document.addEventListener('click', (e) => {
   }
 });
 
-getLocalStorage();
+// getLocalStorage();
+window.addEventListener('DOMContentLoaded', getLocalStorage, getWeather);
 window.addEventListener('beforeunload', setLocalStorage);
-document.addEventListener('DOMContentLoaded', getWeather);
 window.addEventListener('load', function() {
+  getWeather();
   city.addEventListener('keypress', setCity);
 });

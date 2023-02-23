@@ -1,17 +1,36 @@
-import { sourceQuote } from "./_quotes";
 import { settingsTranslation } from "./Languages";
+import { sourceQuote } from "./_quotes";
+
+const state = {
+  language: 'en',
+  imageSource: 'GitHub',
+  toggles: {
+    _time: 'true',
+    _date: 'true',
+    _greeting: 'true',
+    _quote: 'true',
+    _weather: 'true',
+    _audio: 'true',
+    _dop: 'true'
+  }
+}
 
 const isBtnSettings = document.querySelector('.settings-btn');
 const isBtnClose = document.querySelector('.settings_close-bth');
 const settingApp = document.querySelector('.settings-container');
-const toggleSlider = document.querySelector('.toggle-slider');
-const toggleLanguage = document.querySelector('.toggle-language');
-const toggleSwitch = document.querySelector('.toggle-switch');
+const toggleSliders = document.querySelectorAll('.toggle-show');
+const toggleSwitches = document.querySelectorAll('.switch-show');
 const settingsNames = document.querySelectorAll('.settings-name');
 const settingsValues = document.querySelectorAll('.settings-value');
+
+const toggleLanguage = document.querySelector('.toggle-slider', '._language');
+const switchLanguage = document.querySelector('.toggle-switch', '._language');
 const isLanguageValue = document.querySelectorAll('.value-language');
+
+const isSourceFonValue =document.querySelectorAll('.value-source-image');
+
+
 let showBool = false, activeToggleBool = false;
-let language = 'en';
 
 function showSettings() {
   // TODO: add change language here and make function updateShowSettings
@@ -25,15 +44,15 @@ function hideSettings() {
   showBool = false;
 }
 
-function activateToggle() {
-  toggleSlider.classList.add('_active');
-  toggleSwitch.classList.add('_active');
+function activateToggleLanguage() {
+  toggleLanguage.classList.add('_active');
+  switchLanguage.classList.add('_active');
   activeToggleBool = true;
 }
 
-function deactivateToggle() {
-  toggleSlider.classList.remove('_active');
-  toggleSwitch.classList.remove('_active');
+function deactivateToggleLanguage() {
+  toggleLanguage.classList.remove('_active');
+  switchLanguage.classList.remove('_active');
   activeToggleBool = false;
 }
 
@@ -44,7 +63,7 @@ function toggleValues(elValue) {
 }
 
 function changeLanguage() {
-  language === 'en' ? language = 'ru' : language = 'en';
+  state.language === 'en' ? state.language = 'ru' : state.language = 'en';
   setLocalStorage();
   getLocalStorage();
   sourceQuote();
@@ -53,7 +72,7 @@ function changeLanguage() {
 
 function updateSettingsNames() {
   for (let i = 0; i < settingsNames.length; i++) {
-    settingsNames[i].textContent = settingsTranslation[language][i];
+    settingsNames[i].textContent = settingsTranslation[state.language][i];
   }
 }
 
@@ -61,7 +80,15 @@ function setLocalStorage() {
   if (localStorage.getItem('language') === 'undefined') {
     localStorage.clear();
   }
-  localStorage.setItem('language', language);
+  localStorage.setItem('language', state.language);
+  localStorage.setItem('imageSource', state.imageSource);
+  localStorage.setItem('toggle_time', state.toggles._time);
+  localStorage.setItem('toggle_date', state.toggles._date);
+  localStorage.setItem('toggle_greeting', state.toggles._greeting);
+  localStorage.setItem('toggle_quote', state.toggles._quote);
+  localStorage.setItem('toggle_weather', state.toggles._weather);
+  localStorage.setItem('toggle_audio', state.toggles._audio);
+  localStorage.setItem('toggle_dop', state.toggles._dop);
 }
 
 function getLocalStorage() {
@@ -69,28 +96,103 @@ function getLocalStorage() {
     localStorage.clear();
   }
   if (localStorage.getItem('language')) {
-    language = localStorage.getItem('language');
+    state.language = localStorage.getItem('language');
+    state.imageSource = localStorage.getItem('imageSource');
+    localStorage.getItem('toggle_time') != null ? state.toggles._time = localStorage.getItem('toggle_time') : state.toggles._time = true;
+    state.toggles._date = localStorage.getItem('toggle_date');
+    state.toggles._greeting = localStorage.getItem('toggle_greeting');
+    state.toggles._quote= localStorage.getItem('toggle_quote');
+    state.toggles._weather = localStorage.getItem('toggle_weather');
+    state.toggles._audio = localStorage.getItem('toggle_audio');
+    state.toggles._dop = localStorage.getItem('toggle_dop');
   }
 }
 
 function showActualLanguage() {
   isLanguageValue.forEach(el => {
-    if (el.textContent === language) {
+    if (el.textContent === state.language) {
       el.classList.add('_active');
     }
   });
-  if (language === 'ru') {
-    activateToggle();
+  if (state.language === 'ru') {
+    activateToggleLanguage();
   }
 }
 
-getLocalStorage();
-window.addEventListener('DOMContentLoaded',setLocalStorage);
+function showActualImageSource() {
+  isSourceFonValue.forEach(el => {
+    if (el.textContent === state.imageSource) {
+      if (!el.classList.contains('_active'))
+        el.classList.add('_active');
+      if (el.classList.contains('_hide'))
+        el.classList.remove('_hide');
+    } else {
+      if (el.classList.contains('_active'))
+        el.classList.remove('_active');
+      if (!el.classList.contains('_hide'))
+        el.classList.add('_hide');
+    }
+  });
+}
+
+function showActualToggles() {
+  toggleSliders.forEach(toggle => {
+    for (let key in state.toggles) {
+      if (toggle.classList.contains(key)) {
+        console.log(toggle.classList.contains(key).textContent)
+        if (state.toggles[key] === 'true' && !toggle.classList.contains('_active')) {
+          toggle.classList.add('_active');
+          for (let isSwitch of toggleSwitches) {
+            if (isSwitch.classList.contains(key)) {
+              isSwitch.classList.add('_active');
+            }
+          }
+          break
+        }
+        if (state.toggles[key] === 'false' && toggle.classList.contains('_active')) {
+          toggle.classList.remove('_active');
+          for (let isSwitch of toggleSwitches) {
+            if (isSwitch.classList.contains(key)) {
+              isSwitch.classList.remove('_active');
+            }
+          }
+          break
+        }
+      }
+    }
+  });
+}
+
+import { setFon } from "./_slider";
+
+function changeSourceFon(e) {
+  const source = e.target;
+  if (!source.classList.contains('_active'))
+  source.classList.add('_active');
+  if (source.classList.contains('_hide'))
+  source.classList.remove('_hide');
+  isSourceFonValue.forEach(value => {
+    if (value.textContent != source.textContent && value.classList.contains('_active')) {
+      value.classList.remove('_active');
+      value.classList.add('_hide');
+    }
+  });
+  state.imageSource = source.textContent;
+  setLocalStorage();
+  getLocalStorage();
+  setFon();
+}
+
+// getLocalStorage();
+window.addEventListener('DOMContentLoaded',getLocalStorage, setFon);
+window.addEventListener('beforeunload', setLocalStorage);
 
 let isCityValue = 'Minsk';
 window.addEventListener('load', function() {
   getLocalStorage();
   showActualLanguage();
+  showActualImageSource();
+  showActualToggles();
 
   isBtnSettings.addEventListener('click', (e) => {
     !showBool ? showSettings() : hideSettings();
@@ -107,13 +209,42 @@ window.addEventListener('load', function() {
     }
   });
 
-  toggleSlider.addEventListener('click', (e) => {
-    !activeToggleBool ? activateToggle() : deactivateToggle();
+  toggleLanguage.addEventListener('click', (e) => {
+    !activeToggleBool ? activateToggleLanguage() : deactivateToggleLanguage();
     toggleValues(isLanguageValue);
+    changeLanguage();
   });
 
-  toggleLanguage.addEventListener('click', changeLanguage);
+  isSourceFonValue.forEach(valueFon => {
+    valueFon.addEventListener('click', changeSourceFon);
+  });
+
+  toggleSliders.forEach(isToggle => {
+    isToggle.addEventListener('click', function(e) {
+      for (let key in state.toggles) {
+        if (isToggle.classList.contains(key)) {
+          if (isToggle.classList.contains('_active')) {
+            isToggle.classList.remove('_active');
+            for (let isSwitch of toggleSwitches) {
+              if (isSwitch.classList.contains(key)) {
+                isSwitch.classList.remove('_active');
+              }
+            }
+          }  else {
+            isToggle.classList.add('_active');
+            for (let isSwitch of toggleSwitches) {
+              if (isSwitch.classList.contains(key)) {
+                isSwitch.classList.add('_active');
+              }
+            }
+          }
+          state.toggles[key] === 'true' ? state.toggles[key] = 'false' : state.toggles[key] = 'true';
+          setLocalStorage();
+        }
+      }
+    });
+  });
 
 });
 
-export { language, isCityValue };
+export { state, isCityValue };

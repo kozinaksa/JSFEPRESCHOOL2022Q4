@@ -57,8 +57,8 @@
       <button class="slider__prev slider-icon"></button>
       <button class="slider__next slider-icon"></button>
     </div>
-    <time class="time"></time>
-    <date class="date"></date>
+    <time class="time">00:00:00</time>
+    <date class="date">Wednesday, February 22</date>
     <div class="greeting-container">
       <span class="greeting"></span>
       <span class="username _none-name" contenteditable="true">[Enter name]
@@ -83,22 +83,88 @@
       <button class="settings_close-bth settings_close-icon"></button>
       <ul class="settings__list">
         <li class="settings__list-item settings__language">
-          <span class="settings-name">Language</span>
-          <div class="settings-value__container">
+          <p class="settings-name _language">Language</p>
+          <div class="container__settings-value container__language">
             <span class="settings-value value-language">en</span>
-            <span class="toggle-slider toggle-language">
-              <svg class="toggle-switch toggle-switch__language"></svg>
+            <span class="toggle-slider _language">
+              <svg class="toggle-switch _language"></svg>
             </span>
             <span class="settings-value value-language">ru</span>
           </div>
         </li>
+        <li class="settings__list-item settings__show-container">
+          <p class="settings-name _show">Show / Hide</p>
+          <ul class="settings__list-show">
+            <li class="settings__list-show-item item-time">
+              <span class="settings-name _show-time">Time</span>
+              <div class="container__settings-value container__show-time">
+                <span class="toggle-slider toggle-show _time _active">
+                  <svg class="toggle-switch switch-show _time _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-date">
+              <span class="settings-name _show-date">Date</span>
+              <div class="container__settings-value container__show-date">
+                <span class="toggle-slider toggle-show _date _active">
+                  <svg class="toggle-switch switch-show _date _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-greeting">
+              <span class="settings-name _show-greeting">Greeting</span>
+              <div class="container__settings-value container__show-greeting">
+                <span class="toggle-slider toggle-show _greeting _active">
+                  <svg class="toggle-switch switch-show _greeting _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-quote">
+              <span class="settings-name _show-quote">Quote</span>
+              <div class="container__settings-value container__show-quote">
+                <span class="toggle-slider toggle-show _quote _active">
+                  <svg class="toggle-switch switch-show _quote _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-weather">
+              <span class="settings-name _show-weather">Weather</span>
+              <div class="container__settings-value container__show-weather">
+                <span class="toggle-slider toggle-show _weather _active">
+                  <svg class="toggle-switch switch-show _weather _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-audio">
+              <span class="settings-name _show-audio">Audio</span>
+              <div class="container__settings-value container__show-audio">
+                <span class="toggle-slider toggle-show _audio _active">
+                  <svg class="toggle-switch switch-show _audio _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-dop">
+              <span class="settings-name _show-dop">Dop</span>
+              <div class="container__settings-value container__show-dop">
+                <span class="toggle-slider toggle-show _dop _active">
+                  <svg class="toggle-switch switch-show _dop _active"></svg>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </li>
         <li class="settings__list-item settings__source-image">
-
+          <p class="settings-name _source-image">Background source</p>
+          <div class="container__settings-value container__source-image">
+            <span class="settings-value value-source-image _active">GitHub</span>
+            <span class="settings-value value-source-image _hide">Unsplash API</span>
+            <span class="settings-value value-source-image _hide">Flickr API</span>
+          </div>
         </li>
       </ul>
-      <div class="settings-milk">
+      <!-- <div class="settings-milk">
         <button class="source-quote"></button>
-      </div>
+      </div> -->
   </div>
 </body>
 </html>

@@ -66,6 +66,7 @@
     opacity: 0.8;
     cursor: pointer;
     user-select: none;
+    z-index: 100;
 
     &._hide {
       display: none;

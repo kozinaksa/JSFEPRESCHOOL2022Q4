@@ -1,4 +1,4 @@
-import { language } from "./_settings";
+import { state } from "./_settings";
 
 export const dateTimeTranslation = {
   en: 'en-Us',
@@ -17,6 +17,6 @@ export const weatherTranslation = {
 };
 
 export const settingsTranslation = {
-  en: ['Language'],
-  ru: ['Язык']
+  en: ['Language', 'Hide / Show', 'Time', 'Date', 'Greeting', 'Quote', 'Weather', 'Audio', 'Dop', 'Background source'],
+  ru: ['Язык', 'Скрыть / Показать', 'Время', 'Дата', 'Приветствие', 'Цитата', 'Погода', 'Аудио', 'Доп', 'Источник фоновых изображений']
 };

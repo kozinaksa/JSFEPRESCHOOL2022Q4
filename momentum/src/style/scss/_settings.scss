@@ -1,8 +1,12 @@
 .settings-container {
-  display: none;
-  transition: all 5s;
+  position: absolute;
+  left: 15px;
+  bottom: -100vh;
+  transition: all 1s;
 
   &._show {
+    left: 15px;
+    bottom: 54px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -10,18 +14,17 @@
     gap: 10px;
     position: absolute;
     padding: 5px;
-    left: 15px;
-    bottom: 54px;
-    height: 80%;
+    height: 90%;
     width: 300px;
     min-width: 30%;
-    opacity: 0.9;
+    opacity: 1;
     background-clip: padding-box;
-    background-color: hsl(0 0% 6% / 0.925);
+    background-color: hsl(0 0% 6% / 0.95);
     border: 3px solid transparent;
     border-radius: 7px;
-    // transition: all 5s;
+    font-size: 14px;
     z-index: 30;
+    transition: all 1s;
   }
 
   .settings_close-icon {
@@ -61,30 +64,36 @@
       justify-content: space-between;
       align-items: center;
       font-weight: normal;
+      padding: 14px 0 0;
 
       &:not(:first-child) {
-        border-top: 1px solid #878787;
+        border-top: 2px solid #878787;
       }
 
       .settings-name {
         user-select: none;
+        text-align: left;
       }
 
-      .settings-value__container {
+      .container__settings-value {
         display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
         gap: 8px;
 
         .settings-value._active {
-          color: coral;
-          // font-weight: 700;
+          // color: coral;
+          opacity: 1;
         }
 
         .settings-value {
           user-select: none;
+          text-align: left;
+          opacity: .6;
         }
 
         .toggle-slider {
-          height: 20px;
+          height: 19px;
           width: 35px;
           background-color: #878787;
           border-radius: 35px;
@@ -96,22 +105,14 @@
 
           .toggle-switch {
             position: relative;
-            height: 12px;
-            width: 12px;
+            height: 10px;
+            width: 10px;
             top: 4px;
             left: -8px;
             display: inline-block;
             transform-origin: 50% 50%;
             vertical-align: top;
             background-image: url('../../assets/svg/circle.svg');
-
-            // &__language {
-            //   background-image: url('../../assets/svg/circle_coral.svg');
-            // }
-
-            // &__language._active {
-            //   background-image: url('../../assets/svg/circle.svg');
-            // }
 
             &._active {
               transform: translateX(15px) scale(1.25);
@@ -125,6 +126,99 @@
         }
       }
 
+    }
+
+    .settings__language {
+      padding: 0 0 20px;
+
+      .settings-name._language {
+        font-size: 16px;
+      }
+
+      .container__language {
+        padding: 0 10px 0 0;
+      }
+    }
+
+    .settings__show-container {
+      flex-direction: column;
+      align-items: flex-start;
+      user-select: none;
+
+      .settings-name._show {
+        font-size: 16px;
+      }
+
+      .settings__list-show {
+        list-style: none;
+        width: 100%;
+
+        &-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 50px 10px 50px;
+
+          &:not(:first-child) {
+            border-top: 1px solid #878787;
+          }
+
+          &:last-child {
+            margin: 0 0 10px 0;
+          }
+        }
+      }
+    }
+
+    .settings__source-image {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 14px 0 0;
+      gap: 10px;
+
+      .settings-name._source-image {
+        font-size: 16px;
+      }
+
+      .container__source-image {
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        cursor: pointer;
+
+        .value-source-image {
+
+          &:first-child {
+            padding: 0 7px 0 0;
+          }
+
+          &:not(:first-child) {
+            padding: 0 4px 0 14px;
+            border-left: 1px solid #878787;
+          }
+        }
+
+        // .value-source-image._active {
+          // color: #fff;
+
+          // &::after {
+          //   content: "";
+          //   width: 8px;
+          //   height: 8px;
+          //   border: solid #fff;
+          //   border-width: 2px 0 0 2px;
+          //   transform: translate(-50%, -50%) rotate(225deg);
+          //   position: absolute;
+          //   right: 25px;
+          //   top: 17.8%;
+          // }
+        // }
+
+        .value-source-image._hide {
+          color: #fff;
+          opacity: .6;
+        }
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-import { language } from "./_settings";
+import { state } from "./_settings";
 import { greetingTranslation } from "./Languages";
 
 const name = document.querySelector('.name');
@@ -14,7 +14,7 @@ function getTimeOfDay() {
 
 function showGreeting() {
   const timeIndex = greetingEn.indexOf(getTimeOfDay());
-  isGreeting.textContent = greetingTranslation[language][timeIndex];
+  isGreeting.textContent = greetingTranslation[state.language][timeIndex];
   setTimeout(showGreeting, 1000);
 }
 
@@ -55,9 +55,7 @@ function sizeGreeting() {
   }
 }
 
-getLocalStorage();
-showGreeting();
-
+window.addEventListener('DOMContentLoaded', getLocalStorage, showGreeting);
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', function() {
 isUserName.addEventListener('click', function(e) {
@@ -106,5 +104,4 @@ document.addEventListener('click', (e) => {
   sizeGreeting();
 });
 
-showGreeting();
 export { getTimeOfDay };
