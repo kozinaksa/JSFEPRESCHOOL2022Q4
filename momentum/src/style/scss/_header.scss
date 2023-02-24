@@ -227,12 +227,28 @@
         }
 
         &._active::before {
-          color: coral;
+          color: #ff7f50;
         }
 
-        // &._active::after {
-          // content: url();
-        // }
+        &._active::after {
+          margin: 0 8px;
+          background-image: url('../../assets/svg/pause_small.svg');
+          background-size: 12px 12px;
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          content:"";
+        }
+
+        &._active._onPause::after {
+          margin: 0 8px;
+          background-image: url('../../assets/svg/play_small.svg');
+          background-size: 12px 12px;
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          content:"";
+        }
       }
     }
   }
