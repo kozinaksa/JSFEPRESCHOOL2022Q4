@@ -19,17 +19,16 @@ const state = {
 const isBtnSettings = document.querySelector('.settings-btn');
 const isBtnClose = document.querySelector('.settings_close-bth');
 const settingApp = document.querySelector('.settings-container');
+
 const toggleSliders = document.querySelectorAll('.toggle-show');
 const toggleSwitches = document.querySelectorAll('.switch-show');
 const settingsNames = document.querySelectorAll('.settings-name');
-const settingsValues = document.querySelectorAll('.settings-value');
 
 const toggleLanguage = document.querySelector('.toggle-slider', '._language');
 const switchLanguage = document.querySelector('.toggle-switch', '._language');
 const isLanguageValue = document.querySelectorAll('.value-language');
 
 const isSourceFonValue =document.querySelectorAll('.value-source-image');
-
 
 let showBool = false, activeToggleBool = false;
 
@@ -82,7 +81,6 @@ function setLocalStorage() {
     localStorage.clear();
   }
   localStorage.setItem('language', state.language);
-  localStorage.setItem('imageSource', state.imageSource);
   localStorage.setItem('toggle_time', state.toggles._time);
   localStorage.setItem('toggle_date', state.toggles._date);
   localStorage.setItem('toggle_greeting', state.toggles._greeting);
@@ -98,7 +96,6 @@ function getLocalStorage() {
   }
   if (localStorage.getItem('language')) {
     state.language = localStorage.getItem('language');
-    state.imageSource = localStorage.getItem('imageSource');
     localStorage.getItem('toggle_time') != null ? state.toggles._time = localStorage.getItem('toggle_time') : state.toggles._time = true;
     state.toggles._date = localStorage.getItem('toggle_date');
     state.toggles._greeting = localStorage.getItem('toggle_greeting');
@@ -201,11 +198,13 @@ window.addEventListener('load', function() {
 
   isBtnClose.addEventListener('click', hideSettings);
 
+  const tags = document.querySelectorAll('.tag');
   document.addEventListener('click', (e) => {
     let target = e.target;
     let isSettings = target == settingApp || settingApp.contains(target);
     let isBtn = target == isBtnSettings || isBtnSettings.contains(target);
-    if (!isSettings && !isBtn) {
+    let isTag = target == tags.contains(target);
+    if (!isSettings && !isBtn && !isTag) {
       hideSettings();
     }
   });

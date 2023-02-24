@@ -17,6 +17,6 @@ export const weatherTranslation = {
 };
 
 export const settingsTranslation = {
-  en: ['Language', 'Hide / Show', 'Time', 'Date', 'Greeting', 'Quote', 'Weather', 'Audio', 'Dop', 'Background source'],
-  ru: ['Язык', 'Скрыть / Показать', 'Время', 'Дата', 'Приветствие', 'Цитата', 'Погода', 'Аудио', 'Доп', 'Источник фоновых изображений']
+  en: ['Language', 'Hide / Show', 'Time', 'Date', 'Greeting', 'Quote', 'Weather', 'Audio', 'Dop', 'Background source', 'You can enter your own tags to search images'],
+  ru: ['Язык', 'Скрыть / Показать', 'Время', 'Дата', 'Приветствие', 'Цитата', 'Погода', 'Аудио', 'Доп', 'Источник фоновых изображений' , 'Вы можете ввести свои собственные теги для поиска изображений']
 };

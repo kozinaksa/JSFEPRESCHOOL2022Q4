@@ -18,3 +18,5 @@ import './_audioPlayer';
 // TODO: setLocalStorage and getLocalStorage -- make normal export
 // TODO: when will make settings move quotes-source-dots inside
 // TODO: find timeot in player and fix bag in timeline
+
+//TODO: Make small image play|pause near song used ._active::after

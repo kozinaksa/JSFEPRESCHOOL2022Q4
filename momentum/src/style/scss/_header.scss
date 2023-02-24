@@ -229,6 +229,10 @@
         &._active::before {
           color: coral;
         }
+
+        // &._active::after {
+          // content: url();
+        // }
       }
     }
   }

@@ -13,6 +13,7 @@ city.value = weatherTranslation[state.language][2];
 
 export async function getWeather() {
   visibleDateTime();
+  city.value = weatherTranslation[state.language][2];
   try {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${state.language}&appid=c36fdf9b668d78ad77874bc684328a97&units=metric`;
     const res = await fetch(url);

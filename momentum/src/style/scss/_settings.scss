@@ -1,5 +1,6 @@
 .settings-container {
   position: absolute;
+  width: 300px;
   left: 15px;
   bottom: -100vh;
   transition: all 1s;
@@ -17,7 +18,6 @@
     padding: 5px;
     height: 90%;
     width: 300px;
-    min-width: 30%;
     opacity: 1;
     background-clip: padding-box;
     background-color: hsl(0 0% 6% / 0.95);
@@ -158,11 +158,12 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 10px 50px 10px 50px;
+          // padding: 10px 55px 10px 28px;
+          padding: 7px 55px 5px 28px;
 
-          &:not(:first-child) {
-            border-top: 1px solid #878787;
-          }
+          // &:not(:first-child) {
+          //   border-top: 1px solid #878787;
+          // }
 
           &:last-child {
             margin: 0 0 10px 0;
@@ -218,6 +219,60 @@
         .value-source-image._hide {
           color: #fff;
           opacity: .6;
+        }
+      }
+
+      .container__image-tags {
+        padding: 10px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: baseline;
+        gap: 8px;
+        font-size: 12px;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.8s;
+
+        &._hide {
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.8s;
+        }
+
+        .images-tags_text {
+          margin: 10px 0 0;
+          opacity: .8;
+          user-select: none;
+        }
+
+        .image-tags-input {
+          width: 66%;
+          padding: 2px 10px;
+          margin: 8px 0 5px;
+          border: 0px;
+          outline: 0px;
+          opacity: .8;
+          font-weight: 700;
+        }
+
+        .tag {
+          user-select: none;
+          padding: 2px 6px 4px;
+          margin: 0 4px;
+          border: 1px solid rgb(204, 79, 33);
+          background-color: rgb(204, 79, 33);
+          border-radius: 10px;
+          font-weight: 500;
+          cursor: pointer;
+
+          &:hover::after {
+            content: '✖';
+            padding: 0 0 0 5px;
+            vertical-align: middle;
+            top: -1px;
+            color: #fff;
+          }
         }
       }
     }
