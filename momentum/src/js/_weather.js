@@ -9,11 +9,10 @@ const wind = document.querySelector('.wind');
 const humidity = document.querySelector('.humidity');
 const weatherError = document.querySelector('.weather__error');
 const city = document.querySelector('.city');
-city.value = weatherTranslation[state.language][2];
+// city.value = weatherTranslation[state.language][2];
 
 export async function getWeather() {
   visibleDateTime();
-  city.value = weatherTranslation[state.language][2];
   try {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${state.language}&appid=c36fdf9b668d78ad77874bc684328a97&units=metric`;
     const res = await fetch(url);
@@ -93,7 +92,16 @@ function visibleDateTime() {
 }
 
 // getLocalStorage();
-window.addEventListener('DOMContentLoaded', getLocalStorage, getWeather);
+window.addEventListener('DOMContentLoaded', function() {
+  getLocalStorage();
+  if (localStorage.getItem('city') === '') {
+    city.value = weatherTranslation[state.language][2];
+  }
+  if (localStorage.getItem('city') === 'Minsk' && state.language === 'ru')
+    city.value = 'Минск';
+  if (localStorage.getItem('city') === 'Минск' && state.language === 'en')
+    city.value = 'Minsk';
+});
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', function() {
   getWeather();

@@ -198,12 +198,12 @@ window.addEventListener('load', function() {
 
   isBtnClose.addEventListener('click', hideSettings);
 
-  const tags = document.querySelectorAll('.tag');
+  const tag = document.querySelectorAll('.tag');
   document.addEventListener('click', (e) => {
     let target = e.target;
     let isSettings = target == settingApp || settingApp.contains(target);
     let isBtn = target == isBtnSettings || isBtnSettings.contains(target);
-    let isTag = target == tags.contains(target);
+    let isTag = target == tag || tag.contains(target);
     if (!isSettings && !isBtn && !isTag) {
       hideSettings();
     }

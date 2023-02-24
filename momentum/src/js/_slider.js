@@ -77,12 +77,16 @@ function removeTag(e) {
       tagsArray.splice(i, 1);
   }
   tagsContainer.removeChild(tag);
+  if (tagsArray.length === 0) {
+    tagsArray = ['nature', getTimeOfDay()];
+    createCurrentTags();
+  }
   setFon();
 }
 
 function allTags() {
   tagsString = tagsArray.join(',');
-  return tagsString;
+  return tagsString.length != 0 ? tagsString : `nature, ${getTimeOfDay()}`
 }
 
 async function bgFromUnsplash() {
