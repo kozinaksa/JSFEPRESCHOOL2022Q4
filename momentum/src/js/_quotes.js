@@ -21,7 +21,7 @@ function updateQuote() {
 
 async function getQuotesJson() {
   const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-  const quotes = "/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/js/data.json";
+  const quotes = "./js/data.json";
   const res = await fetch(quotes);
   await res.json().then((data) => {
     randomQuote = data[state.language][randomNum];
