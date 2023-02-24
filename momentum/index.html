@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/favicon.ico" rel="shortcut icon">
+  <title>Momentum by Galina Moroz</title>
+<script defer src="script.js"></script></head>
+<body>
+  <div class="overlay"></div>
+  <header class="header">
+    <div class="player">
+      <div class="player-time">
+        <span class="player-current-sound"></span>
+        <div class="player-current">
+          <div class="player-time__current">0:00</div>
+          <div class="player-time__divider">/</div>
+          <div class="player-time__length">0:39</div>
+        </div>
+      </div>
+      <div class="player-progressBar">
+        <div class="player-timeline-wrapper">
+          <div class="player-timeline">
+            <div class="player-timeline-progress"></div>
+          </div>
+        </div>
+      </div>
+      <div class="player-btns">
+        <div class="player-controls">
+          <button class="player-controls__prev player-controls-icon"></button>
+          <button class="player-controls__play player-controls-icon"></button>
+          <button class="player-controls__next player-controls-icon"></button>
+        </div>
+        <div class="player-volume">
+          <div class="player-volume__button player-volume-icon"></div>
+          <div class="player-volume__slider">
+            <div class="player-volume__slider-percentage"></div>
+          </div>
+        </div>
+      </div>
+      <ul class="player-playlist">
+      </ul>
+    </div>
+    <div class="weather">
+      <input type="text" class="city" placeholder="[Enter city]">
+      <i class="weather__icon owf"></i>
+      <div class="weather__error"></div>
+      <div class="weather__description">
+        <span class="temperature"></span>
+        <span class="description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider">
+      <button class="slider__prev slider-icon"></button>
+      <button class="slider__next slider-icon"></button>
+    </div>
+    <time class="time">00:00:00</time>
+    <data class="date" value="data">Data</data>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <span class="username _none-name" contenteditable="true">[Enter name]
+        <input type="text" class="name">
+      </span>
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="change-quote"></button>
+    <div class="quote-container">
+      <div class="quote-text">
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+    <button class="settings-btn">
+      <span class="settings-btn_icon_1"></span>
+      <span class="settings-btn_icon_2"></span>
+    </button>
+  </footer>
+  <div class="settings-container">
+      <button class="settings_close-bth settings_close-icon"></button>
+      <ul class="settings__list">
+        <li class="settings__list-item settings__language">
+          <p class="settings-name _language">Language</p>
+          <div class="container__settings-value container__language">
+            <span class="settings-value value-language">en</span>
+            <span class="toggle-slider _language">
+              <svg class="toggle-switch _language"></svg>
+            </span>
+            <span class="settings-value value-language">ru</span>
+          </div>
+        </li>
+        <li class="settings__list-item settings__show-container">
+          <p class="settings-name _show">Show / Hide</p>
+          <ul class="settings__list-show">
+            <li class="settings__list-show-item item-time">
+              <span class="settings-name _show-time">Time</span>
+              <div class="container__settings-value container__show-time">
+                <span class="toggle-slider toggle-show _time _active">
+                  <svg class="toggle-switch switch-show _time _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-date">
+              <span class="settings-name _show-date">Date</span>
+              <div class="container__settings-value container__show-date">
+                <span class="toggle-slider toggle-show _date _active">
+                  <svg class="toggle-switch switch-show _date _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-greeting">
+              <span class="settings-name _show-greeting">Greeting</span>
+              <div class="container__settings-value container__show-greeting">
+                <span class="toggle-slider toggle-show _greeting _active">
+                  <svg class="toggle-switch switch-show _greeting _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-quote">
+              <span class="settings-name _show-quote">Quote</span>
+              <div class="container__settings-value container__show-quote">
+                <span class="toggle-slider toggle-show _quote _active">
+                  <svg class="toggle-switch switch-show _quote _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-weather">
+              <span class="settings-name _show-weather">Weather</span>
+              <div class="container__settings-value container__show-weather">
+                <span class="toggle-slider toggle-show _weather _active">
+                  <svg class="toggle-switch switch-show _weather _active"></svg>
+                </span>
+              </div>
+            </li>
+            <li class="settings__list-show-item item-audio">
+              <span class="settings-name _show-audio">Audio</span>
+              <div class="container__settings-value container__show-audio">
+                <span class="toggle-slider toggle-show _audio _active">
+                  <svg class="toggle-switch switch-show _audio _active"></svg>
+                </span>
+              </div>
+            </li>
+            <!-- <li class="settings__list-show-item item-dop">
+              <span class="settings-name _show-dop">Dop</span>
+              <div class="container__settings-value container__show-dop">
+                <span class="toggle-slider toggle-show _dop _active">
+                  <svg class="toggle-switch switch-show _dop _active"></svg>
+                </span>
+              </div>
+            </li> -->
+          </ul>
+        </li>
+        <li class="settings__list-item settings__source-image">
+          <p class="settings-name _source-image">Background source</p>
+          <div class="container__settings-value container__source-image">
+            <span class="settings-value value-source-image _active">GitHub</span>
+            <span class="settings-value value-source-image _hide">Unsplash API</span>
+            <span class="settings-value value-source-image _hide">Flickr API</span>
+          </div>
+          <div class="container__image-tags">
+            <p class="images-tags_text settings-name">You can enter your own tags to search images</p>
+              <input type="text" class="image-tags-input">
+            <div class="tags-container">
+              <!-- <span class="tag">nature</span>
+              <span class="tag">evening</span> -->
+            </div>
+          </div>
+        </li>
+      </ul>
+  </div>
+</body>
+</html>
