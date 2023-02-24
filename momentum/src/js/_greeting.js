@@ -1,5 +1,5 @@
 import { state } from "./_settings";
-import { greetingTranslation } from "./Languages";
+import { greetingTranslation, placeholderTranslation } from "./Languages";
 
 const greetingContainer = document.querySelector('.greeting-container');
 const name = document.querySelector('.name');
@@ -24,9 +24,30 @@ function visibleGreeting() {
 
 function showGreeting() {
   visibleGreeting();
+  // showName();
   const timeIndex = greetingEn.indexOf(getTimeOfDay());
   isGreeting.textContent = greetingTranslation[state.language][timeIndex];
   setTimeout(showGreeting, 1000);
+}
+
+export function showName() {
+  if (isUserName.textContent.trim() === '') {
+    isUserName.textContent = placeholderTranslation[state.language];
+    isUserName.classList.add('_none-name');
+  }
+  if (isUserName.textContent.includes(placeholderTranslation['en'])) {
+    isUserName.classList.add('_none-name');
+    if (state.language === 'ru')
+      isUserName.textContent = placeholderTranslation[state.language];
+  }
+  if (isUserName.textContent.includes(placeholderTranslation['ru'])) {
+    isUserName.classList.add('_none-name');
+    if (state.language === 'en')
+      isUserName.textContent = placeholderTranslation[state.language];
+  }
+  else
+    isUserName.textContent = name.value;
+
 }
 
 function setLocalStorage() {
@@ -48,10 +69,10 @@ function getLocalStorage() {
 
 function colorName() {
   if (isUserName.textContent.length === 0) {
-    isUserName.textContent = '[Enter name]';
+    isUserName.textContent = placeholderTranslation[state.language];
     isUserName.classList.add('_none-name');
   }
-  if (isUserName.classList.contains('_none-name') && !isUserName.textContent.includes('[Enter name]')) {
+  if (isUserName.classList.contains('_none-name') && !isUserName.textContent.includes(placeholderTranslation[state.language])) {
     isUserName.classList.remove('_none-name');
   }
 }
@@ -66,11 +87,15 @@ function sizeGreeting() {
   }
 }
 
-window.addEventListener('DOMContentLoaded', getLocalStorage, showGreeting);
+window.addEventListener('DOMContentLoaded', function() {
+  getLocalStorage();
+  showGreeting();
+  showName();
+});
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', function() {
 isUserName.addEventListener('click', function(e) {
-  if (isUserName.textContent.includes('[Enter name]')) {
+  if (isUserName.textContent.includes(placeholderTranslation[state.language])) {
     isUserName.textContent = '';
   }
   isUserName.classList.remove('_none-name');
@@ -80,7 +105,7 @@ isUserName.addEventListener('click', function(e) {
   sizeGreeting();
 });
 
-document.addEventListener( 'keyup', function(e) {
+isUserName.addEventListener( 'keyup', function(e) {
   if( e.code === 'Enter') {
     isUserName.textContent = isUserName.textContent.replace(/(\r\n|\n|\r)/gm," ");
     e.stopPropagation();
@@ -108,9 +133,8 @@ document.addEventListener('click', (e) => {
   }
 });
 
+  showName();
   showGreeting()
-  sizeGreeting();
-  getLocalStorage();
   colorName();
   sizeGreeting();
 });
