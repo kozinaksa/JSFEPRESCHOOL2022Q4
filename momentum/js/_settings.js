@@ -141,7 +141,6 @@ function showActualToggles() {
   toggleSliders.forEach(toggle => {
     for (let key in state.toggles) {
       if (toggle.classList.contains(key)) {
-        console.log(toggle.classList.contains(key).textContent)
         if (state.toggles[key] === 'true' && !toggle.classList.contains('_active')) {
           toggle.classList.add('_active');
           for (let isSwitch of toggleSwitches) {
@@ -202,16 +201,16 @@ window.addEventListener('load', function() {
 
   isBtnClose.addEventListener('click', hideSettings);
 
-  const tag = document.querySelectorAll('.tag');
-  document.addEventListener('click', (e) => {
-    let target = e.target;
-    let isSettings = target == settingApp || settingApp.contains(target);
-    let isBtn = target == isBtnSettings || isBtnSettings.contains(target);
-    let isTag = target == tag || tag.contains(target);
-    if (!isSettings && !isBtn && !isTag) {
-      hideSettings();
-    }
-  });
+  // const tag = document.querySelectorAll('.tag');
+  // document.addEventListener('click', (e) => {
+  //   let target = e.target;
+  //   let isSettings = target == settingApp || settingApp.contains(target);
+  //   let isBtn = target == isBtnSettings || isBtnSettings.contains(target);
+  //   let isTag = target == tag || tag.includes(target);
+  //   if (!isSettings && !isBtn && !isTag) {
+  //     hideSettings();
+  //   }
+  // });
 
   toggleLanguage.addEventListener('click', (e) => {
     !activeToggleBool ? activateToggleLanguage() : deactivateToggleLanguage();
