@@ -10,6 +10,11 @@ export const greetingTranslation = {
   ru: ['Доброй ночи, ', 'Доброе утро, ', 'Добрый день, ', 'Добрый вечер, ']
 };
 
+export const placeholderTranslation = {
+  en: '[Enter name]',
+  ru: '[Введите имя]'
+}
+
 
 export const weatherTranslation = {
   en: ['wind speed: ', 'humidity: ', 'Minsk'],

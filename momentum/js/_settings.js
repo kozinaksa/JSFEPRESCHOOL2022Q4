@@ -1,6 +1,7 @@
 import { settingsTranslation } from "./Languages";
 import { visiblePlayer } from "./_audioPlayer";
 import { sourceQuote, visibleQuote } from "./_quotes";
+import { showName } from "./_greeting";
 
 const state = {
   language: 'en',
@@ -72,6 +73,7 @@ function changeLanguage() {
   getLocalStorage();
   sourceQuote();
   updateSettingsNames();
+  showName();
 }
 
 function updateSettingsNames() {

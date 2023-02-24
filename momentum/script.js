@@ -51,6 +51,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "dateTimeTranslation": () => (/* binding */ dateTimeTranslation),
 /* harmony export */   "greetingTranslation": () => (/* binding */ greetingTranslation),
+/* harmony export */   "placeholderTranslation": () => (/* binding */ placeholderTranslation),
 /* harmony export */   "settingsTranslation": () => (/* binding */ settingsTranslation),
 /* harmony export */   "weatherTranslation": () => (/* binding */ weatherTranslation)
 /* harmony export */ });
@@ -63,6 +64,10 @@ const dateTimeTranslation = {
 const greetingTranslation = {
   en: ['Good night, ', 'Good morning, ', 'Good afternoon, ', 'Good evening, '],
   ru: ['Доброй ночи, ', 'Доброе утро, ', 'Добрый день, ', 'Добрый вечер, ']
+};
+const placeholderTranslation = {
+  en: '[Enter name]',
+  ru: '[Введите имя]'
 };
 const weatherTranslation = {
   en: ['wind speed: ', 'humidity: ', 'Minsk'],
@@ -315,7 +320,8 @@ window.addEventListener('DOMContentLoaded', showTime);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getTimeOfDay": () => (/* binding */ getTimeOfDay)
+/* harmony export */   "getTimeOfDay": () => (/* binding */ getTimeOfDay),
+/* harmony export */   "showName": () => (/* binding */ showName)
 /* harmony export */ });
 /* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_settings */ "./src/js/_settings.js");
 /* harmony import */ var _Languages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Languages */ "./src/js/Languages.js");
@@ -341,9 +347,24 @@ function visibleGreeting() {
 }
 function showGreeting() {
   visibleGreeting();
+  // showName();
   const timeIndex = greetingEn.indexOf(getTimeOfDay());
   isGreeting.textContent = _Languages__WEBPACK_IMPORTED_MODULE_1__.greetingTranslation[_settings__WEBPACK_IMPORTED_MODULE_0__.state.language][timeIndex];
   setTimeout(showGreeting, 1000);
+}
+function showName() {
+  if (isUserName.textContent.trim() === '') {
+    isUserName.textContent = _Languages__WEBPACK_IMPORTED_MODULE_1__.placeholderTranslation[_settings__WEBPACK_IMPORTED_MODULE_0__.state.language];
+    isUserName.classList.add('_none-name');
+  }
+  if (isUserName.textContent.includes(_Languages__WEBPACK_IMPORTED_MODULE_1__.placeholderTranslation.en)) {
+    isUserName.classList.add('_none-name');
+    if (_settings__WEBPACK_IMPORTED_MODULE_0__.state.language === 'ru') isUserName.textContent = _Languages__WEBPACK_IMPORTED_MODULE_1__.placeholderTranslation[_settings__WEBPACK_IMPORTED_MODULE_0__.state.language];
+  }
+  if (isUserName.textContent.includes(_Languages__WEBPACK_IMPORTED_MODULE_1__.placeholderTranslation.ru)) {
+    isUserName.classList.add('_none-name');
+    if (_settings__WEBPACK_IMPORTED_MODULE_0__.state.language === 'en') isUserName.textContent = _Languages__WEBPACK_IMPORTED_MODULE_1__.placeholderTranslation[_settings__WEBPACK_IMPORTED_MODULE_0__.state.language];
+  } else isUserName.textContent = name.value;
 }
 function setLocalStorage() {
   if (localStorage.getItem('name') === 'undefined') {
@@ -362,10 +383,10 @@ function getLocalStorage() {
 }
 function colorName() {
   if (isUserName.textContent.length === 0) {
-    isUserName.textContent = '[Enter name]';
+    isUserName.textContent = _Languages__WEBPACK_IMPORTED_MODULE_1__.placeholderTranslation[_settings__WEBPACK_IMPORTED_MODULE_0__.state.language];
     isUserName.classList.add('_none-name');
   }
-  if (isUserName.classList.contains('_none-name') && !isUserName.textContent.includes('[Enter name]')) {
+  if (isUserName.classList.contains('_none-name') && !isUserName.textContent.includes(_Languages__WEBPACK_IMPORTED_MODULE_1__.placeholderTranslation[_settings__WEBPACK_IMPORTED_MODULE_0__.state.language])) {
     isUserName.classList.remove('_none-name');
   }
 }
@@ -378,11 +399,15 @@ function sizeGreeting() {
     isUserName.style.maxWidth = Math.floor(window.innerWidth - window.innerWidth / 10) + 'px';
   }
 }
-window.addEventListener('DOMContentLoaded', getLocalStorage, showGreeting);
+window.addEventListener('DOMContentLoaded', function () {
+  getLocalStorage();
+  showGreeting();
+  showName();
+});
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', function () {
   isUserName.addEventListener('click', function (e) {
-    if (isUserName.textContent.includes('[Enter name]')) {
+    if (isUserName.textContent.includes(_Languages__WEBPACK_IMPORTED_MODULE_1__.placeholderTranslation[_settings__WEBPACK_IMPORTED_MODULE_0__.state.language])) {
       isUserName.textContent = '';
     }
     isUserName.classList.remove('_none-name');
@@ -391,7 +416,7 @@ window.addEventListener('load', function () {
     isUserName.style.paddingBottom = '6px';
     sizeGreeting();
   });
-  document.addEventListener('keyup', function (e) {
+  isUserName.addEventListener('keyup', function (e) {
     if (e.code === 'Enter') {
       isUserName.textContent = isUserName.textContent.replace(/(\r\n|\n|\r)/gm, " ");
       e.stopPropagation();
@@ -417,9 +442,8 @@ window.addEventListener('load', function () {
       sizeGreeting();
     }
   });
+  showName();
   showGreeting();
-  sizeGreeting();
-  getLocalStorage();
   colorName();
   sizeGreeting();
 });
@@ -537,7 +561,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Languages__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Languages */ "./src/js/Languages.js");
 /* harmony import */ var _audioPlayer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_audioPlayer */ "./src/js/_audioPlayer.js");
 /* harmony import */ var _quotes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_quotes */ "./src/js/_quotes.js");
-/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_slider */ "./src/js/_slider.js");
+/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_greeting */ "./src/js/_greeting.js");
+/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_slider */ "./src/js/_slider.js");
+
 
 
 
@@ -600,6 +626,7 @@ function changeLanguage() {
   getLocalStorage();
   (0,_quotes__WEBPACK_IMPORTED_MODULE_2__.sourceQuote)();
   updateSettingsNames();
+  (0,_greeting__WEBPACK_IMPORTED_MODULE_3__.showName)();
 }
 function updateSettingsNames() {
   for (let i = 0; i < settingsNames.length; i++) {
@@ -695,11 +722,11 @@ function changeSourceFon(e) {
   state.imageSource = source.textContent;
   setLocalStorage();
   getLocalStorage();
-  (0,_slider__WEBPACK_IMPORTED_MODULE_3__.setFon)();
+  (0,_slider__WEBPACK_IMPORTED_MODULE_4__.setFon)();
 }
 
 // getLocalStorage();
-window.addEventListener('DOMContentLoaded', getLocalStorage, _slider__WEBPACK_IMPORTED_MODULE_3__.setFon);
+window.addEventListener('DOMContentLoaded', getLocalStorage, _slider__WEBPACK_IMPORTED_MODULE_4__.setFon);
 window.addEventListener('beforeunload', setLocalStorage);
 let isCityValue = 'Minsk';
 window.addEventListener('load', function () {
@@ -10463,7 +10490,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./assets/favicon.ico */ "./src/assets/favicon.ico"), __webpack_require__.b);
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
-var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <link href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" rel=\"shortcut icon\">\r\n  <title>Momentum by Galina Moroz</title>\r\n</head>\r\n<body>\r\n  <div class=\"overlay\"></div>\r\n  <header class=\"header\">\r\n    <div class=\"player\">\r\n      <div class=\"player-time\">\r\n        <span class=\"player-current-sound\"></span>\r\n        <div class=\"player-current\">\r\n          <div class=\"player-time__current\">0:00</div>\r\n          <div class=\"player-time__divider\">/</div>\r\n          <div class=\"player-time__length\">0:39</div>\r\n        </div>\r\n      </div>\r\n      <div class=\"player-progressBar\">\r\n        <div class=\"player-timeline-wrapper\">\r\n          <div class=\"player-timeline\">\r\n            <div class=\"player-timeline-progress\"></div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"player-btns\">\r\n        <div class=\"player-controls\">\r\n          <button class=\"player-controls__prev player-controls-icon\"></button>\r\n          <button class=\"player-controls__play player-controls-icon\"></button>\r\n          <button class=\"player-controls__next player-controls-icon\"></button>\r\n        </div>\r\n        <div class=\"player-volume\">\r\n          <div class=\"player-volume__button player-volume-icon\"></div>\r\n          <div class=\"player-volume__slider\">\r\n            <div class=\"player-volume__slider-percentage\"></div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <ul class=\"player-playlist\">\r\n      </ul>\r\n    </div>\r\n    <div class=\"weather\">\r\n      <input type=\"text\" class=\"city\" placeholder=\"[Enter city]\">\r\n      <i class=\"weather__icon owf\"></i>\r\n      <div class=\"weather__error\"></div>\r\n      <div class=\"weather__description\">\r\n        <span class=\"temperature\"></span>\r\n        <span class=\"description\"></span>\r\n      </div>\r\n      <div class=\"wind\"></div>\r\n      <div class=\"humidity\"></div>\r\n    </div>\r\n  </header>\r\n  <main class=\"main\">\r\n    <div class=\"slider\">\r\n      <button class=\"slider__prev slider-icon\"></button>\r\n      <button class=\"slider__next slider-icon\"></button>\r\n    </div>\r\n    <time class=\"time\">00:00:00</time>\r\n    <data class=\"date\" value=\"data\">Data</data>\r\n    <div class=\"greeting-container\">\r\n      <span class=\"greeting\"></span>\r\n      <span class=\"username _none-name\" contenteditable=\"true\">[Enter name]\r\n        <input type=\"text\" class=\"name\">\r\n      </span>\r\n    </div>\r\n  </main>\r\n  <footer class=\"footer\">\r\n    <button class=\"change-quote\"></button>\r\n    <div class=\"quote-container\">\r\n      <div class=\"quote-text\">\r\n        <div class=\"quote\"></div>\r\n        <div class=\"author\"></div>\r\n      </div>\r\n    </div>\r\n    <button class=\"settings-btn\">\r\n      <span class=\"settings-btn_icon_1\"></span>\r\n      <span class=\"settings-btn_icon_2\"></span>\r\n    </button>\r\n  </footer>\r\n  <div class=\"settings-container\">\r\n      <button class=\"settings_close-bth settings_close-icon\"></button>\r\n      <ul class=\"settings__list\">\r\n        <li class=\"settings__list-item settings__language\">\r\n          <p class=\"settings-name _language\">Language</p>\r\n          <div class=\"container__settings-value container__language\">\r\n            <span class=\"settings-value value-language\">en</span>\r\n            <span class=\"toggle-slider _language\">\r\n              <svg class=\"toggle-switch _language\"></svg>\r\n            </span>\r\n            <span class=\"settings-value value-language\">ru</span>\r\n          </div>\r\n        </li>\r\n        <li class=\"settings__list-item settings__show-container\">\r\n          <p class=\"settings-name _show\">Show / Hide</p>\r\n          <ul class=\"settings__list-show\">\r\n            <li class=\"settings__list-show-item item-time\">\r\n              <span class=\"settings-name _show-time\">Time</span>\r\n              <div class=\"container__settings-value container__show-time\">\r\n                <span class=\"toggle-slider toggle-show _time _active\">\r\n                  <svg class=\"toggle-switch switch-show _time _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-date\">\r\n              <span class=\"settings-name _show-date\">Date</span>\r\n              <div class=\"container__settings-value container__show-date\">\r\n                <span class=\"toggle-slider toggle-show _date _active\">\r\n                  <svg class=\"toggle-switch switch-show _date _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-greeting\">\r\n              <span class=\"settings-name _show-greeting\">Greeting</span>\r\n              <div class=\"container__settings-value container__show-greeting\">\r\n                <span class=\"toggle-slider toggle-show _greeting _active\">\r\n                  <svg class=\"toggle-switch switch-show _greeting _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-quote\">\r\n              <span class=\"settings-name _show-quote\">Quote</span>\r\n              <div class=\"container__settings-value container__show-quote\">\r\n                <span class=\"toggle-slider toggle-show _quote _active\">\r\n                  <svg class=\"toggle-switch switch-show _quote _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-weather\">\r\n              <span class=\"settings-name _show-weather\">Weather</span>\r\n              <div class=\"container__settings-value container__show-weather\">\r\n                <span class=\"toggle-slider toggle-show _weather _active\">\r\n                  <svg class=\"toggle-switch switch-show _weather _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-audio\">\r\n              <span class=\"settings-name _show-audio\">Audio</span>\r\n              <div class=\"container__settings-value container__show-audio\">\r\n                <span class=\"toggle-slider toggle-show _audio _active\">\r\n                  <svg class=\"toggle-switch switch-show _audio _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <!-- <li class=\"settings__list-show-item item-dop\">\r\n              <span class=\"settings-name _show-dop\">Dop</span>\r\n              <div class=\"container__settings-value container__show-dop\">\r\n                <span class=\"toggle-slider toggle-show _dop _active\">\r\n                  <svg class=\"toggle-switch switch-show _dop _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li> -->\r\n          </ul>\r\n        </li>\r\n        <li class=\"settings__list-item settings__source-image\">\r\n          <p class=\"settings-name _source-image\">Background source</p>\r\n          <div class=\"container__settings-value container__source-image\">\r\n            <span class=\"settings-value value-source-image _active\">GitHub</span>\r\n            <span class=\"settings-value value-source-image _hide\">Unsplash API</span>\r\n            <span class=\"settings-value value-source-image _hide\">Flickr API</span>\r\n          </div>\r\n          <div class=\"container__image-tags\">\r\n            <p class=\"images-tags_text settings-name\">You can enter your own tags to search images</p>\r\n              <input type=\"text\" class=\"image-tags-input\">\r\n            <div class=\"tags-container\">\r\n              <!-- <span class=\"tag\">nature</span>\r\n              <span class=\"tag\">evening</span> -->\r\n            </div>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n  </div>\r\n</body>\r\n</html>";
+var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <link href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" rel=\"shortcut icon\">\r\n  <title>Momentum by Galina Moroz</title>\r\n</head>\r\n<body>\r\n  <div class=\"overlay\"></div>\r\n  <header class=\"header\">\r\n    <div class=\"player\">\r\n      <div class=\"player-time\">\r\n        <span class=\"player-current-sound\"></span>\r\n        <div class=\"player-current\">\r\n          <div class=\"player-time__current\">0:00</div>\r\n          <div class=\"player-time__divider\">/</div>\r\n          <div class=\"player-time__length\">0:39</div>\r\n        </div>\r\n      </div>\r\n      <div class=\"player-progressBar\">\r\n        <div class=\"player-timeline-wrapper\">\r\n          <div class=\"player-timeline\">\r\n            <div class=\"player-timeline-progress\"></div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"player-btns\">\r\n        <div class=\"player-controls\">\r\n          <button class=\"player-controls__prev player-controls-icon\"></button>\r\n          <button class=\"player-controls__play player-controls-icon\"></button>\r\n          <button class=\"player-controls__next player-controls-icon\"></button>\r\n        </div>\r\n        <div class=\"player-volume\">\r\n          <div class=\"player-volume__button player-volume-icon\"></div>\r\n          <div class=\"player-volume__slider\">\r\n            <div class=\"player-volume__slider-percentage\"></div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <ul class=\"player-playlist\">\r\n      </ul>\r\n    </div>\r\n    <div class=\"weather\">\r\n      <input type=\"text\" class=\"city\" placeholder=\"[Enter city]\">\r\n      <i class=\"weather__icon owf\"></i>\r\n      <div class=\"weather__error\"></div>\r\n      <div class=\"weather__description\">\r\n        <span class=\"temperature\"></span>\r\n        <span class=\"description\"></span>\r\n      </div>\r\n      <div class=\"wind\"></div>\r\n      <div class=\"humidity\"></div>\r\n    </div>\r\n  </header>\r\n  <main class=\"main\">\r\n    <div class=\"slider\">\r\n      <button class=\"slider__prev slider-icon\"></button>\r\n      <button class=\"slider__next slider-icon\"></button>\r\n    </div>\r\n    <time class=\"time\">00:00:00</time>\r\n    <data class=\"date\" value=\"data\">Data</data>\r\n    <div class=\"greeting-container\">\r\n      <span class=\"greeting\"></span>\r\n      <span class=\"username _none-name\" contenteditable=\"true\">\r\n        <input type=\"text\" class=\"name\">\r\n      </span>\r\n    </div>\r\n  </main>\r\n  <footer class=\"footer\">\r\n    <button class=\"change-quote\"></button>\r\n    <div class=\"quote-container\">\r\n      <div class=\"quote-text\">\r\n        <div class=\"quote\"></div>\r\n        <div class=\"author\"></div>\r\n      </div>\r\n    </div>\r\n    <button class=\"settings-btn\">\r\n      <span class=\"settings-btn_icon_1\"></span>\r\n      <span class=\"settings-btn_icon_2\"></span>\r\n    </button>\r\n  </footer>\r\n  <div class=\"settings-container\">\r\n      <button class=\"settings_close-bth settings_close-icon\"></button>\r\n      <ul class=\"settings__list\">\r\n        <li class=\"settings__list-item settings__language\">\r\n          <p class=\"settings-name _language\">Language</p>\r\n          <div class=\"container__settings-value container__language\">\r\n            <span class=\"settings-value value-language\">en</span>\r\n            <span class=\"toggle-slider _language\">\r\n              <svg class=\"toggle-switch _language\"></svg>\r\n            </span>\r\n            <span class=\"settings-value value-language\">ru</span>\r\n          </div>\r\n        </li>\r\n        <li class=\"settings__list-item settings__show-container\">\r\n          <p class=\"settings-name _show\">Show / Hide</p>\r\n          <ul class=\"settings__list-show\">\r\n            <li class=\"settings__list-show-item item-time\">\r\n              <span class=\"settings-name _show-time\">Time</span>\r\n              <div class=\"container__settings-value container__show-time\">\r\n                <span class=\"toggle-slider toggle-show _time _active\">\r\n                  <svg class=\"toggle-switch switch-show _time _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-date\">\r\n              <span class=\"settings-name _show-date\">Date</span>\r\n              <div class=\"container__settings-value container__show-date\">\r\n                <span class=\"toggle-slider toggle-show _date _active\">\r\n                  <svg class=\"toggle-switch switch-show _date _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-greeting\">\r\n              <span class=\"settings-name _show-greeting\">Greeting</span>\r\n              <div class=\"container__settings-value container__show-greeting\">\r\n                <span class=\"toggle-slider toggle-show _greeting _active\">\r\n                  <svg class=\"toggle-switch switch-show _greeting _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-quote\">\r\n              <span class=\"settings-name _show-quote\">Quote</span>\r\n              <div class=\"container__settings-value container__show-quote\">\r\n                <span class=\"toggle-slider toggle-show _quote _active\">\r\n                  <svg class=\"toggle-switch switch-show _quote _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-weather\">\r\n              <span class=\"settings-name _show-weather\">Weather</span>\r\n              <div class=\"container__settings-value container__show-weather\">\r\n                <span class=\"toggle-slider toggle-show _weather _active\">\r\n                  <svg class=\"toggle-switch switch-show _weather _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <li class=\"settings__list-show-item item-audio\">\r\n              <span class=\"settings-name _show-audio\">Audio</span>\r\n              <div class=\"container__settings-value container__show-audio\">\r\n                <span class=\"toggle-slider toggle-show _audio _active\">\r\n                  <svg class=\"toggle-switch switch-show _audio _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li>\r\n            <!-- <li class=\"settings__list-show-item item-dop\">\r\n              <span class=\"settings-name _show-dop\">Dop</span>\r\n              <div class=\"container__settings-value container__show-dop\">\r\n                <span class=\"toggle-slider toggle-show _dop _active\">\r\n                  <svg class=\"toggle-switch switch-show _dop _active\"></svg>\r\n                </span>\r\n              </div>\r\n            </li> -->\r\n          </ul>\r\n        </li>\r\n        <li class=\"settings__list-item settings__source-image\">\r\n          <p class=\"settings-name _source-image\">Background source</p>\r\n          <div class=\"container__settings-value container__source-image\">\r\n            <span class=\"settings-value value-source-image _active\">GitHub</span>\r\n            <span class=\"settings-value value-source-image _hide\">Unsplash API</span>\r\n            <span class=\"settings-value value-source-image _hide\">Flickr API</span>\r\n          </div>\r\n          <div class=\"container__image-tags\">\r\n            <p class=\"images-tags_text settings-name\">You can enter your own tags to search images</p>\r\n              <input type=\"text\" class=\"image-tags-input\">\r\n            <div class=\"tags-container\">\r\n              <!-- <span class=\"tag\">nature</span>\r\n              <span class=\"tag\">evening</span> -->\r\n            </div>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n  </div>\r\n</body>\r\n</html>";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
