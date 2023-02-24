@@ -35,13 +35,13 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/libs'),
+          from: path.resolve(__dirname, 'src/js'),
           context: 'json',
-          to: path.resolve(__dirname, 'dist/libs'),
+          to: path.resolve(__dirname, 'dist/js'),
         },
         {
-          from: path.resolve(__dirname, 'src/libs/playList.js'),
-          to: path.resolve(__dirname, 'dist/libs/playList.js'),
+          from: path.resolve(__dirname, 'src/js/playList.js'),
+          to: path.resolve(__dirname, 'dist/js/playList.js'),
         },
         {
           from: path.resolve(__dirname, 'src/assets/sounds'),

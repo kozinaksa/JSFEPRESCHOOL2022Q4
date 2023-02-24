@@ -1,5 +1,5 @@
 import '../index.html';
-import '../libs/normalize.css';
+import '../style/css/normalize.css';
 import '../style/scss/owfont-regular.scss';
 import '../style/scss/style.scss';
 

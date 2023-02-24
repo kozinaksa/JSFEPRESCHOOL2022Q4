@@ -29,6 +29,7 @@ const switchLanguage = document.querySelector('.toggle-switch', '._language');
 const isLanguageValue = document.querySelectorAll('.value-language');
 
 const isSourceFonValue =document.querySelectorAll('.value-source-image');
+const overlay = document.querySelector('.overlay');
 
 let showBool = false, activeToggleBool = false;
 
@@ -36,11 +37,14 @@ function showSettings() {
   // TODO: add change language here and make function updateShowSettings
   updateSettingsNames();
   settingApp.classList.add('_show');
+  overlay.classList.add('_active');
+
   showBool = true;
 }
 
 function hideSettings() {
   settingApp.classList.remove('_show');
+  overlay.classList.remove('_active');
   showBool = false;
 }
 

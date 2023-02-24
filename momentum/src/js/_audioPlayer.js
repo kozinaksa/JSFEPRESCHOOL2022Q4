@@ -1,4 +1,4 @@
-import playList from '../libs/playList.js';
+import playList from './playList.js';
 import { state } from './_settings.js';
 
 const playerContainer = document.querySelector('.player');
