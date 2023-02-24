@@ -322,10 +322,12 @@
   background-color: rgba(0, 0, 0, 0.6);
   transition:all 0.8s ease-in-out;
   backdrop-filter: blur(5px);
+  visibility: hidden;
 
   &._active {
     opacity: .6;
     z-index: 66;
+    visibility: visible;
     user-select: none;
   }
 }
