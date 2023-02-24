@@ -462,7 +462,7 @@ function updateQuote() {
 }
 async function getQuotesJson() {
   const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-  const quotes = "/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/js/data.json";
+  const quotes = "https://rolling-scopes-school.github.io/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/js/data.json";
   const res = await fetch(quotes);
   await res.json().then(data => {
     randomQuote = data[_settings__WEBPACK_IMPORTED_MODULE_0__.state.language][randomNum];
@@ -1081,19 +1081,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const playList = [{
   title: 'Aqua Caelestis',
-  src: '/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/assets/sounds/Aqua_Caelestis.mp3',
+  src: 'https://rolling-scopes-school.github.io/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/assets/sounds/Aqua_Caelestis.mp3',
   duration: '00:39'
 }, {
   title: 'Ennio Morricone',
-  src: '/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/assets/sounds/Ennio_Morricone.mp3',
+  src: 'https://rolling-scopes-school.github.io/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/assets/sounds/Ennio_Morricone.mp3',
   duration: '01:37'
 }, {
   title: 'River Flows In You',
-  src: '/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/assets/sounds/River_Flows_In_You.mp3',
+  src: 'https://rolling-scopes-school.github.io/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/assets/sounds/River_Flows_In_You.mp3',
   duration: '03:50'
 }, {
   title: 'Summer Wind',
-  src: '/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/dist/assets/sounds/Summer_Wind.mp3',
+  src: 'https://rolling-scopes-school.github.io/kozinaksa-JSFEPRESCHOOL2022Q4/momentum/assets/sounds/Summer_Wind.mp3',
   duration: '01:50'
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (playList);
