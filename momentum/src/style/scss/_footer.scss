@@ -146,6 +146,34 @@
         transition-duration: 5s;
       }
     }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .links {
+    position: absolute;
+    display: flex;
+    gap: 16px;
+    right: 10px;
+    bottom: 5px;
+    margin: 10px;
+    opacity: .8;
+
+
+    &_link {
+      opacity: .8;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:active {
+        transform: scale(1.1);
+        transform: all .5s;
+      }
+    }
   }
 }
 
@@ -166,7 +194,8 @@
 @media (max-width: 380px) {
   .footer {
 
-    .settings-btn {
+    .settings-btn,
+    .links {
       margin: 0;
     }
 

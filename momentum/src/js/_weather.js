@@ -91,10 +91,9 @@ function visibleDateTime() {
   }
 }
 
-// getLocalStorage();
 window.addEventListener('DOMContentLoaded', function() {
   getLocalStorage();
-  if (localStorage.getItem('city') === '') {
+  if (localStorage.getItem('city') === '' || localStorage.getItem('city') === null) {
     city.value = weatherTranslation[state.language][2];
   }
   if (localStorage.getItem('city') === 'Minsk' && state.language === 'ru')

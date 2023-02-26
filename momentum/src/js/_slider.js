@@ -156,15 +156,6 @@ function getSlidePrev() {
   return numRand === 1 ? numRand = 20 : numRand = numRand - 1;
 }
 
-// function setLocalStorage() {
-//   localStorage.setItem('bgTags', JSON.stringify(tagsArray));
-// }
-
-// function getLocalStorage() {
-//   if (localStorage.getItem('bgTags') && localStorage.getItem('bgTags') != '[]')
-//     tagsArray = JSON.parse(localStorage.getItem('bgTags'));
-// }
-
 document.addEventListener('DOMContentLoaded', function() {
   // getLocalStorage();
   setFon();
