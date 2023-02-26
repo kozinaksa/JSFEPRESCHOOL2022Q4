@@ -8,6 +8,12 @@
   <title>Momentum by Galina Moroz</title>
 </head>
 <body>
+  <div class="preloader">
+    <div class="loader">
+      <hr/><hr/><hr/><hr/>
+    </div>
+  </div>
+  </div>
   <div class="overlay"></div>
   <header class="header">
     <div class="player">
@@ -177,5 +183,16 @@
         </li>
       </ul>
   </div>
+  <script>
+    window.onload = function () {
+      window.setTimeout( function() {
+        document.body.classList.add('loaded_hiding');
+        setTimeout(function () {
+          document.body.classList.add('loaded');
+          document.body.classList.remove('loaded_hiding');
+        }, 500)
+      }, 3500);
+    }
+  </script>
 </body>
 </html>

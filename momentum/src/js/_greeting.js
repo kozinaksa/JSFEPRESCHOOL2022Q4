@@ -24,7 +24,6 @@ function visibleGreeting() {
 
 function showGreeting() {
   visibleGreeting();
-  // showName();
   const timeIndex = greetingEn.indexOf(getTimeOfDay());
   isGreeting.textContent = greetingTranslation[state.language][timeIndex];
   setTimeout(showGreeting, 1000);

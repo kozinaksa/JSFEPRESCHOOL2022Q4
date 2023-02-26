@@ -35,11 +35,9 @@ const overlay = document.querySelector('.overlay');
 let showBool = false, activeToggleBool = false;
 
 function showSettings() {
-  // TODO: add change language here and make function updateShowSettings
   updateSettingsNames();
   settingApp.classList.add('_show');
   overlay.classList.add('_active');
-
   showBool = true;
 }
 
@@ -186,7 +184,6 @@ function changeSourceFon(e) {
   setFon();
 }
 
-// getLocalStorage();
 window.addEventListener('DOMContentLoaded',getLocalStorage, setFon);
 window.addEventListener('beforeunload', setLocalStorage);
 
@@ -202,17 +199,6 @@ window.addEventListener('load', function() {
   });
 
   isBtnClose.addEventListener('click', hideSettings);
-
-  // const tag = document.querySelectorAll('.tag');
-  // document.addEventListener('click', (e) => {
-  //   let target = e.target;
-  //   let isSettings = target == settingApp || settingApp.contains(target);
-  //   let isBtn = target == isBtnSettings || isBtnSettings.contains(target);
-  //   let isTag = target == tag || tag.includes(target);
-  //   if (!isSettings && !isBtn && !isTag) {
-  //     hideSettings();
-  //   }
-  // });
 
   toggleLanguage.addEventListener('click', (e) => {
     !activeToggleBool ? activateToggleLanguage() : deactivateToggleLanguage();
