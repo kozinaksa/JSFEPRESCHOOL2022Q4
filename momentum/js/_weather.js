@@ -9,7 +9,6 @@ const wind = document.querySelector('.wind');
 const humidity = document.querySelector('.humidity');
 const weatherError = document.querySelector('.weather__error');
 const city = document.querySelector('.city');
-// city.value = weatherTranslation[state.language][2];
 
 export async function getWeather() {
   visibleDateTime();
@@ -26,7 +25,7 @@ export async function getWeather() {
     wind.textContent = `${weatherTranslation[state.language][0]} ${data.wind.speed.toFixed(0)}m/s`;
     humidity.textContent = `${weatherTranslation[state.language][1]} ${data.main.humidity.toFixed(0)}%`
     weatherDescription.textContent = data.weather[0].description;
-    // setTimeout(getWeather, 10000);
+    setTimeout(getWeather, 10000);
   } catch (err) {
     weatherHide();
   }
@@ -91,10 +90,9 @@ function visibleDateTime() {
   }
 }
 
-// getLocalStorage();
 window.addEventListener('DOMContentLoaded', function() {
   getLocalStorage();
-  if (localStorage.getItem('city') === '') {
+  if (localStorage.getItem('city') === '' || localStorage.getItem('city') === null) {
     city.value = weatherTranslation[state.language][2];
   }
   if (localStorage.getItem('city') === 'Minsk' && state.language === 'ru')

@@ -4,9 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="assets/favicon.ico" rel="shortcut icon">
+  <base target="_blank">
   <title>Momentum by Galina Moroz</title>
 <script defer src="script.js"></script></head>
 <body>
+  <div class="preloader">
+    <div class="loader">
+      <hr/><hr/><hr/><hr/>
+    </div>
+  </div>
+  </div>
   <div class="overlay"></div>
   <header class="header">
     <div class="player">
@@ -79,6 +86,10 @@
       <span class="settings-btn_icon_1"></span>
       <span class="settings-btn_icon_2"></span>
     </button>
+    <div class="links">
+      <a href="https://github.com/kozinaksa" class="links__link"><img src="assets/img/github.svg" class="links__img" alt="github logo" width="19" height="19"></a>
+      <a href="https://rs.school/js-stage0/" class="links__link"><img src="assets/img/rs_school.svg" class="links__img" alt="rs school logo" height="19"></a>
+    </div>
   </footer>
   <div class="settings-container">
       <button class="settings_close-bth settings_close-icon"></button>
@@ -144,14 +155,6 @@
                 </span>
               </div>
             </li>
-            <!-- <li class="settings__list-show-item item-dop">
-              <span class="settings-name _show-dop">Dop</span>
-              <div class="container__settings-value container__show-dop">
-                <span class="toggle-slider toggle-show _dop _active">
-                  <svg class="toggle-switch switch-show _dop _active"></svg>
-                </span>
-              </div>
-            </li> -->
           </ul>
         </li>
         <li class="settings__list-item settings__source-image">
@@ -165,12 +168,21 @@
             <p class="images-tags_text settings-name">You can enter your own tags to search images</p>
               <input type="text" class="image-tags-input">
             <div class="tags-container">
-              <!-- <span class="tag">nature</span>
-              <span class="tag">evening</span> -->
             </div>
           </div>
         </li>
       </ul>
   </div>
+  <script>
+    window.onload = function () {
+      window.setTimeout( function() {
+        document.body.classList.add('loaded_hiding');
+        setTimeout(function () {
+          document.body.classList.add('loaded');
+          document.body.classList.remove('loaded_hiding');
+        }, 500)
+      }, 2000);
+    }
+  </script>
 </body>
 </html>

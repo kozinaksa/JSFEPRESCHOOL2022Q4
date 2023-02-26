@@ -5,7 +5,6 @@ const isAuthor = document.querySelector('.author');
 const change = document.querySelector('.change-quote');
 const quoteContainer = document.querySelector('.quote-container');
 const min = 0, max = 54;
-let sourceJson = true;
 let randomQuote = {};
 let author = '', quote = '';
 
@@ -26,9 +25,6 @@ async function getQuotesJson() {
   await res.json().then((data) => {
     randomQuote = data[state.language][randomNum];
     quote = randomQuote.text;
-    // if (quote.length >= 130) {
-    //   getQuotesJson();
-    // }
     author = randomQuote.author;
     showQuote();
   });
@@ -67,7 +63,6 @@ function showQuote() {
 
 export function sourceQuote() {
   return getQuotesJson();
-  // return sourceJson ? getQuotesJson() : getQuotesAPI();
 }
 
 
@@ -78,9 +73,4 @@ window.addEventListener('load', function() {
     updateQuote();
     sourceQuote();
   });
-  // source.addEventListener('click', (e) => {
-  //   sourceJson ? sourceJson = false : sourceJson = true;
-  //   updateQuote();
-  //   sourceQuote();
-  // })
 });

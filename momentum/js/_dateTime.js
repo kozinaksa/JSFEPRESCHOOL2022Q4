@@ -30,5 +30,4 @@ function showTime() {
   setTimeout(showTime, 1000);
 }
 
-// showTime();
 window.addEventListener('DOMContentLoaded', showTime);

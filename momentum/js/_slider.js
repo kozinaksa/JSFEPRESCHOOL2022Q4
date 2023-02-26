@@ -127,7 +127,6 @@ async function bgFromFlickr() {
     fetch(url)
     .then(res => res.json())
     .then(data => {
-      // console.log(numRandFlickr, data.photos.photo[numRandFlickr].url_l);
       img.src = data.photos.photo[numRandFlickr].url_l;
       img.onload = () => {
         document.body.style.backgroundImage = "url('" + img.src + "')";
@@ -156,20 +155,7 @@ function getSlidePrev() {
   return numRand === 1 ? numRand = 20 : numRand = numRand - 1;
 }
 
-// function setLocalStorage() {
-//   localStorage.setItem('bgTags', JSON.stringify(tagsArray));
-// }
-
-// function getLocalStorage() {
-//   if (localStorage.getItem('bgTags') && localStorage.getItem('bgTags') != '[]')
-//     tagsArray = JSON.parse(localStorage.getItem('bgTags'));
-// }
-
-document.addEventListener('DOMContentLoaded', function() {
-  // getLocalStorage();
-  setFon();
-});
-// window.addEventListener('beforeunload', setLocalStorage);
+document.addEventListener('DOMContentLoaded', setFon);
 window.addEventListener('load', function() {
   const btnPrev = document.querySelector('.slider__prev');
   const btnNext = document.querySelector('.slider__next');
@@ -181,7 +167,6 @@ window.addEventListener('load', function() {
     getSlideNext();
     setFon();
   });
-  // inputTags.addEventListener('click', tags);
 
   inputTags.addEventListener('click', (e) => {
     document.addEventListener( 'keyup', (e) => {
